@@ -1,0 +1,1 @@
+#define	NHPET	1

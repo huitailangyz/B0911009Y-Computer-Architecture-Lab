@@ -1,0 +1,3 @@
+#!/bin/bash
+make cfg
+make tgt=rom CROSS_COMPILE=mipsel-linux-

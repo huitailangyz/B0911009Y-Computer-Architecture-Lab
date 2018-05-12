@@ -1,0 +1,31 @@
+现有一个使用gcc编译好的binary文件(后缀名为.bin)，准备使用串口将其下载至FPGA上的flash芯片中。
+
+准备工具：
+1.FPGA开发板。
+2.FPGA电源线。
+3.FPGA下载线。
+4.flash芯片。
+5.串口线（可能还需要usb转串口线）。
+6.xilinx下载工具 chipscope。
+7.串口软件（ECOM或SecureCRT）
+
+步骤：
+1.flash芯片正确放置FPGA开发板上。
+2.FPGA开发板与电脑连接下载线、串口线。
+3.电脑上打开Vivado工具中的Open Hardware Manager，打开串口软件。
+4.FPGA板上电，如正常下载bit流文件一样下载 programmer_by_uart.bit至FPGA上。
+5.串口软件，波特率选为230400，连接正常后
+  根据提示，键盘输入x表示开始xmodem传输
+  串口软件使用xmodem模式传输binary文件。等待传输完成。
+  
+  ECOM软件烧写flash的步骤见      ECOM烧写flash步骤.png
+  SecureCRT软件烧写flash的步骤见 SecureCRT烧写flash简单说明.png
+
+  ECOM传输xmodem的进度会弹出一个界面进行显示，可以看到每个传输包的情况
+  而SecureCRT只会在串口界面显示传输百分百。
+
+
+其他：
+  每次需要烧写flash时都需要下载一次programmer_by_uart.bit文件，不是很方便。
+  考虑将bit文件转换为mcs文件，固化到FPGA开发板上。
+  固化方法，参见

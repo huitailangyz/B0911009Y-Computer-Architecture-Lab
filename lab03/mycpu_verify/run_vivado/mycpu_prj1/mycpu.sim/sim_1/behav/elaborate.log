@@ -1,0 +1,82 @@
+Vivado Simulator 2017.1
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2017.1/bin/unwrapped/win64.o/xelab.exe -wto 8de8692e6f7648c084645fde77f29b66 --debug typical --relax --mt 2 -L blk_mem_gen_v8_3_6 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_top_behav xil_defaultlib.tb_top xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-1783] select index 62 into current_contents is out of bounds [/wrk/2017.1/nightly/2017_04_14_1846317/packages/customer/vivado/data/ip/xilinx/blk_mem_gen_v8_3/simulation/blk_mem_gen_v8_3.v:2420]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/soc_lite_top.v" Line 57. Module soc_lite_top(SIMULATION=1'b1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/mycpu.v" Line 3. Module mycpu_top doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/next_pc.v" Line 1. Module nextpc doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/IF_stage.v" Line 1. Module IF_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/ID_stage.v" Line 2. Module ID_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/EXE_stage.v" Line 2. Module EXE_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/ALU.v" Line 1. Module alu doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_signed.v" Line 1. Module divider_signed doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_unsigned.v" Line 1. Module divider_unsigned doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_signed.v" Line 1. Module multiplier_signed doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_unsigned.v" Line 1. Module multiplier_unsigned doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/MEM_stage.v" Line 2. Module MEM_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/WB_stage.v" Line 2. Module WB_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/regfile.v" Line 1. Module regfile doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/stall.v" Line 2. Module stall doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/BRIDGE/bridge_1x2.v" Line 50. Module bridge_1x2 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/CONFREG/confreg.v" Line 58. Module confreg(SIMULATION=1'b1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/soc_lite_top.v" Line 57. Module soc_lite_top(SIMULATION=1'b1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/mycpu.v" Line 3. Module mycpu_top doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/next_pc.v" Line 1. Module nextpc doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/IF_stage.v" Line 1. Module IF_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/ID_stage.v" Line 2. Module ID_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/EXE_stage.v" Line 2. Module EXE_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/ALU.v" Line 1. Module alu doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_signed.v" Line 1. Module divider_signed doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_unsigned.v" Line 1. Module divider_unsigned doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_signed.v" Line 1. Module multiplier_signed doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_unsigned.v" Line 1. Module multiplier_unsigned doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/MEM_stage.v" Line 2. Module MEM_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/WB_stage.v" Line 2. Module WB_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/regfile.v" Line 1. Module regfile doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/stall.v" Line 2. Module stall doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/BRIDGE/bridge_1x2.v" Line 50. Module bridge_1x2 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/CONFREG/confreg.v" Line 58. Module confreg(SIMULATION=1'b1) doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.PLLE2_ADV(CLKFBOUT_MULT=17,CLKIN...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.clk_pll_clk_wiz
+Compiling module xil_defaultlib.clk_pll
+Compiling module xil_defaultlib.nextpc
+Compiling module xil_defaultlib.IF_stage
+Compiling module xil_defaultlib.ID_stage
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.divider_signed
+Compiling module xil_defaultlib.divider_unsigned
+Compiling module xil_defaultlib.multiplier_signed
+Compiling module xil_defaultlib.multiplier_unsigned
+Compiling module xil_defaultlib.EXE_stage
+Compiling module xil_defaultlib.MEM_stage
+Compiling module xil_defaultlib.WB_stage
+Compiling module xil_defaultlib.regfile
+Compiling module xil_defaultlib.stall
+Compiling module xil_defaultlib.mycpu_top
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_output_stage(...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_output_stage(...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_softecc_outpu...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_mem_module(C_...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6(C_FAMILY="art...
+Compiling module xil_defaultlib.inst_ram
+Compiling module xil_defaultlib.bridge_1x2
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_output_stage(...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_output_stage(...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_softecc_outpu...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_mem_module(C_...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6(C_FAMILY="art...
+Compiling module xil_defaultlib.data_ram
+Compiling module xil_defaultlib.confreg(SIMULATION=1'b1)
+Compiling module xil_defaultlib.soc_lite_top(SIMULATION=1'b1)
+Compiling module xil_defaultlib.tb_top
+WARNING: [XSIM 43-3373] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/testbench/mycpu_tb.v" Line 119. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_top_behav

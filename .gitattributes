@@ -1,0 +1,2 @@
+.wdb filter=lfs diff=lfs merge=lfs -text
+*.wdb filter=lfs diff=lfs merge=lfs -text

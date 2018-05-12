@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Webtalk v2017.1 (64-bit)
+# SW Build 1846317 on Fri Apr 14 18:55:03 MDT 2017
+# IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+# Start of session at: Tue Oct 10 00:10:39 2017
+# Process ID: 9308
+# Current directory: D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav
+# Command line: wbtcv.exe -mode batch -source D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav/xsim.dir/tb_top_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav/webtalk.log
+# Journal file: D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav\webtalk.jou
+#-----------------------------------------------------------
+source D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav/xsim.dir/tb_top_behav/webtalk/xsim_webtalk.tcl -notrace
+webtalk_transmit: Time (s): cpu = 00:00:00 ; elapsed = 00:00:11 . Memory (MB): peak = 61.105 ; gain = 0.172
+INFO: [Common 17-206] Exiting Webtalk at Tue Oct 10 00:10:49 2017...

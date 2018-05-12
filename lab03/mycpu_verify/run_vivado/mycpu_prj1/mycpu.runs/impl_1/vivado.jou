@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.1 (64-bit)
+# SW Build 1846317 on Fri Apr 14 18:55:03 MDT 2017
+# IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+# Start of session at: Mon Oct  9 22:55:31 2017
+# Process ID: 7848
+# Current directory: D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.runs/impl_1
+# Command line: vivado.exe -log soc_lite_top.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source soc_lite_top.tcl -notrace
+# Log file: D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.runs/impl_1/soc_lite_top.vdi
+# Journal file: D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source soc_lite_top.tcl -notrace

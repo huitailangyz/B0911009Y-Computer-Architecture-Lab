@@ -1,0 +1,1490 @@
+#include <pmon.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <ctype.h>
+#include <unistd.h>
+
+#define CAMERA_BASE 0xbc280000
+#define DMA0_CONFIG 0x0
+#define DMA1_CONFIG 0x8
+#define DMA2_CONFIG 0x10
+#define DMA3_CONFIG 0x18
+#define PIX_CONFIG  0x20
+#define UOFF_CONFIG 0x28
+#define VOFF_CONFIG 0x30
+#define CAMIF_CONFIG    0x38
+#define CAM_MEM_BASE    0xa1800000  //the same as frambuffer base
+#define GC0308_ADDRESS 0x42
+//#define CATCH_PICS
+
+
+#define SDIO_DES_ADDR   0x1fe6c040
+#define CONFREG_BASE    0xbfd00000
+#define SDIO_RD_MEM_ADDR 0x900000
+#define SDIO_WR_MEM_ADDR 0x800000
+
+
+#define SDIO_BASE  0xbfe6c000
+#define SDICON     0x00
+#define SDIPRE     0x04
+#define SDICMDARG  0x08
+#define SDICMDCON  0x0c
+#define SDICMDSTA  0x10
+#define SDIRSP0    0x14
+#define SDIRSP1    0x18
+#define SDIRSP2    0x1C
+#define SDIRSP3    0x20
+#define SDIDTIMER  0x24
+#define SDIBSIZE   0x28
+#define SDIDATCON  0x2C
+#define SDIDATCNT  0x30
+#define SDIDATSTA  0x34
+#define SDIFSTA    0x38
+#define SDIINTMSK  0x3C
+#define SDIWRDAT   0x40
+#define SDISTAADD0 0x44
+#define SDISTAADD1 0x48
+#define SDISTAADD2 0x4c
+#define SDISTAADD3 0x50
+#define SDISTAADD4 0x54
+#define SDISTAADD5 0x58
+#define SDISTAADD6 0x5c
+#define SDISTAADD7 0x60
+#define DAT_4_WIRE 1
+#define ERASE_START_ADDR 0x5000
+#define ERASE_End_ADDR   0x5000
+#define	MISC_CTRL		0xbfd00424
+
+#define nr_strtol strtoul
+/*
+ * User tuned register setting values
+ */
+static unsigned char gc0308_init_reg[][2] = {  //  2010-12-16 kim 
+{0xfe,0x00},
+{0x0f,0x00},
+{0x01,0x6a},
+{0x02,0x70},
+{0x05,0x00},
+{0x06,0x00},
+{0x07,0x00},
+{0x08,0x00},
+{0x09,0x01},
+{0x0a,0xe8},
+{0x0b,0x02},
+{0x0c,0x88},
+{0x0d,0x02},
+{0x0e,0x02},
+{0x10,0x26},
+{0x11,0x0d},
+{0x12,0x2a},
+{0x13,0x00},
+{0x14,0x11},// urbetter
+{0x15,0x0a},
+{0x16,0x05},
+{0x17,0x01},
+{0x18,0x44},
+{0x19,0x44},
+{0x1a,0x2a},
+{0x1b,0x00},
+{0x1c,0x49},
+{0x1d,0x9a},
+{0x1e,0x61},
+{0x20,0xff},
+{0x21,0xfa},
+{0x22,0x57},
+//{0x24,0xa2},//0xa0},
+{0x25,0x0f},
+{0x26,0x02},//0x03}, // 0x01
+{0x2f,0x01},
+{0x30,0xf7},
+{0x31,0x50},
+{0x32,0x00},
+{0x39,0x04},
+{0x3a,0x20},
+{0x3b,0x20},
+{0x3c,0x00},
+{0x3d,0x00},
+{0x3e,0x00},
+{0x3f,0x00},
+{0x50,0x16}, // 0x14
+{0x53,0x80},
+{0x54,0x87},
+{0x55,0x87},
+{0x56,0x80},
+{0x8b,0x10},
+{0x8c,0x10},
+{0x8d,0x10},
+{0x8e,0x10},
+{0x8f,0x10},
+{0x90,0x10},
+{0x91,0x3c},
+{0x92,0x50},
+{0x5d,0x12},
+{0x5e,0x1a},
+{0x5f,0x24},
+{0x60,0x07},
+{0x61,0x15},
+{0x62,0x0f}, // 0x08
+{0x64,0x01},  // 0x03
+{0x66,0xe8},
+{0x67,0x86},
+{0x68,0xa2},
+{0x69,0x18},
+{0x6a,0x0f},
+{0x6b,0x00},
+{0x6c,0x5f},
+{0x6d,0x8f},
+{0x6e,0x55},
+{0x6f,0x38},
+{0x70,0x15},
+{0x71,0x33},
+{0x72,0xdc},
+{0x73,0x80},
+{0x74,0x02},
+{0x75,0x3f},
+{0x76,0x02},
+{0x77,0x57}, // 0x47
+{0x78,0x88},
+{0x79,0x81},
+{0x7a,0x81},
+{0x7b,0x22},
+{0x7c,0xff},
+{0x93,0x46},
+{0x94,0x00},
+{0x95,0x03},
+{0x96,0xd0},
+{0x97,0x40},
+{0x98,0xf0},
+{0xb1,0x3c},
+{0xb2,0x3c},
+{0xb3,0x44}, //0x40
+{0xb6,0xe0},
+{0xbd,0x3C},
+{0xbe,0x36},
+{0xd0,0xC9},
+{0xd1,0x10},
+{0xd2,0x90},
+{0xd3,0x90},
+{0xd5,0xF2},
+{0xd6,0x10},
+{0xdb,0x92},
+{0xdc,0xA5},
+{0xdf,0x23},
+{0xd9,0x00},
+{0xda,0x00},
+{0xe0,0x09},
+{0xed,0x04},
+{0xee,0xa0},
+{0xef,0x40},
+{0x80,0x03},
+{0x9F,0x14},
+{0xA0,0x28},
+{0xA1,0x44},
+{0xA2,0x5d},
+{0xA3,0x72},
+{0xA4,0x86},
+{0xA5,0x95},
+{0xA6,0xb1},
+{0xA7,0xc6},
+{0xA8,0xd5},
+{0xA9,0xe1},
+{0xAA,0xea},
+{0xAB,0xf1},
+{0xAC,0xf5},
+{0xAD,0xFb},
+{0xAE,0xFe},
+{0xAF,0xFF},
+{0xc0,0x00},
+{0xc1,0x14},
+{0xc2,0x21},
+{0xc3,0x36},
+{0xc4,0x49},
+{0xc5,0x5B},
+{0xc6,0x6B},
+{0xc7,0x7B},
+{0xc8,0x98},
+{0xc9,0xB4},
+{0xca,0xCE},
+{0xcb,0xE8},
+{0xcc,0xFF},
+{0xf0,0x02},
+{0xf1,0x01},
+{0xf2,0x04},
+{0xf3,0x30},
+{0xf9,0x9f},
+{0xfa,0x78},
+{0xfe,0x01},
+{0x00,0xf5},
+{0x02,0x20},
+{0x04,0x10},
+{0x05,0x10},
+{0x06,0x20},
+{0x08,0x15},
+{0x0a,0xa0},
+{0x0b,0x64},
+{0x0c,0x08},
+{0x0e,0x4C},
+{0x0f,0x39},
+{0x10,0x41},
+{0x11,0x37},
+{0x12,0x24},
+{0x13,0x39},
+{0x14,0x45},
+{0x15,0x45},
+{0x16,0xc2},
+{0x17,0xA8},
+{0x18,0x18},
+{0x19,0x55},
+{0x1a,0xd8},
+{0x1b,0xf5},
+{0x70,0x40},
+{0x71,0x58},
+{0x72,0x30},
+{0x73,0x48},
+{0x74,0x20},
+{0x75,0x60},
+{0x77,0x20},
+{0x78,0x32},
+{0x30,0x03},
+{0x31,0x40},
+{0x32,0x10},
+{0x33,0xe0},
+{0x34,0xe0},
+{0x35,0x00},
+{0x36,0x80},
+{0x37,0x00},
+{0x38,0x04},
+{0x39,0x09},
+{0x3a,0x12},
+{0x3b,0x1C},
+{0x3c,0x28},
+{0x3d,0x31},
+{0x3e,0x44},
+{0x3f,0x57},
+{0x40,0x6C},
+{0x41,0x81},
+{0x42,0x94},
+{0x43,0xA7},
+{0x44,0xB8},
+{0x45,0xD6},
+{0x46,0xEE},
+{0x47,0x0d},
+{0xfe,0x00}, 
+};
+#define GC0308_INIT_REGS	(sizeof(gc0308_init_reg) / sizeof(gc0308_init_reg[0]))    
+
+unsigned char gc0308_data1[][2] = {
+    {0x00, 0x00},
+    {0x00, 0xa2},
+    {0x00, 0x0f},
+    {0x00, 0x02},
+};
+
+unsigned char gc0308_windows_640[][2] = {
+    {0x05,0x00},
+    {0x06,0x00},
+    {0x07,0x00},
+    {0x08,0x00},
+    {0x09,0x01},
+    {0x0a,0xe8},
+    {0x0b,0x02},
+    {0x0c,0x88},
+};
+
+unsigned char gc0308_output_888[][2] = {
+    {0x20,0x00},
+    {0x21,0x00},
+    {0x22,0x00},
+    {0x24,0xb8},
+    {0x29,0x83},
+    {0xd2,0x10},
+};
+
+unsigned char Gc0308_Data[][2]            = { {0x24,0x00}, };
+unsigned char gc0308_output_RGB[][2]      = { {0x24,0xa6}, };
+unsigned char gc0308_output_yuv0[][2]     = { {0x24,0xa2}, };
+unsigned char gc0308_output_yuv1[][2]     = { {0x24,0xa3}, };
+unsigned char gc0308_output_yuv2[][2]     = { {0x24,0xa1}, };
+unsigned char gc0308_output_yuv3[][2]     = { {0x24,0xa0}, };
+unsigned char gc0308_paddrv[][2]          = { {0x1f,0x33}, };
+unsigned char gc0308_syncmode[][2]        = { {0x26,0xf7}, }; // 0xbf by liusu
+unsigned char gc0308_syncmode1[][2]       = { {0x26,0xf7}, }; // 0xbf by liusu
+unsigned char gc0308_output_en[][2]       = { {0x25,0xff}, };
+unsigned char gc0308_windows_2_page1[][2] = { {0xfe,0x01}, };
+unsigned char gc0308_windows_2_page0[][2] = { {0xfe,0x00}, };
+unsigned char gc0308_windows_2_qvga[][2]  = { {0x54,0x22}, };
+unsigned char gc0308_windows_2_vga[][2]   = { {0x54,0x11}, };
+
+int camera_read(int argc,char **argv)
+  {
+      unsigned char i;
+      unsigned char reg,data;
+       unsigned char *dev_add;
+       unsigned char read_buf;
+       *dev_add = GC0308_ADDRESS;
+         if(argc == 2)
+           data= 1;
+          else
+           data= (unsigned char)nr_strtol(argv[2],0,0);
+           reg = (unsigned char)nr_strtol(argv[1],0,0);
+           for (i=0; i<data; i++)
+             {
+              tgt_i2cread(I2C_SINGLE, dev_add, 1, reg,&read_buf, 1);
+              printf("addr: 0x%x,data =0x%x\n",reg,read_buf);
+              reg++;
+             }
+          return 0;
+ }
+
+int camera_set(int argc,char **argv)
+ {
+     unsigned char reg,data;
+    unsigned char *dev_add;
+    *dev_add = GC0308_ADDRESS;
+     if(argc != 3)
+     {
+       printf("should be 2 arguments. [register] [data].failed\n");
+       return -1;
+     }
+     reg = (unsigned char)nr_strtol(argv[1],0,0);
+     data = (unsigned char)nr_strtol(argv[2],0,0);\
+     printf("reg is 0x%x,data is 0x%x\n",reg,data);
+     tgt_i2cwrite(I2C_SINGLE, dev_add, 1, reg, &data, 1);
+     printf("OK\n");
+     return 0;
+
+}
+int set_gc0308_config(unsigned int res, unsigned int yuv)
+{
+	unsigned char i;
+	unsigned char *dev_add;
+	unsigned char read_buf1[1];
+	*dev_add = GC0308_ADDRESS;
+
+	for(i = 0; i < GC0308_INIT_REGS; i++ ) 
+		tgt_i2cwrite(I2C_SINGLE, dev_add, 1, gc0308_init_reg[i][0], gc0308_init_reg[i]+1, 1);     
+
+	tgt_i2cwrite(I2C_SINGLE, dev_add, 1, gc0308_windows_2_page1[0][0], gc0308_windows_2_page1[0]+1, 1);     
+	if(res==33||res==36)
+		tgt_i2cwrite(I2C_SINGLE, dev_add, 1, gc0308_windows_2_qvga[0][0], gc0308_windows_2_qvga[0]+1, 1);     
+	else
+		tgt_i2cwrite(I2C_SINGLE, dev_add, 1, gc0308_windows_2_vga[0][0], gc0308_windows_2_vga[0]+1, 1);     
+	tgt_i2cwrite(I2C_SINGLE, dev_add, 1, gc0308_windows_2_page0[0][0], gc0308_windows_2_page0[0]+1, 1);     
+
+	for(i = 0 ; i < 8; i++)
+		tgt_i2cwrite(I2C_SINGLE, dev_add, 1, gc0308_windows_640[i][0], gc0308_windows_640[i]+1, 1);     
+
+	if(yuv==0) tgt_i2cwrite(I2C_SINGLE, dev_add, 1, gc0308_output_yuv0[0][0], gc0308_output_yuv0[0]+1, 1);
+	else if(yuv==1) tgt_i2cwrite(I2C_SINGLE, dev_add, 1, gc0308_output_yuv1[0][0], gc0308_output_yuv1[0]+1, 1); 
+	else if(yuv==2) tgt_i2cwrite(I2C_SINGLE, dev_add, 1, gc0308_output_yuv2[0][0], gc0308_output_yuv2[0]+1, 1); 
+	else if(yuv==3) tgt_i2cwrite(I2C_SINGLE, dev_add, 1, gc0308_output_yuv3[0][0], gc0308_output_yuv3[0]+1, 1); 
+	else            tgt_i2cwrite(I2C_SINGLE, dev_add, 1, gc0308_output_RGB [0][0], gc0308_output_RGB [0]+1, 1); 
+
+	tgt_i2cwrite(I2C_SINGLE, dev_add, 1, gc0308_paddrv[0][0], gc0308_paddrv[0]+1, 1);    
+	//tgt_i2cwrite(I2C_SINGLE, dev_add, 1, gc0308_syncmode[0][0], gc0308_syncmode[0]+1, 1);
+	if(res==33)
+	{tgt_i2cwrite(I2C_SINGLE, dev_add, 1, gc0308_syncmode[0][0], gc0308_syncmode[0]+1, 1);}
+	else 
+	{tgt_i2cwrite(I2C_SINGLE, dev_add, 1, gc0308_syncmode1[0][0], gc0308_syncmode1[0]+1, 1);}
+	tgt_i2cwrite(I2C_SINGLE, dev_add, 1, gc0308_output_en[0][0], gc0308_output_en[0]+1, 1);     
+	//printf("yuv=%d, set gc0308 config ok\n", yuv);
+
+	//tgt_i2cread(I2C_SINGLE,dev_add,1,0x24,read_buf,1);
+	//printf("cam_reg @ 0x24, data = 0x%x\n", *read_buf);
+
+	tgt_i2cread(I2C_SINGLE,dev_add,1,0x24,read_buf1+0,1);
+	printf("cam_reg @ 0x24, data = 0x%x\n", read_buf1[0]);
+
+	return 0;
+}
+void camera_test()
+{
+    unsigned char i;
+    unsigned char *dev_add;
+    unsigned char read_buf[4];
+    *dev_add = GC0308_ADDRESS;
+
+    for (i=0; i<4; i++)
+    {
+        tgt_i2cread(I2C_SINGLE, dev_add, 1, gc0308_data1[i][0], read_buf+i, 1);
+    }
+
+    printf("read data from gc0308: \n");
+    for (i=0; i<4; i++)
+        printf (" 0x%x, ", read_buf[i]);
+    printf ("\n");
+}
+
+unsigned char get_camera_type()
+{
+    unsigned char read_buf;
+    unsigned char *dev_add;
+    *dev_add = GC0308_ADDRESS;
+    tgt_i2cread(I2C_SINGLE,dev_add,1,Gc0308_Data[0][0],read_buf,1);
+    return read_buf;
+}
+
+int cameraif_init(unsigned int res, unsigned int yuv)
+{
+    unsigned int value;
+    unsigned int yuv_value;
+    unsigned int cam_config;
+    unsigned int reg_cam_config;
+    value = 0;
+    yuv_value = 0;
+    /**(volatile unsigned int *)(CAMERA_BASE + CAMIF_CONFIG) = value;
+    if(*(volatile unsigned int*)(CAMERA_BASE + CAMIF_CONFIG)==0x0)
+              printf("camera init is ready for use....\n");
+    else { while (*(volatile unsigned int*)(CAMERA_BASE + CAMIF_CONFIG)!=0x40000000) ;
+              // *(volatile unsigned int*)(0xbfd00414)&=0xefffffff;
+              // *(volatile unsigned int*)(0xbfd00414)|=0x10000000;
+          }*/
+    *(volatile unsigned int *)(CAMERA_BASE + CAMIF_CONFIG)= value;
+    cam_config = *(volatile unsigned int *)(CAMERA_BASE + CAMIF_CONFIG);
+    reg_cam_config = cam_config & 0x40000000;
+    if(reg_cam_config == 0x40000000)
+    {
+      *(volatile unsigned int *)(CAMERA_BASE + CAMIF_CONFIG) = cam_config | 0x3fffffff;
+      
+    }
+    cam_config = *(volatile unsigned int *)(CAMERA_BASE + CAMIF_CONFIG);
+    reg_cam_config = cam_config & 0x40000000;
+    if(reg_cam_config == 0x0)
+      printf("camera init is ready for use....\n");
+    else {
+             while (*(volatile unsigned int*)(CAMERA_BASE + CAMIF_CONFIG)!=0x40000000) ;
+         }    
+
+    
+    //printf("start camera init\n");
+    *(volatile unsigned int *)(CAMERA_BASE + CAMIF_CONFIG) = 0;
+      if(res==63){
+         *(volatile unsigned int *)(CAMERA_BASE + DMA0_CONFIG) = (CAM_MEM_BASE &0x0fffffff);
+         *(volatile unsigned int *)(CAMERA_BASE + DMA1_CONFIG) = (CAM_MEM_BASE &0x0fffffff)+640;
+         *(volatile unsigned int *)(CAMERA_BASE + DMA2_CONFIG) = (CAM_MEM_BASE &0x0fffffff)+640*480;
+         *(volatile unsigned int *)(CAMERA_BASE + DMA3_CONFIG) = (CAM_MEM_BASE &0x0fffffff)+640*480+640;
+        // *(volatile unsigned int *)(0xbfd00414) &= 0xffcfffff;
+         *(volatile unsigned int *)(0xbfd00414) |= 0x200000;
+    }
+    else  if(res==33){
+         *(volatile unsigned int *)(CAMERA_BASE + DMA0_CONFIG) = (CAM_MEM_BASE &0x0fffffff)+640*240+320;
+         *(volatile unsigned int *)(CAMERA_BASE + DMA1_CONFIG) = (CAM_MEM_BASE &0x0fffffff)+640*240+320;
+         *(volatile unsigned int *)(CAMERA_BASE + DMA2_CONFIG) = (CAM_MEM_BASE &0x0fffffff)+640*240+320;
+         *(volatile unsigned int *)(CAMERA_BASE + DMA3_CONFIG) = (CAM_MEM_BASE &0x0fffffff)+640*240+320;
+         *(volatile unsigned int *)(0xbfd00414) |= 0x200000;
+    }
+    else{ 
+         *(volatile unsigned int *)(CAMERA_BASE + DMA0_CONFIG) = (CAM_MEM_BASE &0x0fffffff);
+         *(volatile unsigned int *)(CAMERA_BASE + DMA1_CONFIG) = (CAM_MEM_BASE &0x0fffffff);
+         *(volatile unsigned int *)(CAMERA_BASE + DMA2_CONFIG) = (CAM_MEM_BASE &0x0fffffff);
+         *(volatile unsigned int *)(CAMERA_BASE + DMA3_CONFIG) = (CAM_MEM_BASE &0x0fffffff);
+       //  *(volatile unsigned int *)(0xbfd00414) &= 0xffcfffff;
+        *(volatile unsigned int *)(0xbfd00414) |= 0x200000;
+    }
+    if(res==33||res==63)
+       *(volatile unsigned int *)(CAMERA_BASE + UOFF_CONFIG) = 640;
+    else
+       *(volatile unsigned int *)(CAMERA_BASE + UOFF_CONFIG) = 0;
+    //*(volatile unsigned int *)(CAMERA_BASE + VOFF_CONFIG) = 320;
+
+     //printf("uoff_set= 0x%x, res=%d\n",*(volatile unsigned int*)(0xbc280028), (unsigned int)(res));
+/*
+    camera enable        [31]
+    output data format   [13]
+    input data format    [11]
+    resolution           [7]
+    yuv input format     [4]
+    rgb input format     [2]
+    hsync level setting  [1]
+    vsync level setting  [0]
+
+*/    
+      if(yuv!=0xf0) yuv_value = ((yuv&(0x0000000f)) <<4)|0x800;
+      else yuv_value = 0;
+
+           if(res==66) value = (1 << 31) |(1 << 13) | (0 << 9) | (1 << 7) | yuv_value;
+      else if(res==63) value = (1 << 31) |(1 << 13) | (1 << 9) | (1 << 7) | yuv_value;
+      else if(res==33) value = (1 << 31) |(1 << 13) | (0 << 9) | (0 << 7) | yuv_value;
+      else if(res==36) value = (1 << 31) |(1 << 13) | (3 << 9) | (0 << 7) | yuv_value;
+
+      printf("CAM config register 0x%x\n",value);
+      //printf("yuv_value for CAM config register 0x%x\n",yuv_value);
+
+    *(volatile unsigned int *)(CAMERA_BASE + CAMIF_CONFIG) = value;
+     #ifdef CATCH_PICS
+     { 
+      while ( ( (*(volatile unsigned int*)(CAMERA_BASE + CAMIF_CONFIG))&0xf00000)!=0x700000) ;
+            *(volatile unsigned int *)(CAMERA_BASE + CAMIF_CONFIG) = 0;
+      printf("Pics capture ok\n");
+      }
+     #endif
+     /*
+      if(res==36)
+      {
+      while ( ( (*(volatile unsigned int*)(CAMERA_BASE + CAMIF_CONFIG))&0xf00000)==0x000000) ;
+            *(volatile unsigned int *)(CAMERA_BASE + CAMIF_CONFIG) = 0;
+      }
+     */
+   //   *(volatile unsigned int *)(CAMERA_BASE + CAMIF_CONFIG) = value;
+   // *(volatile unsigned int *)(CAMERA_BASE + CAMIF_CONFIG) |= 0x80000000;
+      return 0;
+}
+
+int camera_run(int argc,char **argv)
+  {
+      unsigned int data;
+      unsigned int yuv;
+      unsigned int cam_cfg_38;
+      unsigned int reg_cfg;
+         if(argc == 1){
+             printf("Zero param: default rgb and res at 640-> 640\n");
+             data= 0;
+             yuv = 0xf0;
+             }
+         else if(argc == 2){
+             printf("One param:default rgb, 0: 640-> 640, 1: 640-> 320, 2: 320-> 320, 3: 320-> 640!\n");
+             data= (unsigned int)nr_strtol(argv[1],0,0);
+             yuv = 0xf0;
+             }
+         else{ 
+             printf("First param 0: 640-> 640, 1: 640-> 320, 2: 320-> 320, 3: 320-> 640!\n");
+             printf("Secnd param 0: YCbYcr,    1: YCrYCb,    2: CrYCbY,    3: CbYCrY!   \n");
+             data= (unsigned int)nr_strtol(argv[1],0,0);
+             yuv = (unsigned int)nr_strtol(argv[2],0,0);
+             }
+
+           if(data==1) {
+             printf("Res_in_out = 640 -> 320, yuv_mode=%d \n",yuv);
+             set_gc0308_config(63,yuv);
+             cameraif_init(63,yuv);
+            /* cam_cfg_38 = *(volatile unsigned int*)(CAMERA_BASE + CAMIF_CONFIG);
+             reg_cfg = cam_cfg_38 & 0x10000000;
+             while(reg_cfg == !0x10000000)
+             {
+               cam_cfg_38 = *(volatile unsigned int*)(CAMERA_BASE + CAMIF_CONFIG);
+             }
+             printf("buffer is full:");
+             set_gc0308_config(66,yuv);
+             cameraif_init(66,yuv);*/
+
+           }
+           else if(data==2){
+             printf("Res_in_out = 320 -> 320, yuv_mode=%d \n",yuv);
+             set_gc0308_config(33,yuv);
+             cameraif_init(33,yuv);
+            /* cam_cfg_38 = *(volatile unsigned int*)(CAMERA_BASE + CAMIF_CONFIG);
+             reg_cfg = cam_cfg_38 & 0x10000000;
+             while(reg_cfg == !0x10000000)
+             {
+               cam_cfg_38 = *(volatile unsigned int*)(CAMERA_BASE + CAMIF_CONFIG);
+             }
+             printf("buffer is full:");
+             set_gc0308_config(66,yuv);
+             cameraif_init(66,yuv);*/
+           }
+           else if(data==3) {
+             printf("Res_in_out = 320 -> 640 , yuv_mode=%d \n",yuv);
+             set_gc0308_config(36,yuv);
+             cameraif_init(36,yuv);
+           }
+           else {
+             printf("Default: res_in_out = 640 -> 640, yuv_mode=%d \n", yuv);
+             set_gc0308_config(66,yuv);
+             cameraif_init(66,yuv);
+             /*cam_cfg_38 = *(volatile unsigned int*)(CAMERA_BASE + CAMIF_CONFIG);
+             reg_cfg = cam_cfg_38 & 0x10000000;
+             while(reg_cfg == !0x10000000)
+             {
+               cam_cfg_38 = *(volatile unsigned int*)(CAMERA_BASE + CAMIF_CONFIG);
+             }
+             printf("buffer is full:\n");
+             set_gc0308_config(66,yuv);
+             cameraif_init(66,yuv);*/
+               
+           } 
+
+        /*cam_cfg_38 = *(volatile unsigned int*)(CAMERA_BASE + CAMIF_CONFIG); 
+
+         while((cam_cfg_38 & 0xf00000) != 0x100000 ) 
+         {
+            cam_cfg_38 = *(volatile unsigned int*)(CAMERA_BASE + CAMIF_CONFIG); 
+         }
+        *(volatile unsigned int*)(CAMERA_BASE + CAMIF_CONFIG) = (cam_cfg_38 & 0x0); 
+         printf("camera run 1 frame \n");*/
+          return 0;
+
+ }
+
+void camera_color() 
+{
+    unsigned int i;
+    for(i = 8 ; i < 640*120*2; i+=4)
+    {
+        *(volatile unsigned int*)(CAM_MEM_BASE + i)= *(volatile unsigned int*)(0xa1800000); 
+    }    
+    for(i = 640*120*2 ; i < 640*240*2; i+=4)
+    {
+        *(volatile unsigned int*)(CAM_MEM_BASE + i)= *(volatile unsigned int*)(0xa1800004); 
+    }
+    for(i = 640*240*2 ; i < 640*360*2; i+=4)
+    {
+        *(volatile unsigned int*)(CAM_MEM_BASE + i)= ~(*(volatile unsigned int*)(0xa1800004)); 
+    }
+    for(i = 640*360*2 ; i < 640*480*2; i+=4)
+    {
+        *(volatile unsigned int*)(CAM_MEM_BASE + i)= ~(*(volatile unsigned int*)(0xa1800000)); 
+    }
+}
+
+void cam_run_frame(int argc,char **argv)
+{
+      unsigned int data;
+      unsigned int yuv;
+      unsigned int cam_cfg_38;
+
+         if(argc == 1){
+             printf("Zero param: default rgb and res at 640-> 640\n");
+             data= 0;
+             yuv = 0xf0;
+             }
+         else if(argc == 2){
+             printf("One param:default rgb, 0: 640-> 640, 1: 640-> 320, 2: 320-> 320, 3: 320-> 640!\n");
+             data= (unsigned int)nr_strtol(argv[1],0,0);
+             yuv = 0xf0;
+             }
+         else{ 
+             printf("First param 0: 640-> 640, 1: 640-> 320, 2: 320-> 320, 3: 320-> 640!\n");
+             printf("Secnd param 0: YCbYcr,    1: YCrYCb,    2: CrYCbY,    3: CbYCrY!   \n");
+             data= (unsigned int)nr_strtol(argv[1],0,0);
+             yuv = (unsigned int)nr_strtol(argv[2],0,0);
+             }
+
+     camera_run(data,yuv);    
+
+        cam_cfg_38 = *(volatile unsigned int*)(CAMERA_BASE + CAMIF_CONFIG); 
+
+  while((cam_cfg_38 & 0xf00000) != 0x100000 ) 
+         {
+        cam_cfg_38 = *(volatile unsigned int*)(CAMERA_BASE + CAMIF_CONFIG); 
+         }
+        *(volatile unsigned int*)(CAMERA_BASE + CAMIF_CONFIG) = (cam_cfg_38 & 0x0); 
+
+    printf("camera run 1 frame \n");
+}
+
+static void send_cmd(int cmd_index,int wait_rsp,int long_rsp,int check_crc,int cmd_arg)
+{
+	int sdicmdcon;
+
+	sdicmdcon = (cmd_index)&0x3f | 0x140 | (wait_rsp <<9) | (long_rsp <<10) | (check_crc <<13);//bit:7=0---start bit; bit6=1,dir=host to dev;
+	*(volatile unsigned int *)(SDIO_BASE + SDICMDARG) = cmd_arg;
+	*(volatile unsigned int *)(SDIO_BASE + SDICMDCON) = sdicmdcon;
+	printf("sending cmd %d ...\n",cmd_index);
+	//return 0;
+}
+
+static void cmd_check(int cmd_index)
+{
+	int cmd_fin = 0;
+	volatile unsigned int rsp_cmdindex = 0;
+	volatile unsigned int sdiintmsk = 0;
+
+	while(cmd_fin == 0)
+	{
+		sdiintmsk = *(volatile unsigned int *)(SDIO_BASE + SDIINTMSK);
+		cmd_fin   = sdiintmsk & 0x1c0;
+		printf("dbg  sdiintmsk = %0x \n",sdiintmsk);
+		//      break;
+	}
+	if (cmd_fin & 0x80)
+	{
+		printf(" dbg cmd time over!!! \r\n");
+	}
+	rsp_cmdindex = *(volatile unsigned int *)(SDIO_BASE + SDICMDSTA);
+	rsp_cmdindex = rsp_cmdindex & 0x3f;
+
+	if(rsp_cmdindex == cmd_index)
+		printf("cmd_index is %0x \n",rsp_cmdindex);
+	else
+		printf("rsp cmd_index err,rsp_cmdindex is %0x \n",rsp_cmdindex);
+
+	if(sdiintmsk & 0x100)
+		printf("cmd %d crc err \n",cmd_index);
+
+	if(sdiintmsk & 0x80)
+		printf("cmd %d timeout \n",cmd_index);
+	//     *(volatile unsigned int *)(SDIO_BASE + SDIINTMSK) = 0xffffff7f;}
+	if(sdiintmsk & 0x40)
+		printf("cmd %d finished \n",cmd_index);
+
+}
+
+static void data_check()
+{
+  int data_fin = 0;
+  int sdiintmsk = 0;
+  while(data_fin == 0)
+  {
+//  printf("sdiintmsk = %0x \n", sdiintmsk);
+      sdiintmsk = *(volatile unsigned int *)(SDIO_BASE + SDIINTMSK);
+      data_fin  = sdiintmsk & 0x1f;
+  }
+  
+//  printf("sdiintmsk = %0x \n", sdiintmsk);
+
+  if(sdiintmsk & 0x8)
+  {printf("crc state err \n");}
+  if(sdiintmsk & 0x4)
+  {printf("data crc err \n");}
+  if(sdiintmsk & 0x10)
+  {printf("program err \n");}
+  if(sdiintmsk & 0x2)
+  {printf("data time out \n");}
+  if(sdiintmsk & 0x1)
+  {printf("data finished \n");}
+}
+
+static void sdio_cfg_dma(int rd_wr_flag,int block_num)
+{
+  *(volatile unsigned int *)(0xa0010000 + 0x0)  = 0x1100; // 
+  *(volatile unsigned int *)(0xa0010000 + 0x8)  = SDIO_DES_ADDR; // 
+  *(volatile unsigned int *)(0xa0010000 + 0xc)  = block_num*128; // 128 words = 512 bytes 
+  *(volatile unsigned int *)(0xa0010000 + 0x10)  = 0x1; // 
+  *(volatile unsigned int *)(0xa0010000 + 0x14)  = 0x1; // 
+  if(rd_wr_flag)
+    {*(volatile unsigned int *)(0xa0010000 + 0x18)  = 0x1; // read 
+     *(volatile unsigned int *)(0xa0010000 + 0x4)  = SDIO_RD_MEM_ADDR;} // 
+  else
+    {*(volatile unsigned int *)(0xa0010000 + 0x18)  = 0x1001; // write
+     *(volatile unsigned int *)(0xa0010000 + 0x4)  = SDIO_WR_MEM_ADDR;} // 
+  *(volatile unsigned int *)(CONFREG_BASE + 0x1160)  = 0x10008; // 
+}
+
+
+static void sdio_rd_wr(int rd_wr_flag,int single_block,int addr)
+{
+  int block_num,cmd_index,wait_rsp,longrsp,check_crc,cmd_arg;
+  int misc_ctrl;
+  *(volatile unsigned int *)(SDIO_BASE + SDIBSIZE)  = 0x200; //512 
+  *(volatile unsigned int *)(SDIO_BASE + SDIDTIMER) = 0x7fffff; // 
+  misc_ctrl =  *(volatile unsigned int *)(CONFREG_BASE + 0x424);
+  misc_ctrl = misc_ctrl | 0x800000;  //sdio use dma0
+  *(volatile unsigned int *)(CONFREG_BASE + 0x424) = misc_ctrl;
+
+  if(rd_wr_flag)   
+  {									//ques read ???
+    if(single_block)
+//    {*(volatile unsigned int *)(SDIO_BASE + SDIDATCON) = 0x1c001;
+      {if(DAT_4_WIRE) 
+         {*(volatile unsigned int *)(SDIO_BASE + SDIDATCON) = 0x1c001;}  // 4 wire
+      else
+         {*(volatile unsigned int *)(SDIO_BASE + SDIDATCON) = 0x0c001;}  // single wire
+       block_num = 0x1;
+       cmd_index = 0x11; // send cmd17 to read single block
+      }
+    else
+      {
+      if(DAT_4_WIRE) 
+        {*(volatile unsigned int *)(SDIO_BASE + SDIDATCON) = 0x1c004;} // 4 blocks
+      else
+        {*(volatile unsigned int *)(SDIO_BASE + SDIDATCON) = 0x0c004;}  // single wire
+       block_num = 0x4;
+       cmd_index = 0x12; // send cmd18 to write multi blocks
+      }
+    sdio_cfg_dma(rd_wr_flag,block_num);
+    wait_rsp  = 1;
+    longrsp   = 0;
+    check_crc = 1;
+    cmd_arg    = addr;
+    send_cmd(cmd_index,wait_rsp,longrsp,check_crc,cmd_arg);  // 
+    cmd_check(cmd_index);
+    data_check();
+    if(single_block)
+    {printf("sdio single block read done \n");}
+    else
+    {printf("sdio multi block read done \n");}
+  }
+  else
+  {
+    if(single_block)
+      {if(DAT_4_WIRE) 
+         {*(volatile unsigned int *)(SDIO_BASE + SDIDATCON) = 0x1c001;}  // 0x1c001 for 4 wire / 0x0c001 for single wire
+      else
+         {*(volatile unsigned int *)(SDIO_BASE + SDIDATCON) = 0x0c001;}  // single wire single block
+       block_num = 0x1;
+       cmd_index = 0x18; // send cmd24 to write single block
+      }
+    else
+      {
+      if(DAT_4_WIRE) 
+        {*(volatile unsigned int *)(SDIO_BASE + SDIDATCON) = 0x1c004;} // 4 wires 4 blocks
+      else 
+        {*(volatile unsigned int *)(SDIO_BASE + SDIDATCON) = 0x0c004;} // single wire 4 blocks
+       block_num = 0x4;
+       cmd_index = 0x19; // send cmd25 to write multi blocks
+      }
+    wait_rsp  = 1;
+    longrsp   = 0;
+    check_crc = 1;
+    cmd_arg   = addr;
+    send_cmd(cmd_index,wait_rsp,longrsp,check_crc,cmd_arg);  // 
+    cmd_check(cmd_index);
+    sdio_cfg_dma(rd_wr_flag,block_num);
+    printf("=======wait======== \n");
+    data_check();
+    if(single_block)
+    {printf("sdio single block write done \n");}
+    else
+    {printf("sdio multi block write done \n");}
+  
+  }
+}
+
+static void delay_100()
+{
+  int i;
+  for(i=0;i<100;i++)
+  {;}
+}
+
+static void sdio_init()
+{
+	int cmd_index,wait_rsp,longrsp,check_crc;
+	int cmd_arg;
+	unsigned int resp;
+	int  i;
+	int rca;
+	int card_info;
+	int trans_state;
+	int sdiintmsk = 0;
+	int clk_sel;
+
+	/* config mux: sdio mux with spi0, at gpio: 78~83*/
+	*(volatile unsigned int *)(MISC_CTRL) |= (1 << 16);
+
+	*(volatile unsigned int *)(SDIO_BASE + SDICON) = 0x100; // reset sdio ctl reg
+	delay(1000);
+	*(volatile unsigned int *)(SDIO_BASE + SDICON) = 0x01; // enable clk
+	*(volatile unsigned int *)(SDIO_BASE + SDIPRE) = 0x8000000f; // config pre_scale???
+	//  *(volatile unsigned int *)(SDIO_BASE + SDIPRE) = 2; // config pre_scale
+	delay(1000);
+	delay_100();                             // wait at least 74 clk for sd memory card init
+	//while(1){       
+#if 1 
+	cmd_index = 0;
+	wait_rsp  = 0;
+	longrsp   = 0;
+	check_crc = 0;
+	cmd_arg   = 0;
+	send_cmd(cmd_index,wait_rsp,longrsp,check_crc,cmd_arg);  // send cmd0 for reset
+
+	printf("sd card is in idle state \n"); // wait for cmd 0 finished
+	//}
+#endif
+	unsigned int temp, mci_imsk;
+	   while(!(temp)){
+//	 *(volatile unsigned int *)(SDIO_BASE + SDICMDARG) = 0x5a5a5a5a;     // wide bus
+//	 *(volatile unsigned int *)(SDIO_BASE + SDICMDCON) = 0x144;  
+//	 printf("cmd 4 \n"); // wait for cmd 0 finished
+	mci_imsk = *(volatile unsigned int *)(SDIO_BASE + SDIINTMSK); 
+	temp = *(volatile unsigned int *)(SDIO_BASE + 0x10);
+	printf("dbg-yg  temp: 0x%08x ... mci_imsk:0x%08x ...\r\n", temp, mci_imsk);
+	}
+	 
+	delay(1000);
+#if 1	
+	while(1){
+#if 0 
+cmd_index = 0;
+	wait_rsp  = 0;
+	longrsp   = 0;
+	check_crc = 0;
+	cmd_arg   = 0;
+	send_cmd(cmd_index,wait_rsp,longrsp,check_crc,cmd_arg);  // send cmd0 for reset
+delay(1000);
+	printf("sd card is in idle state \n"); // wait for cmd 0 finished
+#endif
+		cmd_index = 8;
+		wait_rsp  = 1;
+		longrsp   = 0;
+		check_crc = 1;
+		cmd_arg   = 0x1aa;
+		send_cmd(cmd_index,wait_rsp,longrsp,check_crc,cmd_arg);  // send cmd8 to get sd memory card support voltage(VHS) 
+		cmd_check(cmd_index);
+		sdiintmsk = *(volatile unsigned int *)(SDIO_BASE + SDIINTMSK);
+		if((sdiintmsk & 0x80) == 0x80)
+		{*(volatile unsigned int *)(SDIO_BASE + SDIINTMSK) = 0x80;} 
+		else
+			break;
+	}
+#endif	
+	resp = 0;
+	delay_100();
+
+	while((resp & 0x80000000) == 0)                              
+	{
+		cmd_index = 55;
+		wait_rsp  = 1;
+		longrsp   = 0;
+		check_crc = 1;
+		cmd_arg   = 0;
+		send_cmd(cmd_index,wait_rsp,longrsp,check_crc,cmd_arg);  // send cmd55 to send acmd 
+		cmd_check(cmd_index);
+
+		cmd_index = 41;
+		wait_rsp  = 1;
+		longrsp   = 0;
+		check_crc = 0;
+		cmd_arg   = 0x40ff8000;
+		send_cmd(cmd_index,wait_rsp,longrsp,check_crc,cmd_arg);  // send acmd41 to get the card's HCS, and power up.
+		cmd_check(cmd_index);
+		sdiintmsk = *(volatile unsigned int *)(SDIO_BASE + SDIINTMSK);
+		if((sdiintmsk & 0x80) == 0x80)  //cmd time out
+		{*(volatile unsigned int *)(SDIO_BASE + SDIINTMSK) = 0x80;} 
+		////  if((sdiintmsk & 0x100) == 0x100)
+		////  {*(volatile unsigned int *)(SDIO_BASE + SDIINTMSK) = 0xfffffeff;} 
+		//  *(volatile unsigned int *)(SDIO_BASE + SDIINTMSK) = 0xffffffff; 
+		resp  = *(volatile unsigned int *)(SDIO_BASE + SDIRSP0);    // read response
+		printf("ocr = %0x \n" ,resp);
+	}
+	printf("sd card is in ready state \n"); // wait for cmd 0 finished
+
+	resp = 0;
+	cmd_index = 2;             // get cid
+	wait_rsp  = 1;
+	longrsp   = 1;
+	check_crc = 0;
+	cmd_arg   = 0;
+	send_cmd(cmd_index,wait_rsp,longrsp,check_crc,cmd_arg);  // send cmd2 to get the card's CID.
+	cmd_check(cmd_index);
+	resp = *(volatile unsigned int *)(SDIO_BASE + SDIRSP0); // 
+	card_info = resp;
+//	printf("sd card's CID[127:96] is 0x%08x \n",card_info); // 
+	printf("Manufacturer ID (MID) : 0x%2x\n", (resp >> 24));
+	printf("OEM/Application ID (OID) : %c%c\n", (resp >> 16), (resp >> 8));
+	printf("Product Name (PNM) : %c", resp);
+	resp = *(volatile unsigned int *)(SDIO_BASE + SDIRSP1); 
+	printf("%c%c%c%c%c\n", (resp >> 24), (resp >> 16), (resp >> 8), (resp));
+	card_info = resp;
+//	printf("sd card's CID[ 95:64] is 0x%08x \n",card_info);
+	resp = *(volatile unsigned int *)(SDIO_BASE + SDIRSP2); 
+	card_info = resp;
+//	printf("sd card's CID[ 63:32] is 0x%08x \n",card_info); // 
+	resp = *(volatile unsigned int *)(SDIO_BASE + SDIRSP3); 
+	card_info = resp;
+//	printf("sd card's CID[ 31: 0] is 0x%08x \n",card_info); // 
+
+
+	resp = 0;
+	while((resp & 0x1e00) != 0x600)
+	{
+		cmd_index = 3;
+		wait_rsp  = 1;
+		longrsp   = 0;
+		check_crc = 1;
+		cmd_arg   = 0;
+		send_cmd(cmd_index,wait_rsp,longrsp,check_crc,cmd_arg);  // send cmd3 to get the card's RCA
+		cmd_check(cmd_index);
+
+		resp = *(volatile unsigned int *)(SDIO_BASE + SDIRSP0); // 
+	}
+	printf("sd card is in stby state \n"); // 
+
+	rca = resp & 0xffff0000;
+	printf("sd card's rca is %0x \n",rca); // 
+
+	resp = 0;
+	cmd_index = 9;
+	wait_rsp  = 1;
+	longrsp   = 1;
+	check_crc = 0;
+	cmd_arg   = rca;
+	send_cmd(cmd_index,wait_rsp,longrsp,check_crc,cmd_arg);  // send cmd9 to get the card's CSD
+	cmd_check(cmd_index);
+
+	resp = *(volatile unsigned int *)(SDIO_BASE + SDIRSP0); // 
+	if (((resp >> 30)&0x3) == 0x00) //CSD Version 1.0
+	{
+		
+		printf(" s  d   s  c  \r\n");	
+		resp = *(volatile unsigned int *)(SDIO_BASE + SDIRSP1); 
+		card_info = resp;
+		resp = *(volatile unsigned int *)(SDIO_BASE + SDIRSP2); 
+		i = ((card_info >> 16) & 0xf);	//READ_BL_LEN
+		i = 1 << i;
+		//card_info = ((card_info & 0x3ff) << 10) | ((resp >> 30) & 0x3);	//C_SIZE ???
+
+		card_info = ((card_info & 0x3ff) << 2) | ((resp >> 30) & 0x3);	//C_SIZE 
+		printf("dbg ......... C_SIZE:0x%08x\r\n",card_info);
+		card_info++;	//C_SIZE + 1
+		i = i * card_info;
+		card_info = (resp >> 15) & 0x7;		//C_SIZE_MULT
+		card_info = 1 << (card_info + 2);
+		i = (i * card_info) >> 10;
+		printf ("sd card's capacity = %d MB!\n", i);
+
+	}
+	else if (((resp >> 30) &0x3) == 0x01) //CSD Version 2.0
+	{
+		printf(" s  d   h  c  \r\n");	
+		resp = *(volatile unsigned int *)(SDIO_BASE + SDIRSP1); 
+		card_info = resp;
+		resp = *(volatile unsigned int *)(SDIO_BASE + SDIRSP2); 
+
+		card_info = ((card_info & 0x3f) << 16) | ((resp >> 48-32) & 0xffff);	//C_SIZE 
+		printf("dbg ......... C_SIZE:0x%08x\r\n",card_info);
+		card_info++;	//C_SIZE + 1
+		i =  (card_info * 512) >> 10;
+		printf ("sd card's capacity = %d MB!\n", i);
+	}
+
+	cmd_index = 7;
+	wait_rsp  = 1;
+	longrsp   = 0;
+	check_crc = 1;
+	cmd_arg   = rca;
+	send_cmd(cmd_index,wait_rsp,longrsp,check_crc,cmd_arg);  // send cmd7 to set card into select state.
+	cmd_check(cmd_index);
+/*************************************************************************************/
+#if 1
+	delay_100();
+//	while(  )  //(resp & 0x80000000) == 0)                              
+	{
+		cmd_index = 55;
+		wait_rsp  = 1;
+		longrsp   = 0;
+		check_crc = 1;
+		cmd_arg   = rca;
+		send_cmd(cmd_index,wait_rsp,longrsp,check_crc,cmd_arg);  // send cmd55 to send acmd 
+		cmd_check(cmd_index);
+
+		cmd_index = 13;
+		wait_rsp  = 1;
+		longrsp   = 0;
+		check_crc = 0;
+		cmd_arg   = 0;
+		send_cmd(cmd_index,wait_rsp,longrsp,check_crc,cmd_arg);  // 
+		cmd_check(cmd_index);
+	//	sdiintmsk = *(volatile unsigned int *)(SDIO_BASE + SDIINTMSK);
+	//	if((sdiintmsk & 0x80) == 0x80)  //cmd time out
+//		{*(volatile unsigned int *)(SDIO_BASE + SDIINTMSK) = 0x80;} 
+		////  if((sdiintmsk & 0x100) == 0x100)
+		////  {*(volatile unsigned int *)(SDIO_BASE + SDIINTMSK) = 0xfffffeff;} 
+		//  *(volatile unsigned int *)(SDIO_BASE + SDIINTMSK) = 0xffffffff; 
+		delay_100();
+
+		delay_100();
+		delay_100();
+		delay_100();
+		delay_100();
+		delay_100();
+		delay_100();
+		delay_100();
+		delay_100();
+		delay_100();
+		delay_100();
+		delay_100();
+		delay_100();
+		delay_100();
+		delay_100();
+		delay_100();
+		delay_100();
+		delay_100();
+		delay_100();
+		int i, j;
+		unsigned int buf[8];
+		for(i=0x60,j=0; i>=0x44; i-=4,j++){
+			buf[j] = *(volatile unsigned int *)(SDIO_BASE + i);
+			printf("sdio add regs: buf[%d] = 0x%08x ...........\r\n", j, buf[j]);
+		}
+
+		resp  = *(volatile unsigned int *)(SDIO_BASE + SDIRSP0);    // read response
+		printf("ocr = %0x \n" ,resp);
+	}
+#endif
+	/*************************************************************************************/
+	resp = 0;
+	cmd_index = 13;
+	wait_rsp  = 1;
+	longrsp   = 0;
+	check_crc = 1;
+	cmd_arg   = rca;
+	send_cmd(cmd_index,wait_rsp,longrsp,check_crc,cmd_arg);  // send cmd13 to get the card's state
+	cmd_check(cmd_index);
+
+	resp = *(volatile unsigned int *)(SDIO_BASE + SDIRSP0); // 
+	trans_state = resp & 0x1e00;
+	if(trans_state == 0x800)
+	{printf("sd card is in tran state \n");} 
+	else
+	{printf("sd card stays in stby state \n");} 
+
+	if(DAT_4_WIRE) {
+		cmd_index = 55;
+		wait_rsp  = 1;
+		longrsp   = 0;
+		check_crc = 1;
+		cmd_arg   = rca;
+		send_cmd(cmd_index,wait_rsp,longrsp,check_crc,cmd_arg);  // send cmd55 to send acmd 
+		cmd_check(cmd_index);
+
+		cmd_index = 6;
+		wait_rsp  = 1;
+		longrsp   = 0;
+		check_crc = 1;
+		cmd_arg   = 0x2;
+		send_cmd(cmd_index,wait_rsp,longrsp,check_crc,cmd_arg);  // send acmd6 to config 4 wire mode
+		cmd_check(cmd_index);
+		printf("change bus width as 4 wires \n");
+	}
+
+	printf("sdio init done \n");
+#if 0	
+	resp = 0;
+	cmd_index = 12;
+	wait_rsp  = 1;
+	longrsp   = 0;
+	check_crc = 1;
+	cmd_arg   = rca;
+	send_cmd(cmd_index,wait_rsp,longrsp,check_crc,cmd_arg);  // send cmd13 to get the card's state
+	cmd_check(cmd_index);
+	resp  = *(volatile unsigned int *)(SDIO_BASE + SDIRSP0);    // read response
+		printf("ocr = %0x \n" ,resp);
+#endif
+}
+
+
+extern void sdio_test()
+{
+  int rd_wr_flag,single_block,addr;
+
+  sdio_init();
+
+  rd_wr_flag = 0x0;
+  single_block = 0x1;
+  addr       = 0x0000;
+  sdio_rd_wr(rd_wr_flag,single_block,addr);  // single wr
+
+  rd_wr_flag = 0x1;
+  single_block = 0x1;
+  addr       = 0x0000;
+  sdio_rd_wr(rd_wr_flag,single_block,addr);  // single rd
+
+
+//  rd_wr_flag = 0x0;
+//  single_block = 0x0;
+//  addr       = 0x10000;
+//  sdio_rd_wr(rd_wr_flag,single_block,addr);  // multi wr
+//
+//  rd_wr_flag = 0x1;
+//  single_block = 0x0;
+//  addr       = 0x10000;
+//  sdio_rd_wr(rd_wr_flag,single_block,addr);  // multi rd
+
+  printf("sdio test ok \n");
+}
+
+int txcmd(int argc,char **argv)
+{ unsigned int index;
+  if(argc == 1)
+  { index = 0;}
+  else
+  { index = (unsigned char)nr_strtol(argv[1],0,0);}
+
+  if(index == 0)
+//    {send_cmd(0,0,0,0,0);}
+{   *(volatile unsigned int *)(SDIO_BASE + SDICMDARG) = 0x0;
+    *(volatile unsigned int *)(SDIO_BASE + SDICMDCON) = 0x140;} 
+  else if(index == 6)
+//    {send_cmd(8,1,0,1,0x1aa);}
+{   *(volatile unsigned int *)(SDIO_BASE + SDICMDARG) = 0x0;     // wide bus
+    *(volatile unsigned int *)(SDIO_BASE + SDICMDCON) = 0x2346;} 
+  else if(index == 8)
+//    {send_cmd(8,1,0,1,0x1aa);}
+{   *(volatile unsigned int *)(SDIO_BASE + SDICMDARG) = 0x1aa;
+    *(volatile unsigned int *)(SDIO_BASE + SDICMDCON) = 0x2348;} 
+  else if(index == 13)
+//    {send_cmd(8,1,0,1,0x1aa);}
+{   *(volatile unsigned int *)(SDIO_BASE + SDICMDARG) = 0x0;
+    *(volatile unsigned int *)(SDIO_BASE + SDICMDCON) = 0x234d;} 
+  else if(index == 22)
+//    {send_cmd(8,1,0,1,0x1aa);}
+{   *(volatile unsigned int *)(SDIO_BASE + SDICMDARG) = 0x0;
+    *(volatile unsigned int *)(SDIO_BASE + SDICMDCON) = 0x2356;} 
+  else if(index == 51)
+//    {send_cmd(8,1,0,1,0x1aa);}
+{   *(volatile unsigned int *)(SDIO_BASE + SDICMDARG) = 0x0;
+    *(volatile unsigned int *)(SDIO_BASE + SDICMDCON) = 0x2373;} 
+  else if(index == 55)
+//    {send_cmd(37,1,0,1,0);}
+{   *(volatile unsigned int *)(SDIO_BASE + SDICMDARG) = 0xaaab0000;
+    *(volatile unsigned int *)(SDIO_BASE + SDICMDCON) = 0x2377;} 
+  else if(index == 41)
+//    {send_cmd(41,1,0,0,0x40040000);}
+{   *(volatile unsigned int *)(SDIO_BASE + SDICMDARG) = 0x40040000;
+    *(volatile unsigned int *)(SDIO_BASE + SDICMDCON) = 0x369;} 
+  else if(index == 2)
+//    {send_cmd(2,1,1,0,0);}
+{   *(volatile unsigned int *)(SDIO_BASE + SDICMDARG) = 0x0;
+    *(volatile unsigned int *)(SDIO_BASE + SDICMDCON) = 0x742;} 
+  else if(index == 3)
+//    {send_cmd(2,1,1,0,0);}
+{   *(volatile unsigned int *)(SDIO_BASE + SDICMDARG) = 0x0;
+    *(volatile unsigned int *)(SDIO_BASE + SDICMDCON) = 0x2343;} 
+  else ;
+//  printf("trans cmd %d\n",index);
+  return 0;
+}
+/*
+int txcmd(int argc,char **argv)
+{ unsigned int rw_flag;
+  unsigned int sgl_blk_flag;
+  unsigned int addr;
+  if(argc == 4)
+  { rw_flag = (unsigned char)nr_strtol(argv[1],0,0);
+    sgl_blk_flag = (unsigned char)nr_strtol(argv[2],0,0);
+    addr = (unsigned char)nr_strtol(argv[3],0,0);
+  }
+  else
+  { index = (unsigned char)nr_strtol(argv[1],0,0);}
+
+}
+*/
+static void sdio_erase()
+{
+ int cmd_index,wait_rsp,longrsp,check_crc,cmd_arg;
+
+  cmd_arg   = ERASE_START_ADDR;
+  cmd_index = 32;
+  wait_rsp  = 1;
+  longrsp   = 0;
+  check_crc = 1;
+  send_cmd(cmd_index,wait_rsp,longrsp,check_crc,cmd_arg);  // send cmd32 to send acmd 
+  cmd_check(cmd_index);
+
+  cmd_arg   = ERASE_End_ADDR;
+  cmd_index = 33;
+  wait_rsp  = 1;
+  longrsp   = 0;
+  check_crc = 1;
+  send_cmd(cmd_index,wait_rsp,longrsp,check_crc,cmd_arg);  // send cmd32 to send acmd 
+  cmd_check(cmd_index);
+
+  cmd_arg   = 0;
+  cmd_index = 38;
+  wait_rsp  = 1;
+  longrsp   = 0;
+  check_crc = 1;
+  send_cmd(cmd_index,wait_rsp,longrsp,check_crc,cmd_arg);  // send cmd38 to send acmd 
+  cmd_check(cmd_index);
+}
+
+
+static void sdio_sgl_rd()
+{
+  sdio_rd_wr(1,1,0x5000); 
+}
+
+static void sdio_multi_rd()
+{
+  sdio_rd_wr(1,0,0x5000); 
+}
+
+static void sdio_sgl_wr()
+{
+  int i;
+  for(i=0; i<256; i=i+4)
+//  {*(volatile unsigned int *)(0xa0000000 + SDIO_WR_MEM_ADDR + i) = i | ((i+1)<<8) | ((i+2)<<16) | ((i+3)<<24);}
+  {*(volatile unsigned int *)(0xa0000000 + SDIO_WR_MEM_ADDR + i) = (i+3)| ((i+2)<<8) | ((i+1)<<16) | (i<<24);}
+  for(i=0; i<256; i=i+4)
+  {*(volatile unsigned int *)(0xa0000000 + SDIO_WR_MEM_ADDR + 0x100 + i) = i | ((i+1)<<8) | ((i+2)<<16) | ((i+3)<<24);}
+  printf("write ram done \n");
+  sdio_rd_wr(0,1,0x5000); 
+}
+
+static void sdio_multi_wr()
+{
+  int i;
+  for(i=0; i<256; i=i+4)
+  {*(volatile unsigned int *)(0xa0000000 + SDIO_WR_MEM_ADDR + i) = i | ((i+1)<<8) | ((i+2)<<16) | ((i+3)<<24);}
+  for(i=0; i<256; i=i+4)
+  {*(volatile unsigned int *)(0xa0000000 + SDIO_WR_MEM_ADDR + 0x100 + i) = i | ((i+1)<<8) | ((i+2)<<16) | ((i+3)<<24);}
+  for(i=0; i<256; i=i+4)
+  {*(volatile unsigned int *)(0xa0000000 + SDIO_WR_MEM_ADDR + 0x200 + i) = i | ((i+1)<<8) | ((i+2)<<16) | ((i+3)<<24);}
+  for(i=0; i<256; i=i+4)
+  {*(volatile unsigned int *)(0xa0000000 + SDIO_WR_MEM_ADDR + 0x300 + i) = i | ((i+1)<<8) | ((i+2)<<16) | ((i+3)<<24);}
+  for(i=0; i<256; i=i+4)
+  {*(volatile unsigned int *)(0xa0000000 + SDIO_WR_MEM_ADDR + 0x400 + i) = i | ((i+1)<<8) | ((i+2)<<16) | ((i+3)<<24);}
+  for(i=0; i<256; i=i+4)
+  {*(volatile unsigned int *)(0xa0000000 + SDIO_WR_MEM_ADDR + 0x500 + i) = i | ((i+1)<<8) | ((i+2)<<16) | ((i+3)<<24);}
+  for(i=0; i<256; i=i+4)
+  {*(volatile unsigned int *)(0xa0000000 + SDIO_WR_MEM_ADDR + 0x600 + i) = i | ((i+1)<<8) | ((i+2)<<16) | ((i+3)<<24);}
+  for(i=0; i<256; i=i+4)
+  {*(volatile unsigned int *)(0xa0000000 + SDIO_WR_MEM_ADDR + 0x700 + i) = i | ((i+1)<<8) | ((i+2)<<16) | ((i+3)<<24);}
+  printf("write ram done \n");
+  sdio_rd_wr(0,0,0x5000); 
+}
+
+/*********************************************/	//lxy for write data to sd card for boot.
+static void sdio_cfg_dma_addr(int rd_wr_flag,int block_num, unsigned int ptr)
+{
+  *(volatile unsigned int *)(0xa0010000 + 0x0)  = 0x1100; // 
+  *(volatile unsigned int *)(0xa0010000 + 0x8)  = SDIO_DES_ADDR; // 
+  *(volatile unsigned int *)(0xa0010000 + 0xc)  = block_num*128; // 128 words = 512 bytes 
+  *(volatile unsigned int *)(0xa0010000 + 0x10)  = 0x0; // 
+  *(volatile unsigned int *)(0xa0010000 + 0x14)  = 0x1; // 
+  if(rd_wr_flag)
+    {*(volatile unsigned int *)(0xa0010000 + 0x18)  = 0x1; // read 
+     *(volatile unsigned int *)(0xa0010000 + 0x4)  = ptr;} // 
+  else
+    {*(volatile unsigned int *)(0xa0010000 + 0x18)  = 0x1001; // write
+     *(volatile unsigned int *)(0xa0010000 + 0x4)  = ptr;}	//change addr after every write time.
+  *(volatile unsigned int *)(CONFREG_BASE + 0x1160)  = 0x10008; // 
+}
+
+/* rd_wr_flag: 1 for read, 0 for write. */
+static void sdio_rd_wr_1(int rd_wr_flag,int single_block,int addr, int blk_num, unsigned int ptr)
+{
+  int block_num,cmd_index,wait_rsp,longrsp,check_crc,cmd_arg;
+  int misc_ctrl;
+  *(volatile unsigned int *)(SDIO_BASE + SDIBSIZE)  = 0x200; // 
+  *(volatile unsigned int *)(SDIO_BASE + SDIDTIMER) = 0x7fffff; // 
+  misc_ctrl =  *(volatile unsigned int *)(CONFREG_BASE + 0x424);
+  misc_ctrl = misc_ctrl | 0x800000;
+  *(volatile unsigned int *)(CONFREG_BASE + 0x424) = misc_ctrl;
+
+  if(rd_wr_flag)
+  { 
+    if(single_block)
+//    {*(volatile unsigned int *)(SDIO_BASE + SDIDATCON) = 0x1c001;
+      {if(DAT_4_WIRE) 
+         {*(volatile unsigned int *)(SDIO_BASE + SDIDATCON) = 0x1c001;}  // 4 wire
+      else
+         {*(volatile unsigned int *)(SDIO_BASE + SDIDATCON) = 0x0c001;}
+       block_num = 0x1;
+       cmd_index = 0x11; // send cmd17 to read single block
+      }
+    else
+      {
+      if(DAT_4_WIRE) 
+        {*(volatile unsigned int *)(SDIO_BASE + SDIDATCON) = 0x1c000 | blk_num;} // read multi blocks
+      else
+        {*(volatile unsigned int *)(SDIO_BASE + SDIDATCON) = 0x0c000 | blk_num;}
+       block_num = blk_num;
+       cmd_index = 0x12; // send cmd18 to read multi block
+      }
+    sdio_cfg_dma_addr(rd_wr_flag,block_num, ptr);
+    wait_rsp  = 1;
+    longrsp   = 0;
+    check_crc = 1;
+    cmd_arg    = addr;
+    send_cmd(cmd_index,wait_rsp,longrsp,check_crc,cmd_arg);  // 
+    cmd_check(cmd_index);
+    data_check();
+    if(single_block)
+    {printf("sdio single block read done \n");}
+    else
+    {printf("sdio multi block read done \n");}
+  }
+  else
+  {
+    if(single_block)
+      {if(DAT_4_WIRE) 
+         {*(volatile unsigned int *)(SDIO_BASE + SDIDATCON) = 0x1c001;}  // 0x1c001 for 4 wire / 0x0c001 for single wire
+      else
+         {*(volatile unsigned int *)(SDIO_BASE + SDIDATCON) = 0x0c001;}  // single wire single block
+       block_num = 0x1;
+       cmd_index = 0x18; // send cmd24 to write single block
+      }
+    else
+      {
+      if(DAT_4_WIRE) 
+        {*(volatile unsigned int *)(SDIO_BASE + SDIDATCON) = 0x1c000 | blk_num;} // multi  wires n blocks
+      else 
+        {*(volatile unsigned int *)(SDIO_BASE + SDIDATCON) = 0x0c000 | blk_num;} // multi wire n blocks
+       block_num = blk_num;
+       cmd_index = 0x19; // send cmd25 to write multi block
+      }
+    wait_rsp  = 1;
+    longrsp   = 0;
+    check_crc = 1;
+    cmd_arg   = addr;
+    send_cmd(cmd_index,wait_rsp,longrsp,check_crc,cmd_arg);  // 
+    cmd_check(cmd_index);
+    sdio_cfg_dma_addr(rd_wr_flag,block_num, ptr);
+    printf("=======wait======== \n");
+    data_check();
+    if(single_block)
+    {printf("sdio single block write done \n");}
+    else
+    {printf("sdio multi block write done \n");}
+  
+  }
+}
+
+int sdio_write_boot(int argc,char **argv)
+{
+#define	DATA_LEN	0x80000
+#define	BLK_P_LEN	512
+	int k, i;
+	unsigned int *p, *p1;
+	unsigned int addr;
+	char cmdbuf[100];
+	int flag = 0;
+
+	if(argc!=2 && argc!=1)return -1;
+	if(argc==2){
+		sprintf(cmdbuf,"load -o 0x%x -r %s", SDIO_WR_MEM_ADDR|0xa0000000,argv[1]);
+		printf("load -o 0x%x -r %s\n", SDIO_WR_MEM_ADDR|0xa0000000,argv[1]);
+		do_cmd(cmdbuf);
+	}
+
+	p = (unsigned int *)(SDIO_WR_MEM_ADDR | 0xa0000000);
+	sdio_rd_wr_1(0, 0, 0, (DATA_LEN/BLK_P_LEN), SDIO_WR_MEM_ADDR);
+
+	printf ("after write data !\n");
+	sdio_rd_wr_1(1, 0, 0, (DATA_LEN/BLK_P_LEN), SDIO_RD_MEM_ADDR);
+	printf ("\r\nbegin to compare data !\n");
+
+	p = (unsigned int *)(SDIO_WR_MEM_ADDR | 0xa0000000);
+	p1 = (unsigned int *)(SDIO_RD_MEM_ADDR | 0xa0000000);
+	i = DATA_LEN / 4;
+//	printf ("p = %p, p1 = %p !\n", p, p1);
+	for (k = 0; k < i; k++) {
+		if (p[k] != p1[k]) {
+			flag = 1;
+			printf ("error data at %d: 0x%4x -> 0x%4x ", k , p[k], p1[k]);
+		}
+	}
+	if (flag == 0)
+		printf ("data is write correct, ^_^ ! \n");
+}
+
+static const Cmd Cmds[] =
+ {
+     {"MyCmds"},
+     {"cam_rd",   "[register] [num] ", 0, "read GC0308",  camera_read, 0, 99, CMD_REPEAT},
+     {"cam_set",  "[register] [data]", 0, "write GC0308", camera_set,  0, 99, CMD_REPEAT},
+     {"cam_run",  "[data]     [yuv] ", 0, "camera_run",   camera_run,  0, 99, CMD_REPEAT},
+     {"camera_color","",0,"camera_color",camera_color,0,99,CMD_REPEAT},
+     {"camera_test","",0,"camera_test",camera_test,0,99,CMD_REPEAT},
+     {"cam_run_frame","[data] [yuv] ", 0,"cam_run_frame",cam_run_frame,0,99,CMD_REPEAT},
+     {"sdio_init","",0,"sdio_init",sdio_init,0,99,CMD_REPEAT},
+     {"txcmd","[index]",0,"txcmd",txcmd,0,99,CMD_REPEAT},
+//     {"sdio_rw_op","[rw_flag] [sgl_blk_flag] [addr]",0,"sdio_rd_wr",sdio_rw_op,0,99,CMD_REPEAT},
+     {"sdio_sgl_rd","",0,"sdio_sgl_rd",sdio_sgl_rd,0,99,CMD_REPEAT},
+     {"sdio_multi_rd","",0,"sdio_multi_rd",sdio_multi_rd,0,99,CMD_REPEAT},
+     {"sdio_sgl_wr","",0,"sdio_sgl_wr",sdio_sgl_wr,0,99,CMD_REPEAT},
+     {"sdio_multi_wr","",0,"sdio_multi_wr",sdio_multi_wr,0,99,CMD_REPEAT},
+     {"sdio_erase","",0,"sdio_erase",sdio_erase,0,99,CMD_REPEAT},
+     {"sdio_write_boot","",0,"sdio_write_boot file",sdio_write_boot,0,99,CMD_REPEAT},
+     {0,0}
+ };
+
+ static void init_cmd __P((void)) __attribute__ ((constructor));
+
+ static void init_cmd()
+ {
+     cmdlist_expand(Cmds, 1);
+ }
+

@@ -1,0 +1,121 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.1 (win64) Build 1846317 Fri Apr 14 18:55:03 MDT 2017
+| Date         : Mon Oct  9 23:00:08 2017
+| Host         : YZ running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file soc_lite_top_control_sets_placed.rpt
+| Design       : soc_lite_top
+| Device       : xc7a200t
+-----------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Flip-Flop Distribution
+3. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    59 |
+| Unused register locations in slices containing registers |    72 |
++----------------------------------------------------------+-------+
+
+
+2. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              38 |           26 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |             376 |          161 |
+| Yes          | No                    | No                     |            1445 |          533 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             477 |          177 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+3. Detailed Control Set Information
+-----------------------------------
+
++------------------------+------------------------------------------------------------+--------------------------------------------------+------------------+----------------+
+|      Clock Signal      |                        Enable Signal                       |                 Set/Reset Signal                 | Slice Load Count | Bel Load Count |
++------------------------+------------------------------------------------------------+--------------------------------------------------+------------------+----------------+
+|  clk_pll/inst/clk_out1 | confreg/step0_sample                                       | cpu/EXE_stage/multiplier_signed/mul_out_reg__2_0 |                1 |              1 |
+|  clk_pll/inst/clk_out1 | confreg/step1_sample                                       | cpu/EXE_stage/multiplier_signed/mul_out_reg__2_0 |                1 |              1 |
+|  clk_pll/inst/clk_out1 |                                                            | confreg/state_count0                             |                1 |              4 |
+|  clk_pll/inst/clk_out1 | cpu/MEM_stage/ena                                          |                                                  |                2 |              4 |
+|  clk_pll/inst/clk_out1 |                                                            | confreg/key_count0                               |                5 |             20 |
+|  clk_pll/inst/clk_out1 |                                                            | confreg/step0_count0                             |                5 |             20 |
+|  clk_pll/inst/clk_out1 |                                                            | confreg/step1_count0                             |                5 |             20 |
+|  clk_pll/inst/clk_out1 | cpu/EXE_stage/divider_unsigned/Q[0]_i_1_n_0                | cpu/EXE_stage/divider_unsigned/Q[31]_i_1__0_n_0  |               11 |             31 |
+|  clk_pll/inst/clk_out1 |                                                            | cpu/WB_stage/r_reg[0][31]                        |               13 |             32 |
+|  clk_pll/inst/clk_out1 | cpu/WB_stage/r_reg[26][31][0]                              |                                                  |               10 |             32 |
+|  clk_pll/inst/clk_out1 | cpu/WB_stage/r_reg[17][31][0]                              |                                                  |                8 |             32 |
+|  clk_pll/inst/clk_out1 | cpu/EXE_stage/divider_unsigned/B[63]_i_1_n_0               |                                                  |                8 |             32 |
+|  clk_pll/inst/clk_out1 | cpu/WB_stage/r_reg[27][31][0]                              |                                                  |               12 |             32 |
+|  clk_pll/inst/clk_out1 | cpu/WB_stage/r_reg[28][31][0]                              |                                                  |               15 |             32 |
+|  clk_pll/inst/clk_out1 | cpu/WB_stage/r_reg[29][31][0]                              |                                                  |               13 |             32 |
+|  clk_pll/inst/clk_out1 | cpu/WB_stage/r_reg[2][31]_0[0]                             |                                                  |               10 |             32 |
+|  clk_pll/inst/clk_out1 | cpu/WB_stage/r_reg[3][31][0]                               |                                                  |                9 |             32 |
+|  clk_pll/inst/clk_out1 | cpu/WB_stage/E[0]                                          |                                                  |               16 |             32 |
+|  clk_pll/inst/clk_out1 | cpu/WB_stage/r_reg[4][31][0]                               |                                                  |               14 |             32 |
+|  clk_pll/inst/clk_out1 | cpu/WB_stage/r_reg[5][31][0]                               |                                                  |               11 |             32 |
+|  clk_pll/inst/clk_out1 | cpu/WB_stage/r_reg[6][31][0]                               |                                                  |               12 |             32 |
+|  clk_pll/inst/clk_out1 | cpu/WB_stage/r_reg[7][31][0]                               |                                                  |               20 |             32 |
+|  clk_pll/inst/clk_out1 | cpu/WB_stage/r_reg[10][31][0]                              |                                                  |               11 |             32 |
+|  clk_pll/inst/clk_out1 | cpu/EXE_stage/multiplier_unsigned/num_data_reg[31][0]      | cpu/EXE_stage/multiplier_signed/mul_out_reg__2_0 |                8 |             32 |
+|  clk_pll/inst/clk_out1 | cpu/WB_stage/r_reg[8][31][0]                               |                                                  |               17 |             32 |
+|  clk_pll/inst/clk_out1 | cpu/EXE_stage/multiplier_signed/HI_reg[0][0]               |                                                  |               19 |             32 |
+|  clk_pll/inst/clk_out1 | cpu/EXE_stage/multiplier_signed/LO_reg[0][0]               |                                                  |               21 |             32 |
+|  clk_pll/inst/clk_out1 | cpu/WB_stage/r_reg[9][31][0]                               |                                                  |               24 |             32 |
+|  clk_pll/inst/clk_out1 | cpu/EXE_stage/multiplier_unsigned/conf_rdata_reg_reg[0]_1  |                                                  |               16 |             32 |
+|  clk_pll/inst/clk_out1 | cpu/WB_stage/r_reg[30][31][0]                              |                                                  |               17 |             32 |
+|  clk_pll/inst/clk_out1 | cpu/WB_stage/r_reg[11][31][0]                              |                                                  |               13 |             32 |
+|  clk_pll/inst/clk_out1 | cpu/WB_stage/r_reg[12][31][0]                              |                                                  |                6 |             32 |
+|  clk_pll/inst/clk_out1 | cpu/WB_stage/r_reg[13][31][0]                              |                                                  |                7 |             32 |
+|  clk_pll/inst/clk_out1 | cpu/WB_stage/r_reg[14][31][0]                              |                                                  |               10 |             32 |
+|  clk_pll/inst/clk_out1 | cpu/WB_stage/r_reg[15][31][0]                              |                                                  |                9 |             32 |
+|  clk_pll/inst/clk_out1 | cpu/WB_stage/r_reg[16][31][0]                              |                                                  |                6 |             32 |
+|  clk_pll/inst/clk_out1 | cpu/WB_stage/r_reg[18][31][0]                              |                                                  |               11 |             32 |
+|  clk_pll/inst/clk_out1 | cpu/WB_stage/r_reg[19][31][0]                              |                                                  |                6 |             32 |
+|  clk_pll/inst/clk_out1 | cpu/WB_stage/r_reg[1][31][0]                               |                                                  |               10 |             32 |
+|  clk_pll/inst/clk_out1 | cpu/WB_stage/r_reg[20][31][0]                              |                                                  |                7 |             32 |
+|  clk_pll/inst/clk_out1 | cpu/WB_stage/r_reg[21][31][0]                              |                                                  |               11 |             32 |
+|  clk_pll/inst/clk_out1 | cpu/WB_stage/r_reg[22][31][0]                              |                                                  |                8 |             32 |
+|  clk_pll/inst/clk_out1 | cpu/WB_stage/r_reg[23][31][0]                              |                                                  |               16 |             32 |
+|  clk_pll/inst/clk_out1 | cpu/WB_stage/r_reg[24][31][0]                              |                                                  |               10 |             32 |
+|  clk_pll/inst/clk_out1 | cpu/WB_stage/r_reg[25][31][0]                              |                                                  |               12 |             32 |
+|  clk_pll/inst/clk_out1 | cpu/EXE_stage/divider_signed/sign_B_i_1_n_0                |                                                  |                9 |             34 |
+|  clk_pll/inst/clk_out1 | cpu/EXE_stage/multiplier_unsigned/led_rg0_data_reg[31][0]  | cpu/EXE_stage/multiplier_signed/mul_out_reg__2_0 |               19 |             34 |
+|  clk_pll/inst/clk_out1 | cpu/EXE_stage/multiplier_signed/mul_validout_i_1__0_n_0    | cpu/EXE_stage/multiplier_signed/mul_out_reg__2_0 |               13 |             34 |
+|  clk_pll/inst/clk_out1 | cpu/EXE_stage/multiplier_unsigned/EXE_unsigned_mul_validin | cpu/EXE_stage/multiplier_signed/mul_out_reg__2_0 |               10 |             34 |
+|  clk_pll/inst/clk_out1 | cpu/EXE_stage/multiplier_unsigned/led_rg1_data_reg[31][0]  | cpu/EXE_stage/multiplier_signed/mul_out_reg__2_0 |               17 |             34 |
+|  clk_pll/inst/clk_out1 |                                                            |                                                  |               26 |             38 |
+|  clk_pll/inst/clk_out1 | cpu/EXE_stage/multiplier_unsigned/E[0]                     | cpu/EXE_stage/multiplier_signed/mul_out_reg__2_0 |               21 |             48 |
+|  clk_pll/inst/clk_out1 | cpu/EXE_stage/divider_unsigned/div_out[63]_i_1__0_n_0      |                                                  |               24 |             64 |
+|  clk_pll/inst/clk_out1 | cpu/EXE_stage/divider_unsigned/Q[0]_i_1_n_0                |                                                  |               22 |             64 |
+|  clk_pll/inst/clk_out1 | cpu/EXE_stage/divider_signed/div_out[63]_i_1_n_0           |                                                  |               18 |             64 |
+|  clk_pll/inst/clk_out1 | cpu/EXE_stage/divider_signed/Q[31]_i_1_n_0                 |                                                  |               33 |             95 |
+|  clk_pll/inst/clk_out1 | cpu/ID_stage/p_1_in                                        | cpu/EXE_stage/multiplier_signed/mul_out_reg__2_0 |               33 |             96 |
+|  clk_pll/inst/clk_out1 | cpu/EXE_stage/multiplier_unsigned/EXE_ALUop_reg[0][0]      | cpu/EXE_stage/multiplier_signed/mul_out_reg__2_0 |               43 |            132 |
+|  clk_pll/inst/clk_out1 |                                                            | cpu/EXE_stage/multiplier_signed/mul_out_reg__2_0 |              132 |            280 |
++------------------------+------------------------------------------------------------+--------------------------------------------------+------------------+----------------+
+
+
++--------+-----------------------+
+| Fanout | Number of ControlSets |
++--------+-----------------------+
+| 1      |                     2 |
+| 4      |                     2 |
+| 16+    |                    55 |
++--------+-----------------------+
+
+

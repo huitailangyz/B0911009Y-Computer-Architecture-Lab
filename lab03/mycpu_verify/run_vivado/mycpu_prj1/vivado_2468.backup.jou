@@ -1,0 +1,35 @@
+#-----------------------------------------------------------
+# Vivado v2017.1 (64-bit)
+# SW Build 1846317 on Fri Apr 14 18:55:03 MDT 2017
+# IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+# Start of session at: Mon Oct  9 22:08:30 2017
+# Process ID: 2468
+# Current directory: D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent4844 D:\Xilinx\CA_LAB\lab03\mycpu_verify\run_vivado\mycpu_prj1\mycpu.xpr
+# Log file: D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/vivado.log
+# Journal file: D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/tb_top_behav.wcfg
+source tb_top.tcl
+run all
+save_wave_config {D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/tb_top_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/tb_top_behav.wcfg
+source tb_top.tcl
+run all
+close_sim
+launch_simulation
+open_wave_config D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/tb_top_behav.wcfg
+source tb_top.tcl
+run all
+close_sim
+launch_simulation
+open_wave_config D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/tb_top_behav.wcfg
+source tb_top.tcl
+run all
+close_sim

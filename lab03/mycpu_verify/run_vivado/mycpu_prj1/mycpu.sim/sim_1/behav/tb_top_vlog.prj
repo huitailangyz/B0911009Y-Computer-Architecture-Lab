@@ -1,0 +1,29 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  "../../../../../rtl/xilinx_ip/data_ram/sim/data_ram.v" --include "../../../../../rtl/myCPU" --include "../../../../../rtl/xilinx_ip/clk_pll"
+verilog xil_defaultlib  "../../../../../rtl/xilinx_ip/inst_ram/sim/inst_ram.v" --include "../../../../../rtl/myCPU" --include "../../../../../rtl/xilinx_ip/clk_pll"
+verilog xil_defaultlib  "../../../../../rtl/xilinx_ip/clk_pll/clk_pll_clk_wiz.v" --include "../../../../../rtl/myCPU" --include "../../../../../rtl/xilinx_ip/clk_pll"
+verilog xil_defaultlib  "../../../../../rtl/xilinx_ip/clk_pll/clk_pll.v" --include "../../../../../rtl/myCPU" --include "../../../../../rtl/xilinx_ip/clk_pll"
+verilog xil_defaultlib  "../../../../../rtl/myCPU/ALU.v" --include "../../../../../rtl/myCPU" --include "../../../../../rtl/xilinx_ip/clk_pll"
+verilog xil_defaultlib  "../../../../../rtl/myCPU/EXE_stage.v" --include "../../../../../rtl/myCPU" --include "../../../../../rtl/xilinx_ip/clk_pll"
+verilog xil_defaultlib  "../../../../../rtl/myCPU/ID_stage.v" --include "../../../../../rtl/myCPU" --include "../../../../../rtl/xilinx_ip/clk_pll"
+verilog xil_defaultlib  "../../../../../rtl/myCPU/IF_stage.v" --include "../../../../../rtl/myCPU" --include "../../../../../rtl/xilinx_ip/clk_pll"
+verilog xil_defaultlib  "../../../../../rtl/myCPU/MEM_stage.v" --include "../../../../../rtl/myCPU" --include "../../../../../rtl/xilinx_ip/clk_pll"
+verilog xil_defaultlib  "../../../../../rtl/myCPU/WB_stage.v" --include "../../../../../rtl/myCPU" --include "../../../../../rtl/xilinx_ip/clk_pll"
+verilog xil_defaultlib  "../../../../../rtl/BRIDGE/bridge_1x2.v" --include "../../../../../rtl/myCPU" --include "../../../../../rtl/xilinx_ip/clk_pll"
+verilog xil_defaultlib  "../../../../../rtl/CONFREG/confreg.v" --include "../../../../../rtl/myCPU" --include "../../../../../rtl/xilinx_ip/clk_pll"
+verilog xil_defaultlib  "../../../../../rtl/myCPU/divider_signed.v" --include "../../../../../rtl/myCPU" --include "../../../../../rtl/xilinx_ip/clk_pll"
+verilog xil_defaultlib  "../../../../../rtl/myCPU/divider_unsigned.v" --include "../../../../../rtl/myCPU" --include "../../../../../rtl/xilinx_ip/clk_pll"
+verilog xil_defaultlib  "../../../../../rtl/myCPU/multiplier_signed.v" --include "../../../../../rtl/myCPU" --include "../../../../../rtl/xilinx_ip/clk_pll"
+verilog xil_defaultlib  "../../../../../rtl/myCPU/multiplier_unsigned.v" --include "../../../../../rtl/myCPU" --include "../../../../../rtl/xilinx_ip/clk_pll"
+verilog xil_defaultlib  "../../../../../rtl/myCPU/mycpu.v" --include "../../../../../rtl/myCPU" --include "../../../../../rtl/xilinx_ip/clk_pll"
+verilog xil_defaultlib  "../../../../../rtl/myCPU/next_pc.v" --include "../../../../../rtl/myCPU" --include "../../../../../rtl/xilinx_ip/clk_pll"
+verilog xil_defaultlib  "../../../../../rtl/myCPU/regfile.v" --include "../../../../../rtl/myCPU" --include "../../../../../rtl/xilinx_ip/clk_pll"
+verilog xil_defaultlib  "../../../../../rtl/soc_lite_top.v" --include "../../../../../rtl/myCPU" --include "../../../../../rtl/xilinx_ip/clk_pll"
+verilog xil_defaultlib  "../../../../../rtl/myCPU/stall.v" --include "../../../../../rtl/myCPU" --include "../../../../../rtl/xilinx_ip/clk_pll"
+verilog xil_defaultlib  "../../../../../testbench/mycpu_tb.v" --include "../../../../../rtl/myCPU" --include "../../../../../rtl/xilinx_ip/clk_pll"
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

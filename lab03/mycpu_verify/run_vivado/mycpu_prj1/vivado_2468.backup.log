@@ -1,0 +1,1730 @@
+#-----------------------------------------------------------
+# Vivado v2017.1 (64-bit)
+# SW Build 1846317 on Fri Apr 14 18:55:03 MDT 2017
+# IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+# Start of session at: Mon Oct  9 22:08:30 2017
+# Process ID: 2468
+# Current directory: D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent4844 D:\Xilinx\CA_LAB\lab03\mycpu_verify\run_vivado\mycpu_prj1\mycpu.xpr
+# Log file: D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/vivado.log
+# Journal file: D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2017.1/data/ip'.
+open_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:06 . Memory (MB): peak = 761.711 ; gain = 13.914
+update_compile_order -fileset sources_1
+launch_simulation
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'D:/Xilinx/Vivado/2017.1/data/xsim/ip/xsim_ip.ini' copied to run dir:'D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_top' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav/data_ram.mif'
+INFO: [SIM-utils-43] Exported 'D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav/data_ram.coe'
+INFO: [SIM-utils-43] Exported 'D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav/inst_ram.mif'
+INFO: [SIM-utils-43] Exported 'D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav/inst_ram.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav'
+"xvlog -m64 --relax -prj tb_top_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/xilinx_ip/data_ram/sim/data_ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/xilinx_ip/inst_ram/sim/inst_ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module inst_ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/xilinx_ip/clk_pll/clk_pll_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_pll_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/xilinx_ip/clk_pll/clk_pll.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_pll
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-2458] undeclared symbol alu_sub_true, assumed default net type wire [D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/ALU.v:27]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/EXE_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module EXE_stage
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/ID_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ID_stage
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/IF_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IF_stage
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/MEM_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MEM_stage
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/WB_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WB_stage
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/BRIDGE/bridge_1x2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bridge_1x2
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/CONFREG/confreg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module confreg
+INFO: [VRFC 10-2458] undeclared symbol conf_we, assumed default net type wire [D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/CONFREG/confreg.v:118]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_signed.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module divider_signed
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_unsigned.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module divider_unsigned
+WARNING: [VRFC 10-969] keyword 'unsigned' is not allowed here in this mode of verilog [D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_unsigned.v:4]
+WARNING: [VRFC 10-969] keyword 'unsigned' is not allowed here in this mode of verilog [D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_unsigned.v:5]
+WARNING: [VRFC 10-969] keyword 'unsigned' is not allowed here in this mode of verilog [D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_unsigned.v:9]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_signed.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module multiplier_signed
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_unsigned.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module multiplier_unsigned
+WARNING: [VRFC 10-969] keyword 'unsigned' is not allowed here in this mode of verilog [D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_unsigned.v:4]
+WARNING: [VRFC 10-969] keyword 'unsigned' is not allowed here in this mode of verilog [D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_unsigned.v:5]
+WARNING: [VRFC 10-969] keyword 'unsigned' is not allowed here in this mode of verilog [D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_unsigned.v:9]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/mycpu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mycpu_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/next_pc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module nextpc
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/regfile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/soc_lite_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module soc_lite_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/stall.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module stall
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/testbench/mycpu_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav'
+Vivado Simulator 2017.1
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2017.1/bin/unwrapped/win64.o/xelab.exe -wto 8de8692e6f7648c084645fde77f29b66 --debug typical --relax --mt 2 -L blk_mem_gen_v8_3_6 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_top_behav xil_defaultlib.tb_top xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-1783] select index 62 into current_contents is out of bounds [/wrk/2017.1/nightly/2017_04_14_1846317/packages/customer/vivado/data/ip/xilinx/blk_mem_gen_v8_3/simulation/blk_mem_gen_v8_3.v:2420]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/soc_lite_top.v" Line 57. Module soc_lite_top(SIMULATION=1'b1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/mycpu.v" Line 3. Module mycpu_top doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/next_pc.v" Line 1. Module nextpc doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/IF_stage.v" Line 1. Module IF_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/ID_stage.v" Line 2. Module ID_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/EXE_stage.v" Line 2. Module EXE_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/ALU.v" Line 1. Module alu doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_signed.v" Line 1. Module divider_signed doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_unsigned.v" Line 1. Module divider_unsigned doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_signed.v" Line 1. Module multiplier_signed doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_unsigned.v" Line 1. Module multiplier_unsigned doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/MEM_stage.v" Line 2. Module MEM_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/WB_stage.v" Line 2. Module WB_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/regfile.v" Line 1. Module regfile doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/stall.v" Line 2. Module stall doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/BRIDGE/bridge_1x2.v" Line 50. Module bridge_1x2 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/CONFREG/confreg.v" Line 58. Module confreg(SIMULATION=1'b1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/soc_lite_top.v" Line 57. Module soc_lite_top(SIMULATION=1'b1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/mycpu.v" Line 3. Module mycpu_top doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/next_pc.v" Line 1. Module nextpc doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/IF_stage.v" Line 1. Module IF_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/ID_stage.v" Line 2. Module ID_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/EXE_stage.v" Line 2. Module EXE_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/ALU.v" Line 1. Module alu doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_signed.v" Line 1. Module divider_signed doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_unsigned.v" Line 1. Module divider_unsigned doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_signed.v" Line 1. Module multiplier_signed doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_unsigned.v" Line 1. Module multiplier_unsigned doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/MEM_stage.v" Line 2. Module MEM_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/WB_stage.v" Line 2. Module WB_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/regfile.v" Line 1. Module regfile doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/stall.v" Line 2. Module stall doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/BRIDGE/bridge_1x2.v" Line 50. Module bridge_1x2 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/CONFREG/confreg.v" Line 58. Module confreg(SIMULATION=1'b1) doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.PLLE2_ADV(CLKFBOUT_MULT=17,CLKIN...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.clk_pll_clk_wiz
+Compiling module xil_defaultlib.clk_pll
+Compiling module xil_defaultlib.nextpc
+Compiling module xil_defaultlib.IF_stage
+Compiling module xil_defaultlib.ID_stage
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.divider_signed
+Compiling module xil_defaultlib.divider_unsigned
+Compiling module xil_defaultlib.multiplier_signed
+Compiling module xil_defaultlib.multiplier_unsigned
+Compiling module xil_defaultlib.EXE_stage
+Compiling module xil_defaultlib.MEM_stage
+Compiling module xil_defaultlib.WB_stage
+Compiling module xil_defaultlib.regfile
+Compiling module xil_defaultlib.stall
+Compiling module xil_defaultlib.mycpu_top
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_output_stage(...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_output_stage(...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_softecc_outpu...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_mem_module(C_...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6(C_FAMILY="art...
+Compiling module xil_defaultlib.inst_ram
+Compiling module xil_defaultlib.bridge_1x2
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_output_stage(...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_output_stage(...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_softecc_outpu...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_mem_module(C_...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6(C_FAMILY="art...
+Compiling module xil_defaultlib.data_ram
+Compiling module xil_defaultlib.confreg(SIMULATION=1'b1)
+Compiling module xil_defaultlib.soc_lite_top(SIMULATION=1'b1)
+Compiling module xil_defaultlib.tb_top
+WARNING: [XSIM 43-3373] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/testbench/mycpu_tb.v" Line 119. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_top_behav
+
+****** Webtalk v2017.1 (64-bit)
+  **** SW Build 1846317 on Fri Apr 14 18:55:03 MDT 2017
+  **** IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav/xsim.dir/tb_top_behav/webtalk/xsim_webtalk.tcl -notrace
+webtalk_transmit: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 61.160 ; gain = 1.172
+INFO: [Common 17-206] Exiting Webtalk at Mon Oct  9 22:09:18 2017...
+run_program: Time (s): cpu = 00:00:02 ; elapsed = 00:00:18 . Memory (MB): peak = 771.500 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '18' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_top_behav -key {Behavioral:sim_1:Functional:tb_top} -tclbatch {tb_top.tcl} -view {D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/tb_top_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.1
+Time resolution is 1 ps
+open_wave_config D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/tb_top_behav.wcfg
+WARNING: Simulation object /tb_top/soc_lite/cpu/MEM_stage/MEM_src1 was not found in the design.
+source tb_top.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# log_wave -r /
+WARNING: [Simtcl 6-142] log_wave skipped an HDL object or scope because of this problem: WARNING: Simulation object /tb_top/soc_lite/inst_ram/inst/\native_mem_module.blk_mem_gen_v8_3_6_inst /memory was not traceable in the design for the following reason:
+The number of elements in the requested object is 8388608, which exceeds the maximum traceable size of 65536 elements.
+The maximum can be changed with "set_property trace_limit <number of elements> [current_sim]" Tcl command.
+
+WARNING: [Simtcl 6-142] log_wave skipped an HDL object or scope because of this problem: WARNING: Simulation object /tb_top/soc_lite/inst_ram/inst/\native_mem_module.blk_mem_gen_v8_3_6_inst /temp_mem_array was not traceable in the design for the following reason:
+The number of elements in the requested object is 8388608, which exceeds the maximum traceable size of 65536 elements.
+The maximum can be changed with "set_property trace_limit <number of elements> [current_sim]" Tcl command.
+
+WARNING: [Simtcl 6-142] log_wave skipped an HDL object or scope because of this problem: WARNING: Simulation object /tb_top/soc_lite/inst_ram/inst/\native_mem_module.blk_mem_gen_v8_3_6_inst /sbiterr_arr was not traceable in the design for the following reason:
+The number of elements in the requested object is 262144, which exceeds the maximum traceable size of 65536 elements.
+The maximum can be changed with "set_property trace_limit <number of elements> [current_sim]" Tcl command.
+
+WARNING: [Simtcl 6-142] log_wave skipped an HDL object or scope because of this problem: WARNING: Simulation object /tb_top/soc_lite/inst_ram/inst/\native_mem_module.blk_mem_gen_v8_3_6_inst /dbiterr_arr was not traceable in the design for the following reason:
+The number of elements in the requested object is 262144, which exceeds the maximum traceable size of 65536 elements.
+The maximum can be changed with "set_property trace_limit <number of elements> [current_sim]" Tcl command.
+
+WARNING: [Simtcl 6-142] log_wave skipped an HDL object or scope because of this problem: WARNING: Simulation object /tb_top/soc_lite/inst_ram/inst/\native_mem_module.blk_mem_gen_v8_3_6_inst /softecc_sbiterr_arr was not traceable in the design for the following reason:
+The number of elements in the requested object is 262144, which exceeds the maximum traceable size of 65536 elements.
+The maximum can be changed with "set_property trace_limit <number of elements> [current_sim]" Tcl command.
+
+WARNING: [Simtcl 6-142] log_wave skipped an HDL object or scope because of this problem: WARNING: Simulation object /tb_top/soc_lite/inst_ram/inst/\native_mem_module.blk_mem_gen_v8_3_6_inst /softecc_dbiterr_arr was not traceable in the design for the following reason:
+The number of elements in the requested object is 262144, which exceeds the maximum traceable size of 65536 elements.
+The maximum can be changed with "set_property trace_limit <number of elements> [current_sim]" Tcl command.
+
+WARNING: [Simtcl 6-142] log_wave skipped an HDL object or scope because of this problem: WARNING: Simulation object /tb_top/soc_lite/data_ram/inst/\native_mem_module.blk_mem_gen_v8_3_6_inst /memory was not traceable in the design for the following reason:
+The number of elements in the requested object is 2097152, which exceeds the maximum traceable size of 65536 elements.
+The maximum can be changed with "set_property trace_limit <number of elements> [current_sim]" Tcl command.
+
+WARNING: [Simtcl 6-142] log_wave skipped an HDL object or scope because of this problem: WARNING: Simulation object /tb_top/soc_lite/data_ram/inst/\native_mem_module.blk_mem_gen_v8_3_6_inst /temp_mem_array was not traceable in the design for the following reason:
+The number of elements in the requested object is 2097152, which exceeds the maximum traceable size of 65536 elements.
+The maximum can be changed with "set_property trace_limit <number of elements> [current_sim]" Tcl command.
+
+# run 0
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb_top.soc_lite.inst_ram.inst.native_mem_module.blk_mem_gen_v8_3_6_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb_top.soc_lite.data_ram.inst.native_mem_module.blk_mem_gen_v8_3_6_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+xsim: Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 816.645 ; gain = 45.145
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_top_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0
+launch_simulation: Time (s): cpu = 00:00:12 ; elapsed = 00:00:28 . Memory (MB): peak = 816.645 ; gain = 45.145
+run all
+==============================================================
+Test begin!
+        [  22000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [  42000 ns] Test is running, debug_wb_pc = 0xbfc2b1e4
+        [  62000 ns] Test is running, debug_wb_pc = 0xbfc2bc44
+        [  82000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 102000 ns] Test is running, debug_wb_pc = 0xbfcb4a98
+        [ 122000 ns] Test is running, debug_wb_pc = 0xbfcb55f4
+        [ 142000 ns] Test is running, debug_wb_pc = 0xbfc51560
+        [ 162000 ns] Test is running, debug_wb_pc = 0xbfc51f6c
+        [ 182000 ns] Test is running, debug_wb_pc = 0xbfc52978
+        [ 202000 ns] Test is running, debug_wb_pc = 0xbfc533c8
+        [ 222000 ns] Test is running, debug_wb_pc = 0xbfc30948
+        [ 242000 ns] Test is running, debug_wb_pc = 0xbfc314a4
+        [ 262000 ns] Test is running, debug_wb_pc = 0xbfc32000
+        [ 282000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 302000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 322000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 342000 ns] Test is running, debug_wb_pc = 0xbfc5fa1c
+        [ 362000 ns] Test is running, debug_wb_pc = 0xbfc60428
+        [ 382000 ns] Test is running, debug_wb_pc = 0xbfc60e34
+        [ 402000 ns] Test is running, debug_wb_pc = 0xbfc6185c
+        [ 422000 ns] Test is running, debug_wb_pc = 0xbfc72b24
+        [ 442000 ns] Test is running, debug_wb_pc = 0xbfc73590
+        [ 462000 ns] Test is running, debug_wb_pc = 0xbfc73ff8
+        [ 482000 ns] Test is running, debug_wb_pc = 0xbfc74ac0
+        [ 502000 ns] Test is running, debug_wb_pc = 0xbfc564a4
+        [ 522000 ns] Test is running, debug_wb_pc = 0xbfc570cc
+        [ 542000 ns] Test is running, debug_wb_pc = 0xbfc04d70
+        [ 562000 ns] Test is running, debug_wb_pc = 0xbfc057dc
+        [ 582000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 602000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 622000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 642000 ns] Test is running, debug_wb_pc = 0xbfc71c4c
+        [ 662000 ns] Test is running, debug_wb_pc = 0xbfc728e0
+        [ 682000 ns] Test is running, debug_wb_pc = 0xbfc5c778
+        [ 702000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 722000 ns] Test is running, debug_wb_pc = 0xbfc5cf94
+        [ 742000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 762000 ns] Test is running, debug_wb_pc = 0xbfc5d7b4
+        [ 782000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 802000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 822000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 842000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 862000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 882000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 902000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 922000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 942000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 962000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 982000 ns] Test is running, debug_wb_pc = 0xbfc2d918
+        [1002000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1022000 ns] Test is running, debug_wb_pc = 0xbfc2e138
+        [1042000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1062000 ns] Test is running, debug_wb_pc = 0xbfc2e954
+        [1082000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1102000 ns] Test is running, debug_wb_pc = 0xbfc2f170
+        [1122000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1142000 ns] Test is running, debug_wb_pc = 0xbfc2f990
+        [1162000 ns] Test is running, debug_wb_pc = 0xbfc2fd44
+        [1182000 ns] Test is running, debug_wb_pc = 0xbfc30104
+        [1202000 ns] Test is running, debug_wb_pc = 0xbfc62640
+        [1222000 ns] Test is running, debug_wb_pc = 0xbfc63004
+        [1242000 ns] Test is running, debug_wb_pc = 0xbfc639c4
+        [1262000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1282000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1302000 ns] Test is running, debug_wb_pc = 0xbfc6576c
+        [1322000 ns] Test is running, debug_wb_pc = 0xbfc661d4
+        [1342000 ns] Test is running, debug_wb_pc = 0xbfcae34c
+        [1362000 ns] Test is running, debug_wb_pc = 0xbfcaed14
+        [1382000 ns] Test is running, debug_wb_pc = 0xbfcaf6d8
+        [1402000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1422000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1442000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1462000 ns] Test is running, debug_wb_pc = 0xbfc071e0
+        [1482000 ns] Test is running, debug_wb_pc = 0xbfc07bf0
+        [1502000 ns] Test is running, debug_wb_pc = 0xbfc085fc
+        [1522000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1542000 ns] Test is running, debug_wb_pc = 0xbfc02fb4
+        [1562000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1582000 ns] Test is running, debug_wb_pc = 0xbfc04800
+        [1602000 ns] Test is running, debug_wb_pc = 0xbfc2c848
+        [1622000 ns] Test is running, debug_wb_pc = 0xbfc4ed04
+        [1642000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1662000 ns] Test is running, debug_wb_pc = 0xbfc50120
+        [1682000 ns] Test is running, debug_wb_pc = 0xbfc50b74
+        [1702000 ns] Test is running, debug_wb_pc = 0xbfc27ad0
+        [1722000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1742000 ns] Test is running, debug_wb_pc = 0xbfc28eec
+        [1762000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1782000 ns] Test is running, debug_wb_pc = 0xbfc21200
+        [1802000 ns] Test is running, debug_wb_pc = 0xbfc21d5c
+        [1822000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1842000 ns] Test is running, debug_wb_pc = 0xbfca0130
+        [1862000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1882000 ns] Test is running, debug_wb_pc = 0xbfca1548
+        [1902000 ns] Test is running, debug_wb_pc = 0xbfca1f8c
+        [1922000 ns] Test is running, debug_wb_pc = 0xbfc00ccc
+        [1942000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1962000 ns] Test is running, debug_wb_pc = 0xbfc02388
+        [1982000 ns] Test is running, debug_wb_pc = 0xbfc0b680
+        [2002000 ns] Test is running, debug_wb_pc = 0xbfc0c24c
+        [2022000 ns] Test is running, debug_wb_pc = 0xbfc0cdfc
+        [2042000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [2062000 ns] Test is running, debug_wb_pc = 0xbfca3468
+        [2082000 ns] Test is running, debug_wb_pc = 0xbfca3f10
+        [2102000 ns] Test is running, debug_wb_pc = 0xbfc23328
+        [2122000 ns] Test is running, debug_wb_pc = 0xbfc23efc
+        [2142000 ns] Test is running, debug_wb_pc = 0xbfc24aa8
+        [2162000 ns] Test is running, debug_wb_pc = 0xbfc3c2b4
+        [2182000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [2202000 ns] Test is running, debug_wb_pc = 0xbfc3d800
+        [2222000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [2242000 ns] Test is running, debug_wb_pc = 0xbfc90c64
+        [2262000 ns] Test is running, debug_wb_pc = 0xbfc91824
+        [2282000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [2302000 ns] Test is running, debug_wb_pc = 0xbfc54500
+        [2322000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [2342000 ns] Test is running, debug_wb_pc = 0xbfc55a88
+        [2362000 ns] Test is running, debug_wb_pc = 0xbfccfe10
+        [2382000 ns] Test is running, debug_wb_pc = 0xbfcd15e8
+        [2402000 ns] Test is running, debug_wb_pc = 0xbfcd2dec
+        [2422000 ns] Test is running, debug_wb_pc = 0xbfcd414c
+        [2442000 ns] Test is running, debug_wb_pc = 0xbfcd540c
+        [2462000 ns] Test is running, debug_wb_pc = 0xbfcd66cc
+        [2482000 ns] Test is running, debug_wb_pc = 0xbfcd798c
+        [2502000 ns] Test is running, debug_wb_pc = 0xbfcd91ec
+        [2522000 ns] Test is running, debug_wb_pc = 0xbfcdab24
+        [2542000 ns] Test is running, debug_wb_pc = 0xbfc75fa0
+        [2562000 ns] Test is running, debug_wb_pc = 0xbfc7751c
+        [2582000 ns] Test is running, debug_wb_pc = 0xbfc78a98
+        [2602000 ns] Test is running, debug_wb_pc = 0xbfc7a014
+        [2622000 ns] Test is running, debug_wb_pc = 0xbfc7b5a8
+        [2642000 ns] Test is running, debug_wb_pc = 0xbfc7d168
+        [2662000 ns] Test is running, debug_wb_pc = 0xbfc7ed04
+        [2682000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [2702000 ns] Test is running, debug_wb_pc = 0xbfc81ec8
+        [2722000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [2742000 ns] Test is running, debug_wb_pc = 0xbfc84b08
+        [2762000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [2782000 ns] Test is running, debug_wb_pc = 0xbfc0ec44
+        [2802000 ns] Test is running, debug_wb_pc = 0xbfc0fdb8
+        [2822000 ns] Test is running, debug_wb_pc = 0xbfc11060
+        [2842000 ns] Test is running, debug_wb_pc = 0xbfc12268
+        [2862000 ns] Test is running, debug_wb_pc = 0xbfc134bc
+        [2882000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [2902000 ns] Test is running, debug_wb_pc = 0xbfc183dc
+        [2922000 ns] Test is running, debug_wb_pc = 0xbfc19cd4
+        [2942000 ns] Test is running, debug_wb_pc = 0xbfc1b49c
+        [2962000 ns] Test is running, debug_wb_pc = 0xbfc1cccc
+        [2982000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3002000 ns] Test is running, debug_wb_pc = 0xbfc1fdac
+        [3022000 ns] Test is running, debug_wb_pc = 0xbfc33fac
+        [3042000 ns] Test is running, debug_wb_pc = 0xbfc35550
+        [3062000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3082000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3102000 ns] Test is running, debug_wb_pc = 0xbfc395c4
+        [3122000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3142000 ns] Test is running, debug_wb_pc = 0xbfc85db8
+        [3162000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3182000 ns] Test is running, debug_wb_pc = 0xbfc88f0c
+        [3202000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3222000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3242000 ns] Test is running, debug_wb_pc = 0xbfc8dc7c
+        [3262000 ns] Test is running, debug_wb_pc = 0xbfc8f5c0
+        [3282000 ns] Test is running, debug_wb_pc = 0xbfcbe9c0
+        [3302000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3322000 ns] Test is running, debug_wb_pc = 0xbfcc154c
+        [3342000 ns] Test is running, debug_wb_pc = 0xbfcc2ae8
+        [3362000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3382000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3402000 ns] Test is running, debug_wb_pc = 0xbfcc6cb4
+        [3422000 ns] Test is running, debug_wb_pc = 0xbfcc8220
+        [3442000 ns] Test is running, debug_wb_pc = 0xbfcc981c
+        [3462000 ns] Test is running, debug_wb_pc = 0xbfccade8
+        [3482000 ns] Test is running, debug_wb_pc = 0xbfccc3dc
+        [3502000 ns] Test is running, debug_wb_pc = 0xbfccd998
+        [3522000 ns] Test is running, debug_wb_pc = 0xbfc3ea38
+        [3542000 ns] Test is running, debug_wb_pc = 0xbfc3ffbc
+        [3562000 ns] Test is running, debug_wb_pc = 0xbfc414f0
+        [3582000 ns] Test is running, debug_wb_pc = 0xbfc42a6c
+        [3602000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3622000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3642000 ns] Test is running, debug_wb_pc = 0xbfc46a28
+        [3662000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3682000 ns] Test is running, debug_wb_pc = 0xbfc49438
+        [3702000 ns] Test is running, debug_wb_pc = 0xbfc4a9b4
+        [3722000 ns] Test is running, debug_wb_pc = 0xbfc4bee0
+        [3742000 ns] Test is running, debug_wb_pc = 0xbfc4d3d8
+        [3762000 ns] Test is running, debug_wb_pc = 0xbfca62f4
+        [3782000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3802000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3822000 ns] Test is running, debug_wb_pc = 0xbfca9a8c
+        [3842000 ns] Test is running, debug_wb_pc = 0xbfcaad08
+        [3862000 ns] Test is running, debug_wb_pc = 0xbfcabf68
+        [3882000 ns] Test is running, debug_wb_pc = 0xbfcad1d0
+        [3902000 ns] Test is running, debug_wb_pc = 0xbfcb6304
+        [3922000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3942000 ns] Test is running, debug_wb_pc = 0xbfcb8198
+        [3962000 ns] Test is running, debug_wb_pc = 0xbfcb90b4
+        [3982000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4002000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4022000 ns] Test is running, debug_wb_pc = 0xbfcbbe90
+        [4042000 ns] Test is running, debug_wb_pc = 0xbfcbcddc
+        [4062000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4082000 ns] Test is running, debug_wb_pc = 0xbfc97824
+        [4102000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4122000 ns] Test is running, debug_wb_pc = 0xbfc99fac
+        [4142000 ns] Test is running, debug_wb_pc = 0xbfc9b370
+        [4162000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4182000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4202000 ns] Test is running, debug_wb_pc = 0xbfc9ee00
+        [4222000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4242000 ns] Test is running, debug_wb_pc = 0xbfc67b0c
+        [4262000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4282000 ns] Test is running, debug_wb_pc = 0xbfc69cbc
+        [4302000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4322000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4342000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4362000 ns] Test is running, debug_wb_pc = 0xbfc6e09c
+        [4382000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4402000 ns] Test is running, debug_wb_pc = 0xbfc7024c
+        [4422000 ns] Test is running, debug_wb_pc = 0xbfc15e38
+        [4442000 ns] Test is running, debug_wb_pc = 0xbfc168a4
+        [4462000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4482000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4502000 ns] Test is running, debug_wb_pc = 0xbfc5c0fc
+        [4522000 ns] Test is running, debug_wb_pc = 0xbfcb264c
+        [4542000 ns] Test is running, debug_wb_pc = 0xbfcb30b8
+        [4562000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4582000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4602000 ns] Test is running, debug_wb_pc = 0xbfca6064
+--------------------------------------------------------------
+[4604645 ns] Error!!!
+    reference: PC = 0xbfc922d4, wb_rf_wnum = 0x10, wb_rf_wdata = 0x0000000b
+    mycpu    : PC = 0xbfc922d4, wb_rf_wnum = 0x10, wb_rf_wdata = 0xffffffe0
+--------------------------------------------------------------
+$finish called at time : 4604685 ns : File "D:/Xilinx/CA_LAB/lab03/mycpu_verify/testbench/mycpu_tb.v" Line 146
+run: Time (s): cpu = 00:02:24 ; elapsed = 00:02:22 . Memory (MB): peak = 1124.426 ; gain = 304.418
+save_wave_config {D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/tb_top_behav.wcfg}
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:21 . Memory (MB): peak = 1158.098 ; gain = 0.000
+launch_simulation
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'D:/Xilinx/Vivado/2017.1/data/xsim/ip/xsim_ip.ini' copied to run dir:'D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_top' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav/data_ram.mif'
+INFO: [SIM-utils-43] Exported 'D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav/data_ram.coe'
+INFO: [SIM-utils-43] Exported 'D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav/inst_ram.mif'
+INFO: [SIM-utils-43] Exported 'D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav/inst_ram.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav'
+"xvlog -m64 --relax -prj tb_top_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/xilinx_ip/data_ram/sim/data_ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/xilinx_ip/inst_ram/sim/inst_ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module inst_ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/xilinx_ip/clk_pll/clk_pll_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_pll_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/xilinx_ip/clk_pll/clk_pll.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_pll
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-2458] undeclared symbol alu_sub_true, assumed default net type wire [D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/ALU.v:27]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/EXE_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module EXE_stage
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/ID_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ID_stage
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/IF_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IF_stage
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/MEM_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MEM_stage
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/WB_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WB_stage
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/BRIDGE/bridge_1x2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bridge_1x2
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/CONFREG/confreg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module confreg
+INFO: [VRFC 10-2458] undeclared symbol conf_we, assumed default net type wire [D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/CONFREG/confreg.v:118]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_signed.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module divider_signed
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_unsigned.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module divider_unsigned
+WARNING: [VRFC 10-969] keyword 'unsigned' is not allowed here in this mode of verilog [D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_unsigned.v:4]
+WARNING: [VRFC 10-969] keyword 'unsigned' is not allowed here in this mode of verilog [D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_unsigned.v:5]
+WARNING: [VRFC 10-969] keyword 'unsigned' is not allowed here in this mode of verilog [D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_unsigned.v:9]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_signed.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module multiplier_signed
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_unsigned.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module multiplier_unsigned
+WARNING: [VRFC 10-969] keyword 'unsigned' is not allowed here in this mode of verilog [D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_unsigned.v:4]
+WARNING: [VRFC 10-969] keyword 'unsigned' is not allowed here in this mode of verilog [D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_unsigned.v:5]
+WARNING: [VRFC 10-969] keyword 'unsigned' is not allowed here in this mode of verilog [D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_unsigned.v:9]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/mycpu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mycpu_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/next_pc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module nextpc
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/regfile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/soc_lite_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module soc_lite_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/stall.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module stall
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/testbench/mycpu_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav'
+Vivado Simulator 2017.1
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2017.1/bin/unwrapped/win64.o/xelab.exe -wto 8de8692e6f7648c084645fde77f29b66 --debug typical --relax --mt 2 -L blk_mem_gen_v8_3_6 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_top_behav xil_defaultlib.tb_top xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-1783] select index 62 into current_contents is out of bounds [/wrk/2017.1/nightly/2017_04_14_1846317/packages/customer/vivado/data/ip/xilinx/blk_mem_gen_v8_3/simulation/blk_mem_gen_v8_3.v:2420]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/soc_lite_top.v" Line 57. Module soc_lite_top(SIMULATION=1'b1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/mycpu.v" Line 3. Module mycpu_top doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/next_pc.v" Line 1. Module nextpc doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/IF_stage.v" Line 1. Module IF_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/ID_stage.v" Line 2. Module ID_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/EXE_stage.v" Line 2. Module EXE_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/ALU.v" Line 1. Module alu doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_signed.v" Line 1. Module divider_signed doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_unsigned.v" Line 1. Module divider_unsigned doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_signed.v" Line 1. Module multiplier_signed doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_unsigned.v" Line 1. Module multiplier_unsigned doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/MEM_stage.v" Line 2. Module MEM_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/WB_stage.v" Line 2. Module WB_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/regfile.v" Line 1. Module regfile doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/stall.v" Line 2. Module stall doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/BRIDGE/bridge_1x2.v" Line 50. Module bridge_1x2 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/CONFREG/confreg.v" Line 58. Module confreg(SIMULATION=1'b1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/soc_lite_top.v" Line 57. Module soc_lite_top(SIMULATION=1'b1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/mycpu.v" Line 3. Module mycpu_top doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/next_pc.v" Line 1. Module nextpc doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/IF_stage.v" Line 1. Module IF_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/ID_stage.v" Line 2. Module ID_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/EXE_stage.v" Line 2. Module EXE_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/ALU.v" Line 1. Module alu doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_signed.v" Line 1. Module divider_signed doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_unsigned.v" Line 1. Module divider_unsigned doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_signed.v" Line 1. Module multiplier_signed doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_unsigned.v" Line 1. Module multiplier_unsigned doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/MEM_stage.v" Line 2. Module MEM_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/WB_stage.v" Line 2. Module WB_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/regfile.v" Line 1. Module regfile doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/stall.v" Line 2. Module stall doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/BRIDGE/bridge_1x2.v" Line 50. Module bridge_1x2 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/CONFREG/confreg.v" Line 58. Module confreg(SIMULATION=1'b1) doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.PLLE2_ADV(CLKFBOUT_MULT=17,CLKIN...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.clk_pll_clk_wiz
+Compiling module xil_defaultlib.clk_pll
+Compiling module xil_defaultlib.nextpc
+Compiling module xil_defaultlib.IF_stage
+Compiling module xil_defaultlib.ID_stage
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.divider_signed
+Compiling module xil_defaultlib.divider_unsigned
+Compiling module xil_defaultlib.multiplier_signed
+Compiling module xil_defaultlib.multiplier_unsigned
+Compiling module xil_defaultlib.EXE_stage
+Compiling module xil_defaultlib.MEM_stage
+Compiling module xil_defaultlib.WB_stage
+Compiling module xil_defaultlib.regfile
+Compiling module xil_defaultlib.stall
+Compiling module xil_defaultlib.mycpu_top
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_output_stage(...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_output_stage(...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_softecc_outpu...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_mem_module(C_...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6(C_FAMILY="art...
+Compiling module xil_defaultlib.inst_ram
+Compiling module xil_defaultlib.bridge_1x2
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_output_stage(...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_output_stage(...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_softecc_outpu...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_mem_module(C_...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6(C_FAMILY="art...
+Compiling module xil_defaultlib.data_ram
+Compiling module xil_defaultlib.confreg(SIMULATION=1'b1)
+Compiling module xil_defaultlib.soc_lite_top(SIMULATION=1'b1)
+Compiling module xil_defaultlib.tb_top
+WARNING: [XSIM 43-3373] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/testbench/mycpu_tb.v" Line 119. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_top_behav
+
+****** Webtalk v2017.1 (64-bit)
+  **** SW Build 1846317 on Fri Apr 14 18:55:03 MDT 2017
+  **** IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav/xsim.dir/tb_top_behav/webtalk/xsim_webtalk.tcl -notrace
+webtalk_transmit: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 60.766 ; gain = 0.176
+INFO: [Common 17-206] Exiting Webtalk at Mon Oct  9 22:25:32 2017...
+run_program: Time (s): cpu = 00:00:02 ; elapsed = 00:00:33 . Memory (MB): peak = 1158.098 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '33' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_top_behav -key {Behavioral:sim_1:Functional:tb_top} -tclbatch {tb_top.tcl} -view {D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/tb_top_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.1
+Time resolution is 1 ps
+open_wave_config D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/tb_top_behav.wcfg
+source tb_top.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# log_wave -r /
+WARNING: [Simtcl 6-142] log_wave skipped an HDL object or scope because of this problem: WARNING: Simulation object /tb_top/soc_lite/inst_ram/inst/\native_mem_module.blk_mem_gen_v8_3_6_inst /memory was not traceable in the design for the following reason:
+The number of elements in the requested object is 8388608, which exceeds the maximum traceable size of 65536 elements.
+The maximum can be changed with "set_property trace_limit <number of elements> [current_sim]" Tcl command.
+
+WARNING: [Simtcl 6-142] log_wave skipped an HDL object or scope because of this problem: WARNING: Simulation object /tb_top/soc_lite/inst_ram/inst/\native_mem_module.blk_mem_gen_v8_3_6_inst /temp_mem_array was not traceable in the design for the following reason:
+The number of elements in the requested object is 8388608, which exceeds the maximum traceable size of 65536 elements.
+The maximum can be changed with "set_property trace_limit <number of elements> [current_sim]" Tcl command.
+
+WARNING: [Simtcl 6-142] log_wave skipped an HDL object or scope because of this problem: WARNING: Simulation object /tb_top/soc_lite/inst_ram/inst/\native_mem_module.blk_mem_gen_v8_3_6_inst /sbiterr_arr was not traceable in the design for the following reason:
+The number of elements in the requested object is 262144, which exceeds the maximum traceable size of 65536 elements.
+The maximum can be changed with "set_property trace_limit <number of elements> [current_sim]" Tcl command.
+
+WARNING: [Simtcl 6-142] log_wave skipped an HDL object or scope because of this problem: WARNING: Simulation object /tb_top/soc_lite/inst_ram/inst/\native_mem_module.blk_mem_gen_v8_3_6_inst /dbiterr_arr was not traceable in the design for the following reason:
+The number of elements in the requested object is 262144, which exceeds the maximum traceable size of 65536 elements.
+The maximum can be changed with "set_property trace_limit <number of elements> [current_sim]" Tcl command.
+
+WARNING: [Simtcl 6-142] log_wave skipped an HDL object or scope because of this problem: WARNING: Simulation object /tb_top/soc_lite/inst_ram/inst/\native_mem_module.blk_mem_gen_v8_3_6_inst /softecc_sbiterr_arr was not traceable in the design for the following reason:
+The number of elements in the requested object is 262144, which exceeds the maximum traceable size of 65536 elements.
+The maximum can be changed with "set_property trace_limit <number of elements> [current_sim]" Tcl command.
+
+WARNING: [Simtcl 6-142] log_wave skipped an HDL object or scope because of this problem: WARNING: Simulation object /tb_top/soc_lite/inst_ram/inst/\native_mem_module.blk_mem_gen_v8_3_6_inst /softecc_dbiterr_arr was not traceable in the design for the following reason:
+The number of elements in the requested object is 262144, which exceeds the maximum traceable size of 65536 elements.
+The maximum can be changed with "set_property trace_limit <number of elements> [current_sim]" Tcl command.
+
+WARNING: [Simtcl 6-142] log_wave skipped an HDL object or scope because of this problem: WARNING: Simulation object /tb_top/soc_lite/data_ram/inst/\native_mem_module.blk_mem_gen_v8_3_6_inst /memory was not traceable in the design for the following reason:
+The number of elements in the requested object is 2097152, which exceeds the maximum traceable size of 65536 elements.
+The maximum can be changed with "set_property trace_limit <number of elements> [current_sim]" Tcl command.
+
+WARNING: [Simtcl 6-142] log_wave skipped an HDL object or scope because of this problem: WARNING: Simulation object /tb_top/soc_lite/data_ram/inst/\native_mem_module.blk_mem_gen_v8_3_6_inst /temp_mem_array was not traceable in the design for the following reason:
+The number of elements in the requested object is 2097152, which exceeds the maximum traceable size of 65536 elements.
+The maximum can be changed with "set_property trace_limit <number of elements> [current_sim]" Tcl command.
+
+# run 0
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb_top.soc_lite.inst_ram.inst.native_mem_module.blk_mem_gen_v8_3_6_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb_top.soc_lite.data_ram.inst.native_mem_module.blk_mem_gen_v8_3_6_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+xsim: Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1158.098 ; gain = 0.000
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_top_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0
+launch_simulation: Time (s): cpu = 00:00:08 ; elapsed = 00:00:44 . Memory (MB): peak = 1158.098 ; gain = 0.000
+run all
+==============================================================
+Test begin!
+        [  22000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [  42000 ns] Test is running, debug_wb_pc = 0xbfc2b1e4
+        [  62000 ns] Test is running, debug_wb_pc = 0xbfc2bc44
+        [  82000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 102000 ns] Test is running, debug_wb_pc = 0xbfcb4a98
+        [ 122000 ns] Test is running, debug_wb_pc = 0xbfcb55f4
+        [ 142000 ns] Test is running, debug_wb_pc = 0xbfc51560
+        [ 162000 ns] Test is running, debug_wb_pc = 0xbfc51f6c
+        [ 182000 ns] Test is running, debug_wb_pc = 0xbfc52978
+        [ 202000 ns] Test is running, debug_wb_pc = 0xbfc533c8
+        [ 222000 ns] Test is running, debug_wb_pc = 0xbfc30948
+        [ 242000 ns] Test is running, debug_wb_pc = 0xbfc314a4
+        [ 262000 ns] Test is running, debug_wb_pc = 0xbfc32000
+        [ 282000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 302000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 322000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 342000 ns] Test is running, debug_wb_pc = 0xbfc5fa1c
+        [ 362000 ns] Test is running, debug_wb_pc = 0xbfc60428
+        [ 382000 ns] Test is running, debug_wb_pc = 0xbfc60e34
+        [ 402000 ns] Test is running, debug_wb_pc = 0xbfc6185c
+        [ 422000 ns] Test is running, debug_wb_pc = 0xbfc72b24
+        [ 442000 ns] Test is running, debug_wb_pc = 0xbfc73590
+        [ 462000 ns] Test is running, debug_wb_pc = 0xbfc73ff8
+        [ 482000 ns] Test is running, debug_wb_pc = 0xbfc74ac0
+        [ 502000 ns] Test is running, debug_wb_pc = 0xbfc564a4
+        [ 522000 ns] Test is running, debug_wb_pc = 0xbfc570cc
+        [ 542000 ns] Test is running, debug_wb_pc = 0xbfc04d70
+        [ 562000 ns] Test is running, debug_wb_pc = 0xbfc057dc
+        [ 582000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 602000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 622000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 642000 ns] Test is running, debug_wb_pc = 0xbfc71c4c
+        [ 662000 ns] Test is running, debug_wb_pc = 0xbfc728e0
+        [ 682000 ns] Test is running, debug_wb_pc = 0xbfc5c778
+        [ 702000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 722000 ns] Test is running, debug_wb_pc = 0xbfc5cf94
+        [ 742000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 762000 ns] Test is running, debug_wb_pc = 0xbfc5d7b4
+        [ 782000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 802000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 822000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 842000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 862000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 882000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 902000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 922000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 942000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 962000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 982000 ns] Test is running, debug_wb_pc = 0xbfc2d918
+        [1002000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1022000 ns] Test is running, debug_wb_pc = 0xbfc2e138
+        [1042000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1062000 ns] Test is running, debug_wb_pc = 0xbfc2e954
+        [1082000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1102000 ns] Test is running, debug_wb_pc = 0xbfc2f170
+        [1122000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1142000 ns] Test is running, debug_wb_pc = 0xbfc2f990
+        [1162000 ns] Test is running, debug_wb_pc = 0xbfc2fd44
+        [1182000 ns] Test is running, debug_wb_pc = 0xbfc30104
+        [1202000 ns] Test is running, debug_wb_pc = 0xbfc62640
+        [1222000 ns] Test is running, debug_wb_pc = 0xbfc63004
+        [1242000 ns] Test is running, debug_wb_pc = 0xbfc639c4
+        [1262000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1282000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1302000 ns] Test is running, debug_wb_pc = 0xbfc6576c
+        [1322000 ns] Test is running, debug_wb_pc = 0xbfc661d4
+        [1342000 ns] Test is running, debug_wb_pc = 0xbfcae34c
+        [1362000 ns] Test is running, debug_wb_pc = 0xbfcaed14
+        [1382000 ns] Test is running, debug_wb_pc = 0xbfcaf6d8
+        [1402000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1422000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1442000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1462000 ns] Test is running, debug_wb_pc = 0xbfc071e0
+        [1482000 ns] Test is running, debug_wb_pc = 0xbfc07bf0
+        [1502000 ns] Test is running, debug_wb_pc = 0xbfc085fc
+        [1522000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1542000 ns] Test is running, debug_wb_pc = 0xbfc02fb4
+        [1562000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1582000 ns] Test is running, debug_wb_pc = 0xbfc04800
+        [1602000 ns] Test is running, debug_wb_pc = 0xbfc2c848
+        [1622000 ns] Test is running, debug_wb_pc = 0xbfc4ed04
+        [1642000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1662000 ns] Test is running, debug_wb_pc = 0xbfc50120
+        [1682000 ns] Test is running, debug_wb_pc = 0xbfc50b74
+        [1702000 ns] Test is running, debug_wb_pc = 0xbfc27ad0
+        [1722000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1742000 ns] Test is running, debug_wb_pc = 0xbfc28eec
+        [1762000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1782000 ns] Test is running, debug_wb_pc = 0xbfc21200
+        [1802000 ns] Test is running, debug_wb_pc = 0xbfc21d5c
+        [1822000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1842000 ns] Test is running, debug_wb_pc = 0xbfca0130
+        [1862000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1882000 ns] Test is running, debug_wb_pc = 0xbfca1548
+        [1902000 ns] Test is running, debug_wb_pc = 0xbfca1f8c
+        [1922000 ns] Test is running, debug_wb_pc = 0xbfc00ccc
+        [1942000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1962000 ns] Test is running, debug_wb_pc = 0xbfc02388
+        [1982000 ns] Test is running, debug_wb_pc = 0xbfc0b680
+        [2002000 ns] Test is running, debug_wb_pc = 0xbfc0c24c
+        [2022000 ns] Test is running, debug_wb_pc = 0xbfc0cdfc
+        [2042000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [2062000 ns] Test is running, debug_wb_pc = 0xbfca3468
+        [2082000 ns] Test is running, debug_wb_pc = 0xbfca3f10
+        [2102000 ns] Test is running, debug_wb_pc = 0xbfc23328
+        [2122000 ns] Test is running, debug_wb_pc = 0xbfc23efc
+        [2142000 ns] Test is running, debug_wb_pc = 0xbfc24aa8
+        [2162000 ns] Test is running, debug_wb_pc = 0xbfc3c2b4
+        [2182000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [2202000 ns] Test is running, debug_wb_pc = 0xbfc3d800
+        [2222000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [2242000 ns] Test is running, debug_wb_pc = 0xbfc90c64
+        [2262000 ns] Test is running, debug_wb_pc = 0xbfc91824
+        [2282000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [2302000 ns] Test is running, debug_wb_pc = 0xbfc54500
+        [2322000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [2342000 ns] Test is running, debug_wb_pc = 0xbfc55a88
+        [2362000 ns] Test is running, debug_wb_pc = 0xbfccfe10
+        [2382000 ns] Test is running, debug_wb_pc = 0xbfcd15e8
+        [2402000 ns] Test is running, debug_wb_pc = 0xbfcd2dec
+        [2422000 ns] Test is running, debug_wb_pc = 0xbfcd414c
+        [2442000 ns] Test is running, debug_wb_pc = 0xbfcd540c
+        [2462000 ns] Test is running, debug_wb_pc = 0xbfcd66cc
+        [2482000 ns] Test is running, debug_wb_pc = 0xbfcd798c
+        [2502000 ns] Test is running, debug_wb_pc = 0xbfcd91ec
+        [2522000 ns] Test is running, debug_wb_pc = 0xbfcdab24
+        [2542000 ns] Test is running, debug_wb_pc = 0xbfc75fa0
+        [2562000 ns] Test is running, debug_wb_pc = 0xbfc7751c
+        [2582000 ns] Test is running, debug_wb_pc = 0xbfc78a98
+        [2602000 ns] Test is running, debug_wb_pc = 0xbfc7a014
+        [2622000 ns] Test is running, debug_wb_pc = 0xbfc7b5a8
+        [2642000 ns] Test is running, debug_wb_pc = 0xbfc7d168
+        [2662000 ns] Test is running, debug_wb_pc = 0xbfc7ed04
+        [2682000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [2702000 ns] Test is running, debug_wb_pc = 0xbfc81ec8
+        [2722000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [2742000 ns] Test is running, debug_wb_pc = 0xbfc84b08
+        [2762000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [2782000 ns] Test is running, debug_wb_pc = 0xbfc0ec44
+        [2802000 ns] Test is running, debug_wb_pc = 0xbfc0fdb8
+        [2822000 ns] Test is running, debug_wb_pc = 0xbfc11060
+        [2842000 ns] Test is running, debug_wb_pc = 0xbfc12268
+        [2862000 ns] Test is running, debug_wb_pc = 0xbfc134bc
+        [2882000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [2902000 ns] Test is running, debug_wb_pc = 0xbfc183dc
+        [2922000 ns] Test is running, debug_wb_pc = 0xbfc19cd4
+        [2942000 ns] Test is running, debug_wb_pc = 0xbfc1b49c
+        [2962000 ns] Test is running, debug_wb_pc = 0xbfc1cccc
+        [2982000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3002000 ns] Test is running, debug_wb_pc = 0xbfc1fdac
+        [3022000 ns] Test is running, debug_wb_pc = 0xbfc33fac
+        [3042000 ns] Test is running, debug_wb_pc = 0xbfc35550
+        [3062000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3082000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3102000 ns] Test is running, debug_wb_pc = 0xbfc395c4
+        [3122000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3142000 ns] Test is running, debug_wb_pc = 0xbfc85db8
+        [3162000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3182000 ns] Test is running, debug_wb_pc = 0xbfc88f0c
+        [3202000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3222000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3242000 ns] Test is running, debug_wb_pc = 0xbfc8dc7c
+        [3262000 ns] Test is running, debug_wb_pc = 0xbfc8f5c0
+        [3282000 ns] Test is running, debug_wb_pc = 0xbfcbe9c0
+        [3302000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3322000 ns] Test is running, debug_wb_pc = 0xbfcc154c
+        [3342000 ns] Test is running, debug_wb_pc = 0xbfcc2ae8
+        [3362000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3382000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3402000 ns] Test is running, debug_wb_pc = 0xbfcc6cb4
+        [3422000 ns] Test is running, debug_wb_pc = 0xbfcc8220
+        [3442000 ns] Test is running, debug_wb_pc = 0xbfcc981c
+        [3462000 ns] Test is running, debug_wb_pc = 0xbfccade8
+        [3482000 ns] Test is running, debug_wb_pc = 0xbfccc3dc
+        [3502000 ns] Test is running, debug_wb_pc = 0xbfccd998
+        [3522000 ns] Test is running, debug_wb_pc = 0xbfc3ea38
+        [3542000 ns] Test is running, debug_wb_pc = 0xbfc3ffbc
+        [3562000 ns] Test is running, debug_wb_pc = 0xbfc414f0
+        [3582000 ns] Test is running, debug_wb_pc = 0xbfc42a6c
+        [3602000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3622000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3642000 ns] Test is running, debug_wb_pc = 0xbfc46a28
+        [3662000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3682000 ns] Test is running, debug_wb_pc = 0xbfc49438
+        [3702000 ns] Test is running, debug_wb_pc = 0xbfc4a9b4
+        [3722000 ns] Test is running, debug_wb_pc = 0xbfc4bee0
+        [3742000 ns] Test is running, debug_wb_pc = 0xbfc4d3d8
+        [3762000 ns] Test is running, debug_wb_pc = 0xbfca62f4
+        [3782000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3802000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3822000 ns] Test is running, debug_wb_pc = 0xbfca9a8c
+        [3842000 ns] Test is running, debug_wb_pc = 0xbfcaad08
+        [3862000 ns] Test is running, debug_wb_pc = 0xbfcabf68
+        [3882000 ns] Test is running, debug_wb_pc = 0xbfcad1d0
+        [3902000 ns] Test is running, debug_wb_pc = 0xbfcb6304
+        [3922000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3942000 ns] Test is running, debug_wb_pc = 0xbfcb8198
+        [3962000 ns] Test is running, debug_wb_pc = 0xbfcb90b4
+        [3982000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4002000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4022000 ns] Test is running, debug_wb_pc = 0xbfcbbe90
+        [4042000 ns] Test is running, debug_wb_pc = 0xbfcbcddc
+        [4062000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4082000 ns] Test is running, debug_wb_pc = 0xbfc97824
+        [4102000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4122000 ns] Test is running, debug_wb_pc = 0xbfc99fac
+        [4142000 ns] Test is running, debug_wb_pc = 0xbfc9b370
+        [4162000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4182000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4202000 ns] Test is running, debug_wb_pc = 0xbfc9ee00
+        [4222000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4242000 ns] Test is running, debug_wb_pc = 0xbfc67b0c
+        [4262000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4282000 ns] Test is running, debug_wb_pc = 0xbfc69cbc
+        [4302000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4322000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4342000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4362000 ns] Test is running, debug_wb_pc = 0xbfc6e09c
+        [4382000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4402000 ns] Test is running, debug_wb_pc = 0xbfc7024c
+        [4422000 ns] Test is running, debug_wb_pc = 0xbfc15e38
+        [4442000 ns] Test is running, debug_wb_pc = 0xbfc168a4
+        [4462000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4482000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4502000 ns] Test is running, debug_wb_pc = 0xbfc5c0fc
+        [4522000 ns] Test is running, debug_wb_pc = 0xbfcb264c
+        [4542000 ns] Test is running, debug_wb_pc = 0xbfcb30b8
+        [4562000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4582000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4602000 ns] Test is running, debug_wb_pc = 0xbfca6064
+        [4622000 ns] Test is running, debug_wb_pc = 0xbfc92c8c
+        [4642000 ns] Test is running, debug_wb_pc = 0xbfc937fc
+        [4662000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4682000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4702000 ns] Test is running, debug_wb_pc = 0xbfc74f00
+        [4722000 ns] Test is running, debug_wb_pc = 0xbfc75a28
+        [4742000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4762000 ns] Test is running, debug_wb_pc = 0xbfc5a988
+        [4782000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4802000 ns] Test is running, debug_wb_pc = 0xbfc94724
+        [4822000 ns] Test is running, debug_wb_pc = 0xbfc951b0
+        [4842000 ns] Test is running, debug_wb_pc = 0xbfc95c6c
+        [4862000 ns] Test is running, debug_wb_pc = 0xbfc58030
+        [4882000 ns] Test is running, debug_wb_pc = 0xbfc58abc
+        [4902000 ns] Test is running, debug_wb_pc = 0xbfc5956c
+        [4922000 ns] Test is running, debug_wb_pc = 0xbfc33108
+        [4942000 ns] Test is running, debug_wb_pc = 0xbfcce840
+--------------------------------------------------------------
+[4947525 ns] Error!!!
+    reference: PC = 0xbfc0082c, wb_rf_wnum = 0x04, wb_rf_wdata = 0x0000005b
+    mycpu    : PC = 0xbfc00838, wb_rf_wnum = 0x08, wb_rf_wdata = 0xbfd00000
+--------------------------------------------------------------
+$finish called at time : 4947565 ns : File "D:/Xilinx/CA_LAB/lab03/mycpu_verify/testbench/mycpu_tb.v" Line 146
+run: Time (s): cpu = 00:02:33 ; elapsed = 00:02:30 . Memory (MB): peak = 1162.270 ; gain = 4.172
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:12 . Memory (MB): peak = 1235.742 ; gain = 0.000
+launch_simulation
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'D:/Xilinx/Vivado/2017.1/data/xsim/ip/xsim_ip.ini' copied to run dir:'D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_top' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav/data_ram.mif'
+INFO: [SIM-utils-43] Exported 'D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav/data_ram.coe'
+INFO: [SIM-utils-43] Exported 'D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav/inst_ram.mif'
+INFO: [SIM-utils-43] Exported 'D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav/inst_ram.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav'
+"xvlog -m64 --relax -prj tb_top_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/xilinx_ip/data_ram/sim/data_ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/xilinx_ip/inst_ram/sim/inst_ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module inst_ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/xilinx_ip/clk_pll/clk_pll_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_pll_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/xilinx_ip/clk_pll/clk_pll.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_pll
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-2458] undeclared symbol alu_sub_true, assumed default net type wire [D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/ALU.v:27]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/EXE_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module EXE_stage
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/ID_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ID_stage
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/IF_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IF_stage
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/MEM_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MEM_stage
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/WB_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WB_stage
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/BRIDGE/bridge_1x2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bridge_1x2
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/CONFREG/confreg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module confreg
+INFO: [VRFC 10-2458] undeclared symbol conf_we, assumed default net type wire [D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/CONFREG/confreg.v:118]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_signed.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module divider_signed
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_unsigned.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module divider_unsigned
+WARNING: [VRFC 10-969] keyword 'unsigned' is not allowed here in this mode of verilog [D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_unsigned.v:4]
+WARNING: [VRFC 10-969] keyword 'unsigned' is not allowed here in this mode of verilog [D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_unsigned.v:5]
+WARNING: [VRFC 10-969] keyword 'unsigned' is not allowed here in this mode of verilog [D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_unsigned.v:9]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_signed.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module multiplier_signed
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_unsigned.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module multiplier_unsigned
+WARNING: [VRFC 10-969] keyword 'unsigned' is not allowed here in this mode of verilog [D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_unsigned.v:4]
+WARNING: [VRFC 10-969] keyword 'unsigned' is not allowed here in this mode of verilog [D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_unsigned.v:5]
+WARNING: [VRFC 10-969] keyword 'unsigned' is not allowed here in this mode of verilog [D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_unsigned.v:9]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/mycpu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mycpu_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/next_pc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module nextpc
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/regfile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/soc_lite_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module soc_lite_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/stall.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module stall
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/testbench/mycpu_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav'
+Vivado Simulator 2017.1
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2017.1/bin/unwrapped/win64.o/xelab.exe -wto 8de8692e6f7648c084645fde77f29b66 --debug typical --relax --mt 2 -L blk_mem_gen_v8_3_6 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_top_behav xil_defaultlib.tb_top xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-1783] select index 62 into current_contents is out of bounds [/wrk/2017.1/nightly/2017_04_14_1846317/packages/customer/vivado/data/ip/xilinx/blk_mem_gen_v8_3/simulation/blk_mem_gen_v8_3.v:2420]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/soc_lite_top.v" Line 57. Module soc_lite_top(SIMULATION=1'b1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/mycpu.v" Line 3. Module mycpu_top doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/next_pc.v" Line 1. Module nextpc doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/IF_stage.v" Line 1. Module IF_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/ID_stage.v" Line 2. Module ID_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/EXE_stage.v" Line 2. Module EXE_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/ALU.v" Line 1. Module alu doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_signed.v" Line 1. Module divider_signed doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_unsigned.v" Line 1. Module divider_unsigned doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_signed.v" Line 1. Module multiplier_signed doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_unsigned.v" Line 1. Module multiplier_unsigned doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/MEM_stage.v" Line 2. Module MEM_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/WB_stage.v" Line 2. Module WB_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/regfile.v" Line 1. Module regfile doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/stall.v" Line 2. Module stall doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/BRIDGE/bridge_1x2.v" Line 50. Module bridge_1x2 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/CONFREG/confreg.v" Line 58. Module confreg(SIMULATION=1'b1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/soc_lite_top.v" Line 57. Module soc_lite_top(SIMULATION=1'b1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/mycpu.v" Line 3. Module mycpu_top doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/next_pc.v" Line 1. Module nextpc doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/IF_stage.v" Line 1. Module IF_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/ID_stage.v" Line 2. Module ID_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/EXE_stage.v" Line 2. Module EXE_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/ALU.v" Line 1. Module alu doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_signed.v" Line 1. Module divider_signed doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_unsigned.v" Line 1. Module divider_unsigned doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_signed.v" Line 1. Module multiplier_signed doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_unsigned.v" Line 1. Module multiplier_unsigned doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/MEM_stage.v" Line 2. Module MEM_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/WB_stage.v" Line 2. Module WB_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/regfile.v" Line 1. Module regfile doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/stall.v" Line 2. Module stall doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/BRIDGE/bridge_1x2.v" Line 50. Module bridge_1x2 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/CONFREG/confreg.v" Line 58. Module confreg(SIMULATION=1'b1) doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.PLLE2_ADV(CLKFBOUT_MULT=17,CLKIN...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.clk_pll_clk_wiz
+Compiling module xil_defaultlib.clk_pll
+Compiling module xil_defaultlib.nextpc
+Compiling module xil_defaultlib.IF_stage
+Compiling module xil_defaultlib.ID_stage
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.divider_signed
+Compiling module xil_defaultlib.divider_unsigned
+Compiling module xil_defaultlib.multiplier_signed
+Compiling module xil_defaultlib.multiplier_unsigned
+Compiling module xil_defaultlib.EXE_stage
+Compiling module xil_defaultlib.MEM_stage
+Compiling module xil_defaultlib.WB_stage
+Compiling module xil_defaultlib.regfile
+Compiling module xil_defaultlib.stall
+Compiling module xil_defaultlib.mycpu_top
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_output_stage(...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_output_stage(...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_softecc_outpu...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_mem_module(C_...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6(C_FAMILY="art...
+Compiling module xil_defaultlib.inst_ram
+Compiling module xil_defaultlib.bridge_1x2
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_output_stage(...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_output_stage(...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_softecc_outpu...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_mem_module(C_...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6(C_FAMILY="art...
+Compiling module xil_defaultlib.data_ram
+Compiling module xil_defaultlib.confreg(SIMULATION=1'b1)
+Compiling module xil_defaultlib.soc_lite_top(SIMULATION=1'b1)
+Compiling module xil_defaultlib.tb_top
+WARNING: [XSIM 43-3373] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/testbench/mycpu_tb.v" Line 119. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_top_behav
+
+****** Webtalk v2017.1 (64-bit)
+  **** SW Build 1846317 on Fri Apr 14 18:55:03 MDT 2017
+  **** IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav/xsim.dir/tb_top_behav/webtalk/xsim_webtalk.tcl -notrace
+webtalk_transmit: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 61.113 ; gain = 0.184
+INFO: [Common 17-206] Exiting Webtalk at Mon Oct  9 22:30:16 2017...
+run_program: Time (s): cpu = 00:00:02 ; elapsed = 00:00:23 . Memory (MB): peak = 1235.742 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '23' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_top_behav -key {Behavioral:sim_1:Functional:tb_top} -tclbatch {tb_top.tcl} -view {D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/tb_top_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.1
+Time resolution is 1 ps
+open_wave_config D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/tb_top_behav.wcfg
+source tb_top.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# log_wave -r /
+WARNING: [Simtcl 6-142] log_wave skipped an HDL object or scope because of this problem: WARNING: Simulation object /tb_top/soc_lite/inst_ram/inst/\native_mem_module.blk_mem_gen_v8_3_6_inst /memory was not traceable in the design for the following reason:
+The number of elements in the requested object is 8388608, which exceeds the maximum traceable size of 65536 elements.
+The maximum can be changed with "set_property trace_limit <number of elements> [current_sim]" Tcl command.
+
+WARNING: [Simtcl 6-142] log_wave skipped an HDL object or scope because of this problem: WARNING: Simulation object /tb_top/soc_lite/inst_ram/inst/\native_mem_module.blk_mem_gen_v8_3_6_inst /temp_mem_array was not traceable in the design for the following reason:
+The number of elements in the requested object is 8388608, which exceeds the maximum traceable size of 65536 elements.
+The maximum can be changed with "set_property trace_limit <number of elements> [current_sim]" Tcl command.
+
+WARNING: [Simtcl 6-142] log_wave skipped an HDL object or scope because of this problem: WARNING: Simulation object /tb_top/soc_lite/inst_ram/inst/\native_mem_module.blk_mem_gen_v8_3_6_inst /sbiterr_arr was not traceable in the design for the following reason:
+The number of elements in the requested object is 262144, which exceeds the maximum traceable size of 65536 elements.
+The maximum can be changed with "set_property trace_limit <number of elements> [current_sim]" Tcl command.
+
+WARNING: [Simtcl 6-142] log_wave skipped an HDL object or scope because of this problem: WARNING: Simulation object /tb_top/soc_lite/inst_ram/inst/\native_mem_module.blk_mem_gen_v8_3_6_inst /dbiterr_arr was not traceable in the design for the following reason:
+The number of elements in the requested object is 262144, which exceeds the maximum traceable size of 65536 elements.
+The maximum can be changed with "set_property trace_limit <number of elements> [current_sim]" Tcl command.
+
+WARNING: [Simtcl 6-142] log_wave skipped an HDL object or scope because of this problem: WARNING: Simulation object /tb_top/soc_lite/inst_ram/inst/\native_mem_module.blk_mem_gen_v8_3_6_inst /softecc_sbiterr_arr was not traceable in the design for the following reason:
+The number of elements in the requested object is 262144, which exceeds the maximum traceable size of 65536 elements.
+The maximum can be changed with "set_property trace_limit <number of elements> [current_sim]" Tcl command.
+
+WARNING: [Simtcl 6-142] log_wave skipped an HDL object or scope because of this problem: WARNING: Simulation object /tb_top/soc_lite/inst_ram/inst/\native_mem_module.blk_mem_gen_v8_3_6_inst /softecc_dbiterr_arr was not traceable in the design for the following reason:
+The number of elements in the requested object is 262144, which exceeds the maximum traceable size of 65536 elements.
+The maximum can be changed with "set_property trace_limit <number of elements> [current_sim]" Tcl command.
+
+WARNING: [Simtcl 6-142] log_wave skipped an HDL object or scope because of this problem: WARNING: Simulation object /tb_top/soc_lite/data_ram/inst/\native_mem_module.blk_mem_gen_v8_3_6_inst /memory was not traceable in the design for the following reason:
+The number of elements in the requested object is 2097152, which exceeds the maximum traceable size of 65536 elements.
+The maximum can be changed with "set_property trace_limit <number of elements> [current_sim]" Tcl command.
+
+WARNING: [Simtcl 6-142] log_wave skipped an HDL object or scope because of this problem: WARNING: Simulation object /tb_top/soc_lite/data_ram/inst/\native_mem_module.blk_mem_gen_v8_3_6_inst /temp_mem_array was not traceable in the design for the following reason:
+The number of elements in the requested object is 2097152, which exceeds the maximum traceable size of 65536 elements.
+The maximum can be changed with "set_property trace_limit <number of elements> [current_sim]" Tcl command.
+
+# run 0
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb_top.soc_lite.inst_ram.inst.native_mem_module.blk_mem_gen_v8_3_6_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb_top.soc_lite.data_ram.inst.native_mem_module.blk_mem_gen_v8_3_6_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+xsim: Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1235.742 ; gain = 0.000
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_top_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0
+launch_simulation: Time (s): cpu = 00:00:09 ; elapsed = 00:00:34 . Memory (MB): peak = 1235.742 ; gain = 0.000
+run all
+==============================================================
+Test begin!
+        [  22000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [  42000 ns] Test is running, debug_wb_pc = 0xbfc2b1e4
+        [  62000 ns] Test is running, debug_wb_pc = 0xbfc2bc44
+        [  82000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 102000 ns] Test is running, debug_wb_pc = 0xbfcb4a98
+        [ 122000 ns] Test is running, debug_wb_pc = 0xbfcb55f4
+        [ 142000 ns] Test is running, debug_wb_pc = 0xbfc51560
+        [ 162000 ns] Test is running, debug_wb_pc = 0xbfc51f6c
+        [ 182000 ns] Test is running, debug_wb_pc = 0xbfc52978
+        [ 202000 ns] Test is running, debug_wb_pc = 0xbfc533c8
+        [ 222000 ns] Test is running, debug_wb_pc = 0xbfc30948
+        [ 242000 ns] Test is running, debug_wb_pc = 0xbfc314a4
+        [ 262000 ns] Test is running, debug_wb_pc = 0xbfc32000
+        [ 282000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 302000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 322000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 342000 ns] Test is running, debug_wb_pc = 0xbfc5fa1c
+        [ 362000 ns] Test is running, debug_wb_pc = 0xbfc60428
+        [ 382000 ns] Test is running, debug_wb_pc = 0xbfc60e34
+        [ 402000 ns] Test is running, debug_wb_pc = 0xbfc6185c
+        [ 422000 ns] Test is running, debug_wb_pc = 0xbfc72b24
+        [ 442000 ns] Test is running, debug_wb_pc = 0xbfc73590
+        [ 462000 ns] Test is running, debug_wb_pc = 0xbfc73ff8
+        [ 482000 ns] Test is running, debug_wb_pc = 0xbfc74ac0
+        [ 502000 ns] Test is running, debug_wb_pc = 0xbfc564a4
+        [ 522000 ns] Test is running, debug_wb_pc = 0xbfc570cc
+        [ 542000 ns] Test is running, debug_wb_pc = 0xbfc04d70
+        [ 562000 ns] Test is running, debug_wb_pc = 0xbfc057dc
+        [ 582000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 602000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 622000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 642000 ns] Test is running, debug_wb_pc = 0xbfc71c4c
+        [ 662000 ns] Test is running, debug_wb_pc = 0xbfc728e0
+        [ 682000 ns] Test is running, debug_wb_pc = 0xbfc5c778
+        [ 702000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 722000 ns] Test is running, debug_wb_pc = 0xbfc5cf94
+        [ 742000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 762000 ns] Test is running, debug_wb_pc = 0xbfc5d7b4
+        [ 782000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 802000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 822000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 842000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 862000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 882000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 902000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 922000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 942000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 962000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 982000 ns] Test is running, debug_wb_pc = 0xbfc2d918
+        [1002000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1022000 ns] Test is running, debug_wb_pc = 0xbfc2e138
+        [1042000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1062000 ns] Test is running, debug_wb_pc = 0xbfc2e954
+        [1082000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1102000 ns] Test is running, debug_wb_pc = 0xbfc2f170
+        [1122000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1142000 ns] Test is running, debug_wb_pc = 0xbfc2f990
+        [1162000 ns] Test is running, debug_wb_pc = 0xbfc2fd44
+        [1182000 ns] Test is running, debug_wb_pc = 0xbfc30104
+        [1202000 ns] Test is running, debug_wb_pc = 0xbfc62640
+        [1222000 ns] Test is running, debug_wb_pc = 0xbfc63004
+        [1242000 ns] Test is running, debug_wb_pc = 0xbfc639c4
+        [1262000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1282000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1302000 ns] Test is running, debug_wb_pc = 0xbfc6576c
+        [1322000 ns] Test is running, debug_wb_pc = 0xbfc661d4
+        [1342000 ns] Test is running, debug_wb_pc = 0xbfcae34c
+        [1362000 ns] Test is running, debug_wb_pc = 0xbfcaed14
+        [1382000 ns] Test is running, debug_wb_pc = 0xbfcaf6d8
+        [1402000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1422000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1442000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1462000 ns] Test is running, debug_wb_pc = 0xbfc071e0
+        [1482000 ns] Test is running, debug_wb_pc = 0xbfc07bf0
+        [1502000 ns] Test is running, debug_wb_pc = 0xbfc085fc
+        [1522000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1542000 ns] Test is running, debug_wb_pc = 0xbfc02fb4
+        [1562000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1582000 ns] Test is running, debug_wb_pc = 0xbfc04800
+        [1602000 ns] Test is running, debug_wb_pc = 0xbfc2c848
+        [1622000 ns] Test is running, debug_wb_pc = 0xbfc4ed04
+        [1642000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1662000 ns] Test is running, debug_wb_pc = 0xbfc50120
+        [1682000 ns] Test is running, debug_wb_pc = 0xbfc50b74
+        [1702000 ns] Test is running, debug_wb_pc = 0xbfc27ad0
+        [1722000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1742000 ns] Test is running, debug_wb_pc = 0xbfc28eec
+        [1762000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1782000 ns] Test is running, debug_wb_pc = 0xbfc21200
+        [1802000 ns] Test is running, debug_wb_pc = 0xbfc21d5c
+        [1822000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1842000 ns] Test is running, debug_wb_pc = 0xbfca0130
+        [1862000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1882000 ns] Test is running, debug_wb_pc = 0xbfca1548
+        [1902000 ns] Test is running, debug_wb_pc = 0xbfca1f8c
+        [1922000 ns] Test is running, debug_wb_pc = 0xbfc00ccc
+        [1942000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [1962000 ns] Test is running, debug_wb_pc = 0xbfc02388
+        [1982000 ns] Test is running, debug_wb_pc = 0xbfc0b680
+        [2002000 ns] Test is running, debug_wb_pc = 0xbfc0c24c
+        [2022000 ns] Test is running, debug_wb_pc = 0xbfc0cdfc
+        [2042000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [2062000 ns] Test is running, debug_wb_pc = 0xbfca3468
+        [2082000 ns] Test is running, debug_wb_pc = 0xbfca3f10
+        [2102000 ns] Test is running, debug_wb_pc = 0xbfc23328
+        [2122000 ns] Test is running, debug_wb_pc = 0xbfc23efc
+        [2142000 ns] Test is running, debug_wb_pc = 0xbfc24aa8
+        [2162000 ns] Test is running, debug_wb_pc = 0xbfc3c2b4
+        [2182000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [2202000 ns] Test is running, debug_wb_pc = 0xbfc3d800
+        [2222000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [2242000 ns] Test is running, debug_wb_pc = 0xbfc90c64
+        [2262000 ns] Test is running, debug_wb_pc = 0xbfc91824
+        [2282000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [2302000 ns] Test is running, debug_wb_pc = 0xbfc54500
+        [2322000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [2342000 ns] Test is running, debug_wb_pc = 0xbfc55a88
+        [2362000 ns] Test is running, debug_wb_pc = 0xbfccfe10
+        [2382000 ns] Test is running, debug_wb_pc = 0xbfcd15e8
+        [2402000 ns] Test is running, debug_wb_pc = 0xbfcd2dec
+        [2422000 ns] Test is running, debug_wb_pc = 0xbfcd414c
+        [2442000 ns] Test is running, debug_wb_pc = 0xbfcd540c
+        [2462000 ns] Test is running, debug_wb_pc = 0xbfcd66cc
+        [2482000 ns] Test is running, debug_wb_pc = 0xbfcd798c
+        [2502000 ns] Test is running, debug_wb_pc = 0xbfcd91ec
+        [2522000 ns] Test is running, debug_wb_pc = 0xbfcdab24
+        [2542000 ns] Test is running, debug_wb_pc = 0xbfc75fa0
+        [2562000 ns] Test is running, debug_wb_pc = 0xbfc7751c
+        [2582000 ns] Test is running, debug_wb_pc = 0xbfc78a98
+        [2602000 ns] Test is running, debug_wb_pc = 0xbfc7a014
+        [2622000 ns] Test is running, debug_wb_pc = 0xbfc7b5a8
+        [2642000 ns] Test is running, debug_wb_pc = 0xbfc7d168
+        [2662000 ns] Test is running, debug_wb_pc = 0xbfc7ed04
+        [2682000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [2702000 ns] Test is running, debug_wb_pc = 0xbfc81ec8
+        [2722000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [2742000 ns] Test is running, debug_wb_pc = 0xbfc84b08
+        [2762000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [2782000 ns] Test is running, debug_wb_pc = 0xbfc0ec44
+        [2802000 ns] Test is running, debug_wb_pc = 0xbfc0fdb8
+        [2822000 ns] Test is running, debug_wb_pc = 0xbfc11060
+        [2842000 ns] Test is running, debug_wb_pc = 0xbfc12268
+        [2862000 ns] Test is running, debug_wb_pc = 0xbfc134bc
+        [2882000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [2902000 ns] Test is running, debug_wb_pc = 0xbfc183dc
+        [2922000 ns] Test is running, debug_wb_pc = 0xbfc19cd4
+        [2942000 ns] Test is running, debug_wb_pc = 0xbfc1b49c
+        [2962000 ns] Test is running, debug_wb_pc = 0xbfc1cccc
+        [2982000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3002000 ns] Test is running, debug_wb_pc = 0xbfc1fdac
+        [3022000 ns] Test is running, debug_wb_pc = 0xbfc33fac
+        [3042000 ns] Test is running, debug_wb_pc = 0xbfc35550
+        [3062000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3082000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3102000 ns] Test is running, debug_wb_pc = 0xbfc395c4
+        [3122000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3142000 ns] Test is running, debug_wb_pc = 0xbfc85db8
+        [3162000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3182000 ns] Test is running, debug_wb_pc = 0xbfc88f0c
+        [3202000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3222000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3242000 ns] Test is running, debug_wb_pc = 0xbfc8dc7c
+        [3262000 ns] Test is running, debug_wb_pc = 0xbfc8f5c0
+        [3282000 ns] Test is running, debug_wb_pc = 0xbfcbe9c0
+        [3302000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3322000 ns] Test is running, debug_wb_pc = 0xbfcc154c
+        [3342000 ns] Test is running, debug_wb_pc = 0xbfcc2ae8
+        [3362000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3382000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3402000 ns] Test is running, debug_wb_pc = 0xbfcc6cb4
+        [3422000 ns] Test is running, debug_wb_pc = 0xbfcc8220
+        [3442000 ns] Test is running, debug_wb_pc = 0xbfcc981c
+        [3462000 ns] Test is running, debug_wb_pc = 0xbfccade8
+        [3482000 ns] Test is running, debug_wb_pc = 0xbfccc3dc
+        [3502000 ns] Test is running, debug_wb_pc = 0xbfccd998
+        [3522000 ns] Test is running, debug_wb_pc = 0xbfc3ea38
+        [3542000 ns] Test is running, debug_wb_pc = 0xbfc3ffbc
+        [3562000 ns] Test is running, debug_wb_pc = 0xbfc414f0
+        [3582000 ns] Test is running, debug_wb_pc = 0xbfc42a6c
+        [3602000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3622000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3642000 ns] Test is running, debug_wb_pc = 0xbfc46a28
+        [3662000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3682000 ns] Test is running, debug_wb_pc = 0xbfc49438
+        [3702000 ns] Test is running, debug_wb_pc = 0xbfc4a9b4
+        [3722000 ns] Test is running, debug_wb_pc = 0xbfc4bee0
+        [3742000 ns] Test is running, debug_wb_pc = 0xbfc4d3d8
+        [3762000 ns] Test is running, debug_wb_pc = 0xbfca62f4
+        [3782000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3802000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3822000 ns] Test is running, debug_wb_pc = 0xbfca9a8c
+        [3842000 ns] Test is running, debug_wb_pc = 0xbfcaad08
+        [3862000 ns] Test is running, debug_wb_pc = 0xbfcabf68
+        [3882000 ns] Test is running, debug_wb_pc = 0xbfcad1d0
+        [3902000 ns] Test is running, debug_wb_pc = 0xbfcb6304
+        [3922000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [3942000 ns] Test is running, debug_wb_pc = 0xbfcb8198
+        [3962000 ns] Test is running, debug_wb_pc = 0xbfcb90b4
+        [3982000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4002000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4022000 ns] Test is running, debug_wb_pc = 0xbfcbbe90
+        [4042000 ns] Test is running, debug_wb_pc = 0xbfcbcddc
+        [4062000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4082000 ns] Test is running, debug_wb_pc = 0xbfc97824
+        [4102000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4122000 ns] Test is running, debug_wb_pc = 0xbfc99fac
+        [4142000 ns] Test is running, debug_wb_pc = 0xbfc9b370
+        [4162000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4182000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4202000 ns] Test is running, debug_wb_pc = 0xbfc9ee00
+        [4222000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4242000 ns] Test is running, debug_wb_pc = 0xbfc67b0c
+        [4262000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4282000 ns] Test is running, debug_wb_pc = 0xbfc69cbc
+        [4302000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4322000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4342000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4362000 ns] Test is running, debug_wb_pc = 0xbfc6e09c
+        [4382000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4402000 ns] Test is running, debug_wb_pc = 0xbfc7024c
+        [4422000 ns] Test is running, debug_wb_pc = 0xbfc15e38
+        [4442000 ns] Test is running, debug_wb_pc = 0xbfc168a4
+        [4462000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4482000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4502000 ns] Test is running, debug_wb_pc = 0xbfc5c0fc
+        [4522000 ns] Test is running, debug_wb_pc = 0xbfcb264c
+        [4542000 ns] Test is running, debug_wb_pc = 0xbfcb30b8
+        [4562000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4582000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4602000 ns] Test is running, debug_wb_pc = 0xbfca6064
+        [4622000 ns] Test is running, debug_wb_pc = 0xbfc92c8c
+        [4642000 ns] Test is running, debug_wb_pc = 0xbfc937fc
+        [4662000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4682000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4702000 ns] Test is running, debug_wb_pc = 0xbfc74f00
+        [4722000 ns] Test is running, debug_wb_pc = 0xbfc75a28
+        [4742000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4762000 ns] Test is running, debug_wb_pc = 0xbfc5a988
+        [4782000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [4802000 ns] Test is running, debug_wb_pc = 0xbfc94724
+        [4822000 ns] Test is running, debug_wb_pc = 0xbfc951b0
+        [4842000 ns] Test is running, debug_wb_pc = 0xbfc95c6c
+        [4862000 ns] Test is running, debug_wb_pc = 0xbfc58030
+        [4882000 ns] Test is running, debug_wb_pc = 0xbfc58abc
+        [4902000 ns] Test is running, debug_wb_pc = 0xbfc5956c
+        [4922000 ns] Test is running, debug_wb_pc = 0xbfc33108
+        [4942000 ns] Test is running, debug_wb_pc = 0xbfcce840
+==============================================================
+Test end!
+----PASS!!!
+$finish called at time : 4947485 ns : File "D:/Xilinx/CA_LAB/lab03/mycpu_verify/testbench/mycpu_tb.v" Line 219
+run: Time (s): cpu = 00:02:34 ; elapsed = 00:02:38 . Memory (MB): peak = 1402.523 ; gain = 166.781
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:12 . Memory (MB): peak = 1410.652 ; gain = 0.000
+launch_simulation
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'D:/Xilinx/Vivado/2017.1/data/xsim/ip/xsim_ip.ini' copied to run dir:'D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_top' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav/data_ram.mif'
+INFO: [SIM-utils-43] Exported 'D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav/data_ram.coe'
+INFO: [SIM-utils-43] Exported 'D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav/inst_ram.mif'
+INFO: [SIM-utils-43] Exported 'D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav/inst_ram.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav'
+"xvlog -m64 --relax -prj tb_top_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/xilinx_ip/data_ram/sim/data_ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/xilinx_ip/inst_ram/sim/inst_ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module inst_ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/xilinx_ip/clk_pll/clk_pll_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_pll_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/xilinx_ip/clk_pll/clk_pll.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_pll
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-2458] undeclared symbol alu_sub_true, assumed default net type wire [D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/ALU.v:27]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/EXE_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module EXE_stage
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/ID_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ID_stage
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/IF_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IF_stage
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/MEM_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MEM_stage
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/WB_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WB_stage
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/BRIDGE/bridge_1x2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bridge_1x2
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/CONFREG/confreg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module confreg
+INFO: [VRFC 10-2458] undeclared symbol conf_we, assumed default net type wire [D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/CONFREG/confreg.v:118]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_signed.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module divider_signed
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_unsigned.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module divider_unsigned
+WARNING: [VRFC 10-969] keyword 'unsigned' is not allowed here in this mode of verilog [D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_unsigned.v:4]
+WARNING: [VRFC 10-969] keyword 'unsigned' is not allowed here in this mode of verilog [D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_unsigned.v:5]
+WARNING: [VRFC 10-969] keyword 'unsigned' is not allowed here in this mode of verilog [D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_unsigned.v:9]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_signed.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module multiplier_signed
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_unsigned.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module multiplier_unsigned
+WARNING: [VRFC 10-969] keyword 'unsigned' is not allowed here in this mode of verilog [D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_unsigned.v:4]
+WARNING: [VRFC 10-969] keyword 'unsigned' is not allowed here in this mode of verilog [D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_unsigned.v:5]
+WARNING: [VRFC 10-969] keyword 'unsigned' is not allowed here in this mode of verilog [D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_unsigned.v:9]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/mycpu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mycpu_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/next_pc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module nextpc
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/regfile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/soc_lite_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module soc_lite_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/stall.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module stall
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/testbench/mycpu_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav'
+Vivado Simulator 2017.1
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2017.1/bin/unwrapped/win64.o/xelab.exe -wto 8de8692e6f7648c084645fde77f29b66 --debug typical --relax --mt 2 -L blk_mem_gen_v8_3_6 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_top_behav xil_defaultlib.tb_top xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-1783] select index 62 into current_contents is out of bounds [/wrk/2017.1/nightly/2017_04_14_1846317/packages/customer/vivado/data/ip/xilinx/blk_mem_gen_v8_3/simulation/blk_mem_gen_v8_3.v:2420]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/soc_lite_top.v" Line 57. Module soc_lite_top(SIMULATION=1'b1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/mycpu.v" Line 3. Module mycpu_top doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/next_pc.v" Line 1. Module nextpc doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/IF_stage.v" Line 1. Module IF_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/ID_stage.v" Line 2. Module ID_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/EXE_stage.v" Line 2. Module EXE_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/ALU.v" Line 1. Module alu doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_signed.v" Line 1. Module divider_signed doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_unsigned.v" Line 1. Module divider_unsigned doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_signed.v" Line 1. Module multiplier_signed doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_unsigned.v" Line 1. Module multiplier_unsigned doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/MEM_stage.v" Line 2. Module MEM_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/WB_stage.v" Line 2. Module WB_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/regfile.v" Line 1. Module regfile doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/stall.v" Line 2. Module stall doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/BRIDGE/bridge_1x2.v" Line 50. Module bridge_1x2 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/CONFREG/confreg.v" Line 58. Module confreg(SIMULATION=1'b1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/soc_lite_top.v" Line 57. Module soc_lite_top(SIMULATION=1'b1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/mycpu.v" Line 3. Module mycpu_top doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/next_pc.v" Line 1. Module nextpc doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/IF_stage.v" Line 1. Module IF_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/ID_stage.v" Line 2. Module ID_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/EXE_stage.v" Line 2. Module EXE_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/ALU.v" Line 1. Module alu doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_signed.v" Line 1. Module divider_signed doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_unsigned.v" Line 1. Module divider_unsigned doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_signed.v" Line 1. Module multiplier_signed doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_unsigned.v" Line 1. Module multiplier_unsigned doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/MEM_stage.v" Line 2. Module MEM_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/WB_stage.v" Line 2. Module WB_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/regfile.v" Line 1. Module regfile doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/stall.v" Line 2. Module stall doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/BRIDGE/bridge_1x2.v" Line 50. Module bridge_1x2 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/CONFREG/confreg.v" Line 58. Module confreg(SIMULATION=1'b1) doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.PLLE2_ADV(CLKFBOUT_MULT=17,CLKIN...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.clk_pll_clk_wiz
+Compiling module xil_defaultlib.clk_pll
+Compiling module xil_defaultlib.nextpc
+Compiling module xil_defaultlib.IF_stage
+Compiling module xil_defaultlib.ID_stage
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.divider_signed
+Compiling module xil_defaultlib.divider_unsigned
+Compiling module xil_defaultlib.multiplier_signed
+Compiling module xil_defaultlib.multiplier_unsigned
+Compiling module xil_defaultlib.EXE_stage
+Compiling module xil_defaultlib.MEM_stage
+Compiling module xil_defaultlib.WB_stage
+Compiling module xil_defaultlib.regfile
+Compiling module xil_defaultlib.stall
+Compiling module xil_defaultlib.mycpu_top
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_output_stage(...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_output_stage(...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_softecc_outpu...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_mem_module(C_...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6(C_FAMILY="art...
+Compiling module xil_defaultlib.inst_ram
+Compiling module xil_defaultlib.bridge_1x2
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_output_stage(...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_output_stage(...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_softecc_outpu...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6_mem_module(C_...
+Compiling module blk_mem_gen_v8_3_6.blk_mem_gen_v8_3_6(C_FAMILY="art...
+Compiling module xil_defaultlib.data_ram
+Compiling module xil_defaultlib.confreg(SIMULATION=1'b1)
+Compiling module xil_defaultlib.soc_lite_top(SIMULATION=1'b1)
+Compiling module xil_defaultlib.tb_top
+WARNING: [XSIM 43-3373] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/testbench/mycpu_tb.v" Line 119. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_top_behav
+
+****** Webtalk v2017.1 (64-bit)
+  **** SW Build 1846317 on Fri Apr 14 18:55:03 MDT 2017
+  **** IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav/xsim.dir/tb_top_behav/webtalk/xsim_webtalk.tcl -notrace
+webtalk_transmit: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 61.348 ; gain = 1.148
+INFO: [Common 17-206] Exiting Webtalk at Mon Oct  9 22:34:38 2017...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:21 . Memory (MB): peak = 1410.652 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '21' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_top_behav -key {Behavioral:sim_1:Functional:tb_top} -tclbatch {tb_top.tcl} -view {D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/tb_top_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.1
+Time resolution is 1 ps
+open_wave_config D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/tb_top_behav.wcfg
+source tb_top.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# log_wave -r /
+WARNING: [Simtcl 6-142] log_wave skipped an HDL object or scope because of this problem: WARNING: Simulation object /tb_top/soc_lite/inst_ram/inst/\native_mem_module.blk_mem_gen_v8_3_6_inst /memory was not traceable in the design for the following reason:
+The number of elements in the requested object is 8388608, which exceeds the maximum traceable size of 65536 elements.
+The maximum can be changed with "set_property trace_limit <number of elements> [current_sim]" Tcl command.
+
+WARNING: [Simtcl 6-142] log_wave skipped an HDL object or scope because of this problem: WARNING: Simulation object /tb_top/soc_lite/inst_ram/inst/\native_mem_module.blk_mem_gen_v8_3_6_inst /temp_mem_array was not traceable in the design for the following reason:
+The number of elements in the requested object is 8388608, which exceeds the maximum traceable size of 65536 elements.
+The maximum can be changed with "set_property trace_limit <number of elements> [current_sim]" Tcl command.
+
+WARNING: [Simtcl 6-142] log_wave skipped an HDL object or scope because of this problem: WARNING: Simulation object /tb_top/soc_lite/inst_ram/inst/\native_mem_module.blk_mem_gen_v8_3_6_inst /sbiterr_arr was not traceable in the design for the following reason:
+The number of elements in the requested object is 262144, which exceeds the maximum traceable size of 65536 elements.
+The maximum can be changed with "set_property trace_limit <number of elements> [current_sim]" Tcl command.
+
+WARNING: [Simtcl 6-142] log_wave skipped an HDL object or scope because of this problem: WARNING: Simulation object /tb_top/soc_lite/inst_ram/inst/\native_mem_module.blk_mem_gen_v8_3_6_inst /dbiterr_arr was not traceable in the design for the following reason:
+The number of elements in the requested object is 262144, which exceeds the maximum traceable size of 65536 elements.
+The maximum can be changed with "set_property trace_limit <number of elements> [current_sim]" Tcl command.
+
+WARNING: [Simtcl 6-142] log_wave skipped an HDL object or scope because of this problem: WARNING: Simulation object /tb_top/soc_lite/inst_ram/inst/\native_mem_module.blk_mem_gen_v8_3_6_inst /softecc_sbiterr_arr was not traceable in the design for the following reason:
+The number of elements in the requested object is 262144, which exceeds the maximum traceable size of 65536 elements.
+The maximum can be changed with "set_property trace_limit <number of elements> [current_sim]" Tcl command.
+
+WARNING: [Simtcl 6-142] log_wave skipped an HDL object or scope because of this problem: WARNING: Simulation object /tb_top/soc_lite/inst_ram/inst/\native_mem_module.blk_mem_gen_v8_3_6_inst /softecc_dbiterr_arr was not traceable in the design for the following reason:
+The number of elements in the requested object is 262144, which exceeds the maximum traceable size of 65536 elements.
+The maximum can be changed with "set_property trace_limit <number of elements> [current_sim]" Tcl command.
+
+WARNING: [Simtcl 6-142] log_wave skipped an HDL object or scope because of this problem: WARNING: Simulation object /tb_top/soc_lite/data_ram/inst/\native_mem_module.blk_mem_gen_v8_3_6_inst /memory was not traceable in the design for the following reason:
+The number of elements in the requested object is 2097152, which exceeds the maximum traceable size of 65536 elements.
+The maximum can be changed with "set_property trace_limit <number of elements> [current_sim]" Tcl command.
+
+WARNING: [Simtcl 6-142] log_wave skipped an HDL object or scope because of this problem: WARNING: Simulation object /tb_top/soc_lite/data_ram/inst/\native_mem_module.blk_mem_gen_v8_3_6_inst /temp_mem_array was not traceable in the design for the following reason:
+The number of elements in the requested object is 2097152, which exceeds the maximum traceable size of 65536 elements.
+The maximum can be changed with "set_property trace_limit <number of elements> [current_sim]" Tcl command.
+
+# run 0
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb_top.soc_lite.inst_ram.inst.native_mem_module.blk_mem_gen_v8_3_6_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb_top.soc_lite.data_ram.inst.native_mem_module.blk_mem_gen_v8_3_6_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+xsim: Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1410.652 ; gain = 0.000
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_top_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0
+launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:33 . Memory (MB): peak = 1410.652 ; gain = 0.000
+run all
+==============================================================
+Test begin!
+        [  22000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [  42000 ns] Test is running, debug_wb_pc = 0xbfc2b1e4
+        [  62000 ns] Test is running, debug_wb_pc = 0xbfc2bc44
+        [  82000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 102000 ns] Test is running, debug_wb_pc = 0xbfcb4a98
+        [ 122000 ns] Test is running, debug_wb_pc = 0xbfcb55f4
+        [ 142000 ns] Test is running, debug_wb_pc = 0xbfc51560
+        [ 162000 ns] Test is running, debug_wb_pc = 0xbfc51f6c
+        [ 182000 ns] Test is running, debug_wb_pc = 0xbfc52978
+        [ 202000 ns] Test is running, debug_wb_pc = 0xbfc533c8
+        [ 222000 ns] Test is running, debug_wb_pc = 0xbfc30948
+        [ 242000 ns] Test is running, debug_wb_pc = 0xbfc314a4
+        [ 262000 ns] Test is running, debug_wb_pc = 0xbfc32000
+        [ 282000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 302000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 322000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 342000 ns] Test is running, debug_wb_pc = 0xbfc5fa1c
+        [ 362000 ns] Test is running, debug_wb_pc = 0xbfc60428
+        [ 382000 ns] Test is running, debug_wb_pc = 0xbfc60e34
+        [ 402000 ns] Test is running, debug_wb_pc = 0xbfc6185c
+        [ 422000 ns] Test is running, debug_wb_pc = 0xbfc72b24
+        [ 442000 ns] Test is running, debug_wb_pc = 0xbfc73590
+        [ 462000 ns] Test is running, debug_wb_pc = 0xbfc73ff8
+        [ 482000 ns] Test is running, debug_wb_pc = 0xbfc74ac0
+        [ 502000 ns] Test is running, debug_wb_pc = 0xbfc564a4
+        [ 522000 ns] Test is running, debug_wb_pc = 0xbfc570cc
+        [ 542000 ns] Test is running, debug_wb_pc = 0xbfc04d70
+        [ 562000 ns] Test is running, debug_wb_pc = 0xbfc057dc
+        [ 582000 ns] Test is running, debug_wb_pc = 0xbfc00000
+        [ 602000 ns] Test is running, debug_wb_pc = 0xbfc00000
+run: Time (s): cpu = 00:00:23 ; elapsed = 00:00:20 . Memory (MB): peak = 1495.375 ; gain = 84.723
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:12 . Memory (MB): peak = 1506.508 ; gain = 0.000
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Oct  9 22:35:43 2017...

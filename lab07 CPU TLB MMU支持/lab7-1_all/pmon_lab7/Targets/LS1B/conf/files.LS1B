@@ -1,0 +1,67 @@
+# $Id: files.LS1B
+#
+# Bonito Target specific files
+#
+#file	Targets/LS1B/ls1b/dc.c mod_framebuffer
+file	Targets/LS1B/ls1b/tgt_machdep.c
+file	Targets/LS1B/dev/i2c.c i2c
+file	Targets/LS1B/dev/spi.c spi needs-flag
+#file	Targets/LS1B/dev/ac97.c ac97
+file	Targets/LS1B/ls1b/tgt_cmd.c tgtcmd
+file	Targets/LS1B/ls1b/memscan.c memscan
+file	Targets/LS1B/dev/hpet.c hpet needs-flag
+#sw
+#file	sys/dev/gmac/synopGMAC_Host.c               gmac
+#file	sys/dev/gmac/synopGMAC_Dev.c                gmac
+#file	sys/dev/gmac/synopGMAC_network_interface.c  gmac
+#file	sys/dev/gmac/synopGMAC_plat.c               gmac
+#file	sys/dev/gmac/if_gmac.c gmac
+
+#file 	Targets/LS1B/dev/net_lakers.c		    lakers
+
+file	Targets/LS1B/dev/can.c can
+file    Targets/LS1B/dev/spi_w.c spi
+file    sys/dev/nand/ls1g-nand.c  nand needs-flag
+
+file	Targets/LS1B/dev/switch.c switch needs-flag
+file	Targets/LS1B/dev/irq.c
+
+#file 	sys/dev/phy/bcm5461config.c
+
+define  localbus { [base = -1 ] }
+device  localbus
+attach  localbus at mainbus
+file    Targets/LS1B/dev/localbus.c		localbus
+
+# Net
+device	dmfe: ether, ifnet, ifmedia, mii
+attach	dmfe at localbus
+file	Targets/LS1B/dev/if_dc2114x.c dmfe
+
+#device	syn: ether, ifnet
+#attach	syn at localbus
+
+#device  lakers: ether, ifnet
+#attach  lakers at localbus
+
+#device	sdcard
+#attach	sdcard at localbus
+#file	Targets/LS1B/dev/sdcardfs_spi.c sdcard needs-flag
+
+# Ethernet driver for Discovery ethernet
+
+#device lohci: usbbus 
+#attach lohci at localbus
+
+#device lehci: usbbus 
+#attach lehci at localbus
+
+#
+# Media Indepedent Interface (mii)
+#
+include "sys/dev/mii/files.mii"
+
+#
+# Custom application files
+#
+include "pmon/custom/files.custom"

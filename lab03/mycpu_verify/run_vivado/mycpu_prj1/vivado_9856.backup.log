@@ -1,0 +1,148 @@
+#-----------------------------------------------------------
+# Vivado v2017.1 (64-bit)
+# SW Build 1846317 on Fri Apr 14 18:55:03 MDT 2017
+# IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+# Start of session at: Mon Oct  9 22:03:37 2017
+# Process ID: 9856
+# Current directory: D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent14276 D:\Xilinx\CA_LAB\lab03\mycpu_verify\run_vivado\mycpu_prj1\mycpu.xpr
+# Log file: D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/vivado.log
+# Journal file: D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2017.1/data/ip'.
+open_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:06 . Memory (MB): peak = 817.820 ; gain = 91.863
+update_compile_order -fileset sources_1
+launch_simulation
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav/elaborate.log
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav/simulate.log
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav/tb_top_behav.wdb
+WARNING: [Vivado 12-3661] Failed to remove file:D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav/xelab.pb
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'D:/Xilinx/Vivado/2017.1/data/xsim/ip/xsim_ip.ini' copied to run dir:'D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_top' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav/data_ram.mif'
+INFO: [SIM-utils-43] Exported 'D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav/data_ram.coe'
+INFO: [SIM-utils-43] Exported 'D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav/inst_ram.mif'
+INFO: [SIM-utils-43] Exported 'D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav/inst_ram.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav'
+"xvlog -m64 --relax -prj tb_top_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/xilinx_ip/data_ram/sim/data_ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/xilinx_ip/inst_ram/sim/inst_ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module inst_ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/xilinx_ip/clk_pll/clk_pll_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_pll_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/xilinx_ip/clk_pll/clk_pll.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_pll
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-2458] undeclared symbol alu_sub_true, assumed default net type wire [D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/ALU.v:27]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/EXE_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module EXE_stage
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/ID_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ID_stage
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/IF_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IF_stage
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/MEM_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MEM_stage
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/WB_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module WB_stage
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/BRIDGE/bridge_1x2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bridge_1x2
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/CONFREG/confreg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module confreg
+INFO: [VRFC 10-2458] undeclared symbol conf_we, assumed default net type wire [D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/CONFREG/confreg.v:118]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_signed.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module divider_signed
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_unsigned.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module divider_unsigned
+WARNING: [VRFC 10-969] keyword 'unsigned' is not allowed here in this mode of verilog [D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_unsigned.v:4]
+WARNING: [VRFC 10-969] keyword 'unsigned' is not allowed here in this mode of verilog [D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_unsigned.v:5]
+WARNING: [VRFC 10-969] keyword 'unsigned' is not allowed here in this mode of verilog [D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_unsigned.v:9]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_signed.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module multiplier_signed
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_unsigned.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module multiplier_unsigned
+WARNING: [VRFC 10-969] keyword 'unsigned' is not allowed here in this mode of verilog [D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_unsigned.v:4]
+WARNING: [VRFC 10-969] keyword 'unsigned' is not allowed here in this mode of verilog [D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_unsigned.v:5]
+WARNING: [VRFC 10-969] keyword 'unsigned' is not allowed here in this mode of verilog [D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_unsigned.v:9]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/mycpu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mycpu_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/next_pc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module nextpc
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/regfile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/soc_lite_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module soc_lite_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/stall.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module stall
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/testbench/mycpu_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav'
+Vivado Simulator 2017.1
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2017.1/bin/unwrapped/win64.o/xelab.exe -wto 8de8692e6f7648c084645fde77f29b66 --debug typical --relax --mt 2 -L blk_mem_gen_v8_3_6 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_top_behav xil_defaultlib.tb_top xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-1783] select index 62 into current_contents is out of bounds [/wrk/2017.1/nightly/2017_04_14_1846317/packages/customer/vivado/data/ip/xilinx/blk_mem_gen_v8_3/simulation/blk_mem_gen_v8_3.v:2420]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/soc_lite_top.v" Line 57. Module soc_lite_top(SIMULATION=1'b1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/mycpu.v" Line 3. Module mycpu_top doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/next_pc.v" Line 1. Module nextpc doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/IF_stage.v" Line 1. Module IF_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/ID_stage.v" Line 2. Module ID_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/EXE_stage.v" Line 2. Module EXE_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/ALU.v" Line 1. Module alu doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_signed.v" Line 1. Module divider_signed doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_unsigned.v" Line 1. Module divider_unsigned doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_signed.v" Line 1. Module multiplier_signed doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_unsigned.v" Line 1. Module multiplier_unsigned doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/MEM_stage.v" Line 2. Module MEM_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/WB_stage.v" Line 2. Module WB_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/regfile.v" Line 1. Module regfile doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/stall.v" Line 2. Module stall doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/BRIDGE/bridge_1x2.v" Line 50. Module bridge_1x2 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/CONFREG/confreg.v" Line 58. Module confreg(SIMULATION=1'b1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/soc_lite_top.v" Line 57. Module soc_lite_top(SIMULATION=1'b1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/mycpu.v" Line 3. Module mycpu_top doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/next_pc.v" Line 1. Module nextpc doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/IF_stage.v" Line 1. Module IF_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/ID_stage.v" Line 2. Module ID_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/EXE_stage.v" Line 2. Module EXE_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/ALU.v" Line 1. Module alu doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_signed.v" Line 1. Module divider_signed doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/divider_unsigned.v" Line 1. Module divider_unsigned doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_signed.v" Line 1. Module multiplier_signed doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/multiplier_unsigned.v" Line 1. Module multiplier_unsigned doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/MEM_stage.v" Line 2. Module MEM_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/WB_stage.v" Line 2. Module WB_stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/regfile.v" Line 1. Module regfile doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/myCPU/stall.v" Line 2. Module stall doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/BRIDGE/bridge_1x2.v" Line 50. Module bridge_1x2 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/Xilinx/CA_LAB/lab03/mycpu_verify/rtl/CONFREG/confreg.v" Line 58. Module confreg(SIMULATION=1'b1) doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+ERROR: [XSIM 43-3356]  Could not open file xsim.dir/tb_top_behav/xsim.type for writing.
+ERROR: [XSIM 43-3915] Encountered a fatal error. Cannot continue. Exiting... 
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 817.820 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-99] Step results log file:'D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.sim/sim_1/behav/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:11 . Memory (MB): peak = 817.820 ; gain = 0.000
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.

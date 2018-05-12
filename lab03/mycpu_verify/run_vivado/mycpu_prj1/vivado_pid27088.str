@@ -1,0 +1,102 @@
+/*
+
+Vivado v2017.1 (64-bit)
+SW Build 1846317 on Fri Apr 14 18:55:03 MDT 2017
+IP Build 1846188 on Fri Apr 14 20:52:08 MDT 2017
+
+Process ID: 27088
+License: Customer
+
+Current time: 	10/4/17 3:07:38 PM CST
+Time zone: 	China Standard Time (Asia/Shanghai)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 4
+
+Screen size: 1536x864
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 10 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	D:/Xilinx/Vivado/2017.1/tps/win64/jre
+JVM executable location: 	D:/Xilinx/Vivado/2017.1/tps/win64/jre/bin/java.exe
+Java library paths: D:/Xilinx/Vivado/2017.1/bin/unwrapped/win64.o;C:/Windows/Sun/Java/bin;C:/Windows/system32;C:/Windows;D:/Xilinx/Vivado/2017.1/bin;D:/Xilinx/Vivado/2017.1/lib/win64.o;D:/Xilinx/Vivado/2017.1/tps/win64/jre/bin/server;D:/Xilinx/Vivado/2017.1/tps/win64/jre/bin;D:/Xilinx/Vivado/2017.1/ids_lite/ISE/bin/nt64;D:/Xilinx/Vivado/2017.1/ids_lite/ISE/lib/nt64;D:/Xilinx/Vivado_HLS/2017.1/bin;C:/Program Files (x86)/Common Files/NetSarang;E:/Program Files/Python36/Scripts/;E:/Program Files/Python36/;C:/Python27/Lib/site-packages/PyQt4;C:/Windows/system32;C:/Windows;C:/Windows/System32/Wbem;C:/Windows/System32/WindowsPowerShell/v1.0/;C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common;D:/Program Files (x86)/CTEX/UserData/miktex/bin;D:/Program Files (x86)/CTEX/MiKTeX/miktex/bin;D:/Program Files (x86)/CTEX/CTeX/ctex/bin;D:/Program Files (x86)/CTEX/CTeX/cct/bin;D:/Program Files (x86)/CTEX/CTeX/ty/bin;D:/Program Files (x86)/CTEX/Ghostscript/gs9.05/bin;D:/Program Files (x86)/CTEX/GSview/gsview;D:/Program Files (x86)/CTEX/WinEdt;C:/Program Files/Microsoft SQL Server/130/Tools/Binn/;E:/Program Files/MATLAB/R2016a/runtime/win64;E:/Program Files/MATLAB/R2016a/bin;E:/Program Files/MATLAB/R2016a/polyspace/bin;C:/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/;C:/Python27;C:/Python27/DLLs;C:/Python27/Scripts;C:/Python27/Lib/site-packages/vtk;C:/Python27/gnuplot/binary;C:/Python27/Lib/site-packages/osgeo;E:/Program Files (x86)/pythonxy/SciTE-3.5.1-4;E:/Program Files (x86)/pythonxy/console;C:/Program Files (x86)/pythonxy/swig;E:/Program Files (x86)/pythonxy/gettext/bin;D:/MinGW/bin;D:/Program Files/LLVM/bin;D:/Program Files/mysql-5.6.36-winx64/bin;C:/Program Files/MySQL/MySQL Utilities 1.6/;C:/Users/YZ/AppData/Local/Microsoft/WindowsApps;E:/Program Files (x86)/modeltech64_10.4/win64;E:/modeltech64_10.4/win64;D:/Program Files (x86)/Microsoft VS Code/bin;D:/Program Files/java/bin;C:/Users/YZ/AppData/Local/GitHubDesktop/bin;D:/Xilinx/Vivado/2017.1/tps/mingw/6.2.0/win64.o/nt/bin;D:/Xilinx/Vivado/2017.1/tps/mingw/6.2.0/win64.o/nt/libexec/gcc/x86_64-w64-mingw32/6.2.0;.
+
+User name: 	YZ
+User home directory: C:/Users/YZ
+User working directory: D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1
+User country: 	CN
+User language: 	zh
+User locale: 	zh_CN
+
+RDI_BASEROOT: D:/Xilinx/Vivado
+HDI_APPROOT: D:/Xilinx/Vivado/2017.1
+RDI_DATADIR: D:/Xilinx/Vivado/2017.1/data
+RDI_BINDIR: D:/Xilinx/Vivado/2017.1/bin
+
+User preferences location: C:/Users/YZ/AppData/Roaming/Xilinx/Vivado
+Vivado preferences directory: C:/Users/YZ/AppData/Roaming/Xilinx/Vivado/2017.1/vivado.xml
+Vivado layouts directory: C:/Users/YZ/AppData/Roaming/Xilinx/Vivado/2017.1/layouts
+PlanAhead jar location: 	D:/Xilinx/Vivado/2017.1/lib/classes/planAhead.jar
+Vivado Look & Feel: 	[Synthetica - the extended Synth Look and Feel. - ui.g.i.H]
+Engine tmp dir: 	D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/.Xil/Vivado-27088-YZ
+
+GUI allocated memory:	182 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 548 MB
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// bs:g (cg:JFrame):  Open Project : addNotify
+// Opening Vivado Project: D:\Xilinx\CA_LAB\lab03\mycpu_verify\run_vivado\mycpu_prj1\mycpu.xpr. Version: Vivado v2017.1 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// [GUI Memory]: 47 MB (+47191kb) [00:00:10]
+// [Engine Memory]: 486 MB (+358111kb) [00:00:10]
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_CURRENT
+// Tcl Message: open_project D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.xpr 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 52 MB (+2793kb) [00:00:12]
+// [Engine Memory]: 519 MB (+8909kb) [00:00:13]
+// [GUI Memory]: 56 MB (+634kb) [00:00:14]
+// Tcl Message: open_project D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1/mycpu.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2017.1/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 556 MB. GUI used memory: 61 MB. Current time: 10/4/17 3:07:38 PM CST
+// [Engine Memory]: 562 MB (+18104kb) [00:00:15]
+// Project name: mycpu; location: D:/Xilinx/CA_LAB/lab03/mycpu_verify/run_vivado/mycpu_prj1; part: xc7a200tfbg676-2
+// [GUI Memory]: 61 MB (+2798kb) [00:00:16]
+// Tcl Message: open_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:06 . Memory (MB): peak = 766.766 ; gain = 21.352 
+// TclEventType: DG_ANALYSIS_MSG_RESET
+dismissDialog("Open Project"); // bs:g (cg:JFrame)
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// [GUI Memory]: 65 MB (+492kb) [00:00:24]
+// PAPropertyPanels.initPanels (divider_signed.xci) elapsed time: 0.5s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, divider_signed (divider_signed.xci)]", 3, false); // B:i (D:JPanel, cg:JFrame)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, divider_signed (divider_signed.xci)]", 3); // B:i (D:JPanel, cg:JFrame)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// Elapsed time: 24 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, soc_lite_top (soc_lite_top.v)]", 2); // B:i (D:JPanel, cg:JFrame)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, soc_lite_top (soc_lite_top.v), cpu : mycpu_top (mycpu.v)]", 4); // B:i (D:JPanel, cg:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, soc_lite_top (soc_lite_top.v), cpu : mycpu_top (mycpu.v), EXE_stage : EXE_stage (EXE_stage.v)]", 8, true); // B:i (D:JPanel, cg:JFrame) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, soc_lite_top (soc_lite_top.v), cpu : mycpu_top (mycpu.v), EXE_stage : EXE_stage (EXE_stage.v)]", 8, true, false, false, false, false, true); // B:i (D:JPanel, cg:JFrame) - Double Click - Node
+// [GUI Memory]: 68 MB (+273kb) [00:01:01]
+selectCodeEditor("EXE_stage.v", 8, 192); // bI:J (JPanel:JComponent, cg:JFrame)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Coefficient Files]", 19); // B:i (D:JPanel, cg:JFrame)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Coefficient Files]", 19); // B:i (D:JPanel, cg:JFrame)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 20); // B:i (D:JPanel, cg:JFrame)
+// [GUI Memory]: 72 MB (+59kb) [00:01:10]
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 20); // B:i (D:JPanel, cg:JFrame)

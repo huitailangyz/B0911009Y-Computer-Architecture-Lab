@@ -1,0 +1,59 @@
+#include <pmon.h>
+#include <stdlib.h>
+#include <stdio.h>
+
+#define CAMERA_BASE 0xbc280000
+#define DMA0_CONFIG 0x0
+#define DMA1_CONFIG 0x8
+#define DMA2_CONFIG 0x10
+#define DMA3_CONFIG 0x18
+#define PIX_CONFIG  0x20
+#define UOFF_CONFIG 0x28
+#define VOFF_CONFIG 0x30
+#define CAMIF_CONFIG    0x38
+#define CAM_MEM_BASE    0x02000000  //the same as frambuffer base
+
+//static unsigned char *mem_ptr = CAM_MEM_BASE;
+static  fb_xsize, fb_ysize;
+
+/*
+static void camera_intr_handler(void *)
+{
+    
+}
+*/
+
+void camera_init()
+{
+    unsigned int pic_size;
+    unsigned int value;
+    fb_xsize  = getenv("xres")? strtoul(getenv("xres"),0,0):FB_XSIZE;
+    fb_ysize  = getenv("yres")? strtoul(getenv("yres"),0,0):FB_YSIZE;
+    pic_size = fb_xsize * fb_ysize;
+
+    *(volatile unsigned int *)(CAMERA_BASE + DMA0_CONFIG) = CAM_MEM_BASE ; 
+    *(volatile unsigned int *)(CAMERA_BASE + DMA1_CONFIG) = CAM_MEM_BASE ;
+    *(volatile unsigned int *)(CAMERA_BASE + DMA2_CONFIG) = CAM_MEM_BASE ;
+    *(volatile unsigned int *)(CAMERA_BASE + DMA3_CONFIG) = CAM_MEM_BASE ;
+
+/*
+    *(volatile unsigned int *)(CAMERA_BASE + DMA1_CONFIG) = CAM_MEM_BASE + pic_size;
+    *(volatile unsigned int *)(CAMERA_BASE + DMA2_CONFIG) = CAM_MEM_BASE + (pic_size << 1);
+    *(volatile unsigned int *)(CAMERA_BASE + DMA3_CONFIG) = CAM_MEM_BASE + (pic_size * 3);
+*/
+/*
+    camera enable        [31]
+    output data format   [13]
+    input data format    [11]
+    resolution           [7]
+    yuv input format     [4]
+    hsync level setting  [1]
+    vsync level setting  [0]
+*/
+    value = (1<<13) | (1<<11) | (1<<7) | (1<<0);    
+    *(volatile unsigned int *)(CAMERA_BASE + CAMIF_CONFIG) = value;
+    *(volatile unsigned int *)(CAMERA_BASE + CAMIF_CONFIG) |= 0x80000000;
+//    pci_intr_establish(0, 0, IPL_BIO, camera_intr_handler, 0, 0);
+}
+
+
